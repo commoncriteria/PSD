@@ -5,7 +5,7 @@
     xmlns:sec="https://niap-ccevs.org/cc/v1/section"
     xmlns:h="http://www.w3.org/1999/xhtml">
   <boilerplate>yes</boilerplate>
-  <!-- <inline-comment color='green'> Hello World QQQQ </inline-comment> -->
+  <!-- <inline-comment color='green'>Initial PSD Template on 5/8.</inline-comment> -->
   <!-- <inline-comment color='blue' linebreak='yes'> Hello World QQQQ </inline-comment> -->
   <product_class>QQQQ</product_class>
   <RevisionHistory>
