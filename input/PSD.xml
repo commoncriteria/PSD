@@ -87,89 +87,138 @@
         to have an active interface with the PSD.
       </term>
       <term abbr='CMC' full="Certificate Management over CMS"/>
-      <term abbr='CMS' full="Cryptographic Message Syntax"/>      
-      <term full="Credential">
-	Data that establishes the identity of a user, e.g. a cryptographic key or
-	password.
+      <term full="Combiner (multi-viewer)">
+        A PSD with video integration functionality. Used to simultaneously display output
+        from multiple personal computers (PCs).
       </term>
-      
-      <term full="Critical Security Parameters" abbr="CSP">
-	Information that is either user or system defined and
-	is used to operate a cryptographic module in processing encryption functions including
-	cryptographic keys and authentication data, such as passwords, the disclosure or modification
-	of which can compromise the security of a cryptographic module or the security of the
-	information protected by the module.
+      <term full="Computer Interface">
+        The PSD's physical receptacle or port for connecting to a computer.
+      </term>      
+      <term abbr="CDF" full="Configurable Device Filtration">
+        A PSD function that filters traffic based on properties of a connected peripheral
+        device and criteria that are configurable by an Administrator.
       </term>
-      
-      <term full="DAR Protection">
-	Countermeasures that prevent attackers, even those with physical access,
-	from extracting data from non-volatile storage.
-	Common techniques include data encryption and wiping.
+      <term full="Connected Computer">
+        A computing device connected to a PSD. May be a personal computer, server, tablet, or any
+        other computing device.
       </term>
-      <term full="Data Execution Prevention" abbr="DEP">
-	An anti-exploitation feature of modern operating systems executing on
-	modern computer hardware, which enforces a non-execute permission on pages of memory.
-	DEP prevents pages of memory from containing both data and instructions, which makes
-	it more difficult for an attacker to introduce and execute code.
+      <term full="Connected Peripheral">
+        A peripheral that is connected to a PSD.
       </term>
-      
-      <term full="Developer">
-	An entity that writes OS software. For the purposes of this document,
-	vendors and developers are the same.
+      <term full="Connection">
+        A physical or logical conduit that enables devices to interact through respective
+        interfaces. May consist of one or more physical (e.g., a cable) or logical (e.g., a
+        protocol) components.
       </term>
-      <term full="General Purpose Operating System">
-	A class of OSes designed to support a wide-variety of workloads consisting of many concurrent applications or services.
-	Typical characteristics for OSes in this class include support for third-party applications,
-	support for multiple users, and security separation between users and their respective resources.
-	General Purpose Operating Systems also lack the real-time constraint that defines Real Time Operating Systems (RTOS).
-	RTOSes typically power routers, switches, and embedded devices.
+      <term full="Connector">
+        The plug on a connection that attaches to a computer or peripheral interface.
       </term>
-      
-      <term full="Host-based Firewall">
-	A software-based firewall implementation running on the OS for filtering inbound and
-	outbound network traffic to and from processes running on the OS.
+      <term abbr='CMS' full="Cryptographic Message Syntax"/>
+      <term full="Device">
+        An information technology product. In the context of this PP, a device is a PSD, a
+        connected computer, or a connected peripheral.
+      </term>            
+      <term full="Display">
+        A device that visually outputs user data, such as a monitor
       </term>
-      
-      <term full="Operating System" abbr="OS" plural="OSes">
-	Software that manages physical and logical resources and provides services
-	for applications. The terms <h:i>TOE</h:i> and <h:i>OS</h:i> are interchangeable in this
-	document. 
+      <term full="Guard">
+        A PSD function that requires multiple express user actions in order to switch between
+        connected computers using connected peripherals.
       </term>
-      
-      <term full="Personally Identifiable Information" abbr="PII">
-	Any information about an individual maintained by an agency, including, but
-	not limited to, education, financial transactions, medical history, and criminal or
-	employment history and information which can be used to distinguish or trace an
-	individual's identity, such as their name, social security number, date and place of
-	birth, mother's maiden name, biometric records, etc., including any other personal
-	information which is linked or linkable to an individual.<xref to="bibOMB"/>
+      <term full="Interface">
+        A shared boundary across which two or more devices exchange information through
+        a Connection.
       </term>
-      
-      <term full="Sensitive Data">
-	Sensitive data may include all user or enterprise data or may be specific
-	application data such as PII, emails, messaging, documents, calendar items, and contacts.
-	Sensitive data must minimally include credentials and keys. Sensitive data shall
-	be identified in the OS's TSS by the ST author. 
+      <term full="Isolator or Filter">
+        A PSD with a single connected computer.
       </term>
-      
+      <term abbr="KM" full="Keyboard, Mouse">
+        A type of PSD that shares a keyboard and pointing device between connected
+        computers. A KM may optionally include an analog audio device.
+      </term>
+      <term abbr="KVM" full="Keyboard, Video, Mouse">
+        A type of PSD that shares a keyboard, video, and pointing device between connected
+        computers. A KVM may optionally include an analog audio device and user
+        authentication device.
+      </term>
+      <term full="Letter of Volatility">
+        A letter issued by the manufacturer outlining whether on-board memory can store
+        data when the device is powered off (non‐volatile) or not (volatile).
+      </term>
+      <term full="Monitoring">
+        The ability of a user to receive an indicator of the current active interface.
+      </term>
+      <term full="Non-Selected Computer">
+        A connected computer that has no active interfaces with the PSD.
+      </term>
+      <term full="Peripheral or Peripheral Device">
+        A device with access that can be shared or filtered by a PSD.
+      </term>
+      <term full="Remote Controller">
+        Remote component of the PSD that extends the controls and indications through a
+        cable.
+      </term>
+      <term full="Secure State">
+        An operating condition in which the PSD disables all connected peripheral and
+        connected computer interfaces when the correctness of its functions cannot be
+        ensured.
+      </term>
+      <term full="Selected Computer">
+        A connected computer that has active interfaces with the PSD.
+      </term>
+      <term full="Supported Peripheral">
+        A peripheral device that is technically supported by the PSD
+      </term>
+      <term full="Touch Screen">
+        A pointing peripheral device that enable users to touch one or more objects
+        on the screen or to point the cursor device to specific locations.
+      </term>      
       <term abbr='USB' full="Universal Serial Bus"/>
       <term full="User">
-	A user is subject to configuration policies applied
-	to the operating system by administrators.  On some systems under certain
-	configurations, a normal user can temporarily elevate privileges to that of an administrator.
-	At that time, such a user should be considered an administrator.
+        A person that interacts with a PSD (or a process or mechanism acting on behalf of a
+        person).	
       </term>
-	  <term abbr="VM" full="Virtual Machine">Blah Blah Blah</term>
-      
+      <term full="User Authentication Device">
+        A peripheral device that is used to affirm the identity of a user attempting to
+        authenticate to a computer (e.g., smart card reader, biometric authentication device,
+        proximity card reader).
+      </term>
+      <term full="User Data">
+        Information that the user inputs to the connected computer or is output to the user
+        from the connected computer (and including user authentication and credential
+        information)
+      </term>
+      <term full="Video Wall">
+        A tiled set of displays that allow the video output from a single selected computer to
+        be spanned across multiple individual displays.
+      </term>
     </tech-terms>   
     
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
+      In the context of this PP, a PSD is an IT product for connecting one or more peripheral devices to one or
+      more computers such that data cannot flow between computers by way of the peripherals or the PSD.
+      Examples of PSDs that can claim compliance to this PP include Keyboard, Video, Mouse (KVM) switches;
+      Keyboard, Mouse (KM) switches; and Isolators.<h:br/><h:br/>
+      A PSD may be composed of one or more hardware components or platforms, and its software or
+      firmware. It may include cables and accessories. PSDs that support more than one computer include a
+      user interface that includes a visible indication of the selected computer interface and a mechanism for
+      changing the selected computer interface. The user interface can be implemented on the chassis of the
+      PSD using, for example, a touch screen or lights and buttons, or as part of a wired remote control.<h:br/><h:br/>
+      An isolator or filter PSD is a device that provides the same security functions as a KVM but only to a single
+      connected computer. Isolators do not require continuous display of the active interface.
       <section title="TOE Boundary" id="TOEboundary">
+        The TOE boundary is limited to the PSD itself. The TOE’s operational environment consists of one or more
+        connected peripherals or computers. The typical usage of a multi‐computer PSD involves mapping
+        interfaces between multiple computers such that the user is able to interact with the selected computers.<h:br/><h:br/>
+        In this case, the TOE includes a user interface that allows a user to select the active computer. The user
+        interface includes an indicator identifying the currently selected computer. Typical PSD usage is illustrated
+        in Figure 1 below.
         <figure entity="images/Toe.png" title="General TOE " id="toe"/>
       </section>
       <section title="TOE Platform" id="TOEplatform">
       </section>
     </section>
+    
     <section title="Use Cases" id="usecases">Requirements in this Protection Profile are designed to
       address the security problems in at least the following use cases. These use cases are intentionally
       very broad, as many specific use cases exist for an operating system. These use cases may also
@@ -428,7 +477,7 @@ users of the same system.
 
     <sec:SFRs title="Security Functional Requirements">
       <sec:Something>
-          Here's whwere we talk about an audit table.
+          Here's where we talk about an audit table.
           <audit-table table="mandatory" id="at-mandatory"/>
       </sec:Something>
       <section title="QQQQ" id="FOO">
