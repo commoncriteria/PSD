@@ -212,8 +212,35 @@
         interfaces between multiple computers such that the user is able to interact with the selected computers.<h:br/><h:br/>
         In this case, the TOE includes a user interface that allows a user to select the active computer. The user
         interface includes an indicator identifying the currently selected computer. Typical PSD usage is illustrated
-        in Figure 1 below.
-        <figure entity="images/Toe.png" title="General TOE " id="toe"/>
+        in Figure 1 below.        
+        <figure entity="images/Toe.png" title="General TOE " id="toe"/> <comment>Need to add figure here.</comment>
+          <section title="PSD Compliance Guidelines">
+            Connected peripheral devices, computer platforms, and connecting cables are not covered under this PP,
+            but may be addressed by another PP. Nevertheless, testing of the TOE requires a complete setup that
+            includes computers, cables, and peripheral devices.<h:br/><h:br/>
+            PSDs covered by this PP: <h:ul>
+              <h:li>May support one or more types of peripherals specified in the PP‐Modules that extend this PP
+              (e.g., video display or keyboard/mouse).</h:li>
+              <h:li>Must be connected to one or more computers.</h:li>
+              <h:li>May comprise one or more connected sub‐systems (e.g., one KM device and one video device
+              connected with cables or wires).</h:li>
+              <h:li>Must not support more than one of each peripheral device type except for display or audio output
+              devices.</h:li>
+              <h:li>Must support only single users; a PSD may not be shared among users.</h:li>
+            </h:ul>
+            The following list includes additional characteristics that a conformant TOE must have or may have:<h:ul>
+              <h:li>PSD connected devices are limited as per the Peripheral Device Connections (Appendix E).</h:li>
+              <h:li>A single user may use more than one PSD instance at a time.</h:li>
+              <h:li>The PSD monitoring and control functions are optional. If supported, these functions shall be builtin
+                to the PSD chassis or implemented as part of a wired remote control.</h:li>
+              <h:li>PSD indicators must be implemented in such a way as to be visible to the user at all times.</h:li>
+              <h:li>PSDs may have non‐tactile user controls (e.g., multi‐touch windows).</h:li>
+              <h:li>Connected Computers may have one or more peripheral devices that bypass the PSD (i.e.,
+                peripherals that are connected directly to a computer).</h:li>
+              <h:li>The PSD user display may present one‐to‐many computers’ video output simultaneously if
+                displays are a peripheral type supported by the TOE.</h:li>
+        </h:ul>
+      </section>  
       </section>
       <section title="TOE Platform" id="TOEplatform">
       </section>
