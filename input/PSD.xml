@@ -241,760 +241,1202 @@
                 displays are a peripheral type supported by the TOE.</h:li>
         </h:ul>
       </section>  
-      </section>
-      <section title="TOE Platform" id="TOEplatform">
-      </section>
+      </section>     
     </section>
     
-    <section title="Use Cases" id="usecases">Requirements in this Protection Profile are designed to
-      address the security problems in at least the following use cases. These use cases are intentionally
-      very broad, as many specific use cases exist for an operating system. These use cases may also
-      overlap with one another.  An operating system's functionality may even be effectively extended by
-      privileged applications installed onto it.  However, these are out of scope of this PP. 
+    <section title="Use Cases" id="sec-usecases">
+      The following use cases are examples of PSDs covered by this PP.
       <usecases>
-      <usecase title="Elephant-own device" id="elephant">
-        <description>This is everything we need to describe in words about this use case.</description>	
-	  <config>
-                <ref-id>soup</ref-id><not><ref-id>ratatouille</ref-id><ref-id>pizza</ref-id></not>
-                <not><ref-id>table2</ref-id></not> <!-- This says you can't choose this selectable-->
-                <ref-id>optional-comp-example</ref-id><!-- Inclusion of an optional/objective requirement -->
-	  </config>
-      </usecase>
+        <usecase title="Single User with PSD, Local Monitoring, and Local Control" id="supsd-loc-mon-loc-con">
+          <config>
+            <ref-id><comment>Add Single user with PSD, local monitoring, and local control Figure here</comment></ref-id>            
+          </config>
+            <description>In this use case, the user controls the PSD through a user interface on the PSD itself or through
+            a directly connected remote controller. Peripheral devices are connected directly to the PSD
+            using cables. Since the PSD resides in close physical proximity to the user, the user is expected
+            to have physical access and full visibility of the PSD monitoring and control functions.<h:br/><h:br/>
+            PSDs implementing this use case may support any type of supported peripheral as defined in this
+            PP and its associated PP‐Modules.<h:br/><h:br/>
+            Note that the Operational Environment of this PSD may include peripherals that are connected
+            directly to the connected computers (unconnected to the PSD) and multiple peripherals of the
+            same type (for display or audio output only) each connected to the PSD, as shown in the figures
+            below:
+              <config>
+                <ref-id><comment>Add Single user with KM PSDand peripherals connected directly to computers Figure here</comment></ref-id>
+                <ref-id><comment>Add Single user with PSD and multiple peripherals of the same type Figure here</comment></ref-id>
+              </config>              
+            </description>
+        </usecase>
+        <usecase title="Single User with PSD and a Single Computer (Isolator or Filter)" id="supsd-sin-comp-iso-or-fil">
+          <config>
+            <ref-id><comment>Add Single User with PSD and a Single Computer (Isolator or Filter) Figure here</comment></ref-id>            
+          </config>          
+          <description>
+            In this use case, the PSD sits between a set of connected peripherals and a single connected
+            computer. The connected computer may change over time, such as different laptops connected
+            to an Isolator or Filter that persistently resides in a conference room. Once again, this use case
+            does not specifically mandate or exclude the use of any one type of peripheral that is defined by
+            this PP and its PP‐Modules.
+          </description>
+        </usecase>
+        <usecase title="PSD with Single Integrated Video Display (Combiner or Multi-Viewer)" id="psd-sin-int-vid-disp-comb-or-mv">
+          <config>
+            <ref-id><comment>Add PSD with Single Integrated Video Display (Combiner or Multi-Viewer) Figure here</comment></ref-id>            
+          </config>
+          <description>
+            A Combiner is used to simultaneously display output from multiple connected computers to one or more
+            display devices. A Combiner PSD may combine the display output from multiple connected computers
+            onto a single monitor (as shown in Figure 6 above) or output the display from one connected computer
+            to be spanned onto multiple tiled or overlapping displays (e.g., a video wall). Any PSD TOE that claims to
+            support this use case must have the ability to support display peripherals. Other supported peripherals
+            can be claimed at the ST author’s discretion.
+          </description>          
+        </usecase>
       </usecases>
     </section>
   </sec:Introduction>
 
-  <sec:cclaims title="Conformance Claims"/>
-  <sec:spd title="Security Problem Description">The security problem is described in terms
-    of the threats that the OS is expected to address, assumptions about the
-    operational environment, and any organizational security policies that the OS
-    is expected to enforce.
+  <section title="Conformance Claims" id="sec-cclaims" boilerplate="no">
+    <CClaimsInfo
+      cc-version="cc-2022r1"
+      cc-approach="direct-rationale"
+      display="yes">
+      <cc-st-conf>exact</cc-st-conf>
+      <cc-pt2-conf>extended</cc-pt2-conf>           
+      <cc-pt3-conf>conformant</cc-pt3-conf> 
+      <cc-pp-conf/>
+      <cc-pp-config-with>
+        <Mod-cc-ref>PP‐Module for Analog Audio Output Devices, Version 1.0</Mod-cc-ref>
+        <Mod-cc-ref>PP‐Module for Audio Input Devices, Version 1.0</Mod-cc-ref>
+        <Mod-cc-ref>PP‐Module for Keyboard/Mouse Devices, Version 1.0</Mod-cc-ref>
+        <Mod-cc-ref>PP‐Module for User Authentication Devices, Version 1.0</Mod-cc-ref>        
+        <Mod-cc-ref>PP‐Module for Video/Display Devices, Version 1.0</Mod-cc-ref>
+      </cc-pp-config-with>
+      <cc-pkg-claim/>
+    </CClaimsInfo>
+  </section>
+  
+  <sec:spd title="Security Problem Definition">
     <sec:Threats>
       <threats>
-        <threat name="T.NETWORK_ATTACK">
-          <description> An attacker is positioned on a communications channel or elsewhere on the
-            network infrastructure. Attackers may engage in communications with applications and
-            services running on or part of the OS with the intent of compromise. Engagement may
-            consist of altering existing legitimate communications.</description>
-          <objective-refer ref="O.PROTECTED_COMMS">
-            <rationale>The threat T.NETWORK_ATTACK is countered by O.PROTECTED_COMMS as this
-              provides for integrity of transmitted data.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.INTEGRITY">
-            <rationale>The threat T.NETWORK_ATTACK is countered by O.INTEGRITY as this provides for
-              integrity of software that is installed onto the system from the network.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.MANAGEMENT">
-            <rationale>The threat T.NETWORK_ATTACK is countered by O.MANAGEMENT as this provides for
-              the ability to configure the OS to defend against network attack.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.ACCOUNTABILITY">
-            <rationale>The threat T.NETWORK_ATTACK is countered by O.ACCOUNTABILITY as this
-              provides a mechanism for the OS to report behavior that may indicate a network
-              attack has occurred.</rationale>
-          </objective-refer>
+        <threat name="T.DATA_LEAK">
+          <description>
+            A connection via the PSD between one or more computers may allow unauthorized data flow
+            through the PSD or its connected peripherals.
+          </description>
+          <addressed-by>FDP_APC_EXT.1</addressed-by><rationale></rationale>
+          <addressed-by>FDP_PDC_EXT.1</addressed-by><rationale></rationale>
         </threat>
-        <threat name="T.NETWORK_EAVESDROP">
-          <description> An attacker is positioned on a communications channel or elsewhere on the
-            network infrastructure. Attackers may monitor and gain access to data exchanged between
-            applications and services that are running on or part of the OS. </description>
-          <objective-refer ref="O.PROTECTED_COMMS">
-            <rationale>The threat T.NETWORK_EAVESDROP is countered by O.PROTECTED_COMMS as this
-              provides for confidentiality of transmitted data.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.MANAGEMENT">
-            <rationale>The threat T.NETWORK_EAVESDROP is countered by O.MANAGEMENT as this provides
-              for the ability to configure the OS to protect the confidentiality of its transmitted
-              data.</rationale>
-          </objective-refer>
+        <threat name="T.FAILED">
+          <description>
+            Detectable failure of a PSD may cause an unauthorized information flow or weakening of PSD security
+            functions.
+          </description>
+          <addressed-by>FPT_FLS_EXT.1</addressed-by><rationale></rationale>
+          <addressed-by>FPT_TST.1</addressed-by><rationale></rationale>
+          <addressed-by>FPT_TST_EXT.1</addressed-by><rationale></rationale>
         </threat>
-        <threat name="T.LOCAL_ATTACK">
-          <description> An attacker may compromise applications running on the OS. The
-            compromised application may provide maliciously formatted input to the OS through a
-            variety of channels including unprivileged system calls and messaging via the
-            file system. </description>
-          <objective-refer ref="O.INTEGRITY">
-            <rationale>The objective O.INTEGRITY protects against the use of mechanisms that weaken
-              the TOE with regard to attack by other software on the
-              platform.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.ACCOUNTABILITY">
-            <rationale>The objective O.ACCOUNTABILITY protects against local attacks by providing
-              a mechanism to report behavior that may indicate a local attack is occurring or
-              has occurred.</rationale>
-          </objective-refer>
+        <threat name="T.LOGICAL_TAMPER">
+          <description>
+            An attached device (computer or peripheral) with malware, or otherwise under the control of a
+            malicious user, could modify or overwrite code or data stored in the PSD’s volatile or non‐volatile
+            memory to allow unauthorized information flows.
+          </description>
+          <addressed-by>FPT_NTA_EXT.1</addressed-by><rationale></rationale>          
         </threat>
-        <threat name="T.LIMITED_PHYSICAL_ACCESS">
-          <description> An attacker may attempt to access data on the OS while having a limited
-            amount of time with the physical device. </description>
-          <objective-refer ref="O.PROTECTED_STORAGE">
-            <rationale>The objective O.PROTECTED_STORAGE protects against unauthorized attempts to
-              access physical storage used by the TOE.</rationale>
-          </objective-refer>
+        <threat name="T.PHYSICAL_TAMPER">
+          <description>
+            A malicious user or human agent could physically modify the PSD to allow unauthorized information
+            flows.
+          </description>
+          <addressed-by>FPT_PHP.1</addressed-by><rationale></rationale>
+          <addressed-by>FPT_PHP.3 (implementation-dependent)</addressed-by><rationale></rationale>
         </threat>
+        <threat name="T.REPLACEMENT">
+          <description>
+            A malicious human agent could replace the PSD during shipping, storage, or use with an alternate
+            device that does not enforce the PSD security policies.
+          </description>
+          <addressed-by>FPT_PHP.1</addressed-by><rationale></rationale>
+        </threat>
+        <threat name="T.RESIDUAL_LEAK">
+          <description>
+            A PSD may leak (partial, residual, or echo) user data between the intended connected computer and
+            another unintended connected computer.
+          </description>
+          <addressed-by>FDP_RIP_EXT.1</addressed-by><rationale></rationale>
+          <addressed-by>FDP_RIP_EXT.2 (implementation-dependent)</addressed-by><rationale></rationale>
+        </threat>
+        <threat name="T.SIGNAL_LEAK">
+          <description>
+            A connection via the PSD between one or more computers may allow unauthorized data flow
+            through bit‐by‐bit signaling.
+          </description>
+          <addressed-by>FDP_ APC_EXT.1</addressed-by><rationale></rationale>
+          <addressed-by>FDP_PDC_EXT.1</addressed-by><rationale></rationale>
+          <addressed-by>FDP_SWI_EXT.1</addressed-by><rationale></rationale>
+          <addressed-by>FDP_SWI_EXT.2 (selection-based)></addressed-by><rationale></rationale>      	
+        </threat>
+        <threat name="T.UNAUTHORIZED_DEVICES">
+          <description>
+            The use of an unauthorized peripheral device with a specific PSD peripheral port may allow
+            unauthorized data flows between connected devices or enable an attack on the PSD or its connected
+            computers.
+          </description>
+          <addressed-by>FDP_PDC_EXT.1</addressed-by><rationale></rationale>
+        </threat>
+        <threat name="T.UNINTENDED_USE">
+          <description>
+            A PSD may connect the user to a computer other than the one to which the user intended to connect.
+          </description>          
+          <addressed-by>FDP SWI_EXT.1</addressed-by><rationale></rationale>
+          <addressed-by>FDP_SWI_EXT.2 (selection-based)</addressed-by><rationale></rationale>
+          <addressed-by>FTA_CIN_EXT.1 (selection-based)</addressed-by><rationale></rationale>
+          <addressed-by>FAU_GEN.1 (implementation-dependent)</addressed-by><rationale></rationale>
+          <addressed-by>FIA_UAU.2 (implementation-dependent)</addressed-by><rationale></rationale>
+          <addressed-by>FIA_UID.2 (implementation-dependent)</addressed-by><rationale></rationale>
+          <addressed-by>FMT_MOF.1 (implementation-dependent)</addressed-by><rationale></rationale>
+          <addressed-by>FMT_SMF.1 (implementation-dependent)</addressed-by><rationale></rationale>
+          <addressed-by>FMT_SMR.1 (implementation-dependent)</addressed-by><rationale></rationale>
+          <addressed-by>FPT_STM.1 (implementation-dependent)</addressed-by><rationale></rationale>         
+        </threat>        
       </threats>
     </sec:Threats>
+    
     <section title="Assumptions" id="assumptions">
       <assumptions>
-        <assumption name="A.PLATFORM">
-          <description> The OS relies upon a trustworthy computing platform for
-            its execution. This underlying platform is out of scope of this PP. </description>
-          <objective-refer ref="OE.PLATFORM">
-            <rationale> The operational environment objective OE.PLATFORM is realized through
-              A.PLATFORM. </rationale>
+        <assumption name="A.NO_TEMPEST">
+          <description>
+            Computers and peripheral devices connected to the PSD are not TEMPEST approved.
+          </description>
+          <objective-refer ref="OE.NO_TEMPEST">
+            <rationale>If the TOE’s operational environment does not include TEMPEST approved equipment,
+              then the assumption is satisfied.</rationale>
           </objective-refer>
         </assumption>
-        <assumption name="A.PROPER_USER">
-          <description> The user of the OS is not willfully negligent or hostile, and uses the
-            software in compliance with the applied enterprise security policy. At the same time,
-            malicious software could act <h:i>as</h:i> the user, so requirements which
-            confine malicious subjects are still in scope.</description>
-          <objective-refer ref="OE.PROPER_USER">
-            <rationale>The operational environment objective OE.PROPER_USER is realized through
-              A.PROPER_USER.</rationale>
+        <assumption name="A.NO_WIRELESS_DEVICES">
+          <description>
+            The environment includes no wireless peripheral devices.
+          </description>
+          <objective-refer ref="OE.NO_WIRELESS_DEVICES">
+            <rationale>If the TOE’s operational environment does not include wireless peripherals, then the
+              assumption is satisfied.</rationale>
           </objective-refer>
         </assumption>
-        <assumption name="A.PROPER_ADMIN">
-          <description> The administrator of the OS is not careless, willfully negligent or hostile,
-            and administers the OS within compliance of the applied enterprise security policy. </description>
-          <objective-refer ref="OE.PROPER_ADMIN">
-            <rationale>The operational environment objective OE.PROPER_ADMIN is realized through
-              A.PROPER_ADMIN.</rationale>
+        <assumption name="A.PHYSICAL">
+          <description>
+            The environment provides physical security commensurate with the value of the TOE and the data it
+            processes and contains.
+          </description>
+          <objective-refer ref="OE.PHYSICAL">
+            <rationale>If the TOE’s operational environment provides physical security, then the
+              assumption is satisfied.</rationale>
+          </objective-refer>
+        </assumption>
+        <assumption name="A.TRUSTED_ADMIN">
+          <description>
+            PSD administrators and users are trusted to follow and apply all guidance in a trusted manner.
+          </description>
+          <objective-refer ref="OE.TRUSTED_ADMIN">
+            <rationale>If the TOE’s operational environment ensures that only trusted administrators will
+              manage the TSF, then the assumption is satisfied.</rationale>
+          </objective-refer>
+        </assumption>
+        <assumption name="A.TRUSTED_CONFIG">
+          <description>
+            Personnel configuring the PSD and its operational environment follow the applicable security
+            configuration guidance.
+          </description>
+          <objective-refer ref="OE.TRUSTED_CONFIG">
+            <rationale>If TOE administrators follow the provided security configuration guidance, then the
+              assumption is satisfied.</rationale>
+          </objective-refer>
+        </assumption>
+        <assumption name="A.USER_ALLOWED_ACCESS">
+          <description>
+            All PSD users are allowed to interact with all connected computers. It is not the role of the PSD to
+            prevent or otherwise control user access to connected computers. Computers or their connected
+            network shall have the required means to authenticate the user and to control access to their various
+            resources.
+          </description>
+          <objective-refer ref="OE.PHYSICAL">
+            <rationale>If the TOE’s operational environment provides physical access to connected
+              computers, then the assumption is satisfied.</rationale>
           </objective-refer>
         </assumption>
       </assumptions>
     </section>
-<!--    <section title="Organizational Security Policies" id="OSPs">
-      <OSPs>
-        <OSP id="P.ENTERPRISE">
-          <description>If the OS is bound to a directory or management server, the configuration of
-            the OS software must be capable of adhering to the enterprise security policies
-            distributed by them.</description>
-          <objective-refer ref="O.MANAGEMENT">
-            <rationale>The organizational security policy P.ENTERPRISE is enforced through the
-              objective O.MANAGEMENT as this objective represents how the enterprise and user assert
-              management over the OS.</rationale>
-          </objective-refer>
-        </OSP>
-      </OSPs>
-    </section> -->
+    
+    <sec:Organizational_Security_Policies>      
+      <OSPs/>      
+    </sec:Organizational_Security_Policies>
   </sec:spd>
-  <sec:Security_Objectives>
-    <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
-      <SOs>
-        <SO name="O.ACCOUNTABILITY">
-          <description> Conformant OSes ensure that information exists that allows
-            administrators to discover unintentional issues with the configuration and operation of
-            the operating system and discover its cause.  Gathering event information and immediately
-            transmitting it to another system can also enable incident response in the event
-            of system compromise.</description>
-          <addressed-by>FAU_GEN.1</addressed-by><rationale>'cause FAU_GEN.1 is awesome</rationale>
-          <addressed-by>FTP_ITC_EXT.1</addressed-by><rationale>Cause FTP reasons </rationale>
-        </SO>
-        <SO name="O.INTEGRITY">
-          <description>Conformant OSes ensure the integrity of their update
-            packages. OSes are seldom if ever shipped without errors, and the
-            ability to deploy patches and updates with integrity is critical to enterprise network
-            security. Conformant OSes provide execution environment-based
-            mitigations that increase the cost to attackers by adding complexity to the task of
-            compromising systems. </description>
-            <addressed-by>FPT_SBOP_EXT.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FPT_ASLR_EXT.1</addressed-by><rationale>ASLR For reasons </rationale>
-            <addressed-by>FPT_TUD_EXT.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FPT_TUD_EXT.2</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FCS_COP.1/HASH</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FCS_COP.1/SIGN</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FCS_COP.1/KEYHMAC</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FPT_ACF_EXT.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FPT_SRP_EXT.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FIA_X509_EXT.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FPT_TST_EXT.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FTP_ITC_EXT.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FPT_W^X_EXT.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FIA_AFL.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FIA_UAU.5</addressed-by><rationale>For reasons </rationale>
-        </SO>
-        <SO name="O.MANAGEMENT">
-          <description> To facilitate management by users and the enterprise, conformant OSes
-	    provide consistent and supported interfaces for their
-            security-relevant configuration and maintenance. This includes the deployment of
-            applications and application updates through the use of platform-supported deployment
-            mechanisms and formats, as well as providing mechanisms for configuration and
-            application execution control. </description>
-            <addressed-by>FMT_MOF_EXT.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FMT_SMF_EXT.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FTA_TAB.1</addressed-by><rationale>For reasons </rationale>
-            <addressed-by>FTP_TRP.1</addressed-by><rationale>For reasons </rationale>
-        </SO>
-	<!-- <SO id="O.RESILIENCE"> -->
-	<!--   <description>  -->
-	<!--     To address the issue of exploitation in the event of software vulnerabilities,  -->
-	<!--     conformant OSs employ industry-standard exploitation countermeasures. -->
-	<!--   </description> -->
-	<!-- </SO> -->
-        <SO name="O.PROTECTED_STORAGE">
+  
+  <sec:Security_Objectives>  
+    <section title="Security Objectives for the Operational Environment" id="OESecurityObjectives">
+      The following subsections describe objectives for the operational environment.
+      <SOEs>
+        <SOE name="OE.NO_TEMPEST">
           <description>
-To address the issue of loss of confidentiality of credentials in the event of
-loss of physical control of the storage medium, conformant OSes
-provide data-at-rest protection for credentials.
-Conformant OSes also provide access controls which allow users to keep their files private from other
-users of the same system.
+            The operational environment will not use TEMPEST approved equipment.
           </description>
-          <addressed-by>FCS_STO_EXT.1, FCS_RBG_EXT.1, FCS_COP.1/ENCRYPT, FDP_ACF_EXT.1</addressed-by>
-          <rationale>Rationale for a big chunk</rationale>
-        </SO>
-        <SO name="O.PROTECTED_COMMS">
-          <description> To address both passive (eavesdropping) and active (packet modification)
-            network attack threats, conformant OSes provide mechanisms to create
-            trusted channels for CSP and sensitive data. Both CSP and sensitive data
-            should not be exposed outside of the platform. </description>
-          <addressed-by>
-            FCS_RBG_EXT.1, FCS_CKM.1, FCS_CKM.2, FCS_CKM_EXT.4, FCS_COP.1/ENCRYPT,
-            FCS_COP.1/HASH, FCS_COP.1/SIGN, FCS_COP.1/HMAC, FDP_IFC_EXT.1, FIA_X509_EXT.1,
-            FIA_X509_EXT.2, FTP_ITC_EXT.1
-          </addressed-by>
-          <rationale>Rationale for a big chunk</rationale>
-        </SO>
-      </SOs>
+        </SOE>
+        <SOE name="OE.NO_WIRELESS_DEVICES">
+          <description>
+            The operational environment will not include wireless keyboards, mice, audio, user authentication,
+            or video devices.
+          </description>
+        </SOE>
+        <SOE name="OE.PHYSICAL">
+          <description>
+            The operational environment will provide physical security, commensurate with the value of the PSD
+            and the data that transits it.
+          </description>
+        </SOE>
+        <SOE name="OE.TRUSTED_ADMIN">
+          <description>
+            The operational environment will ensure that trusted PSD Administrators and users are appropriately
+            trained.
+          </description>
+        </SOE>
+        <SOE name="OE.TRUSTED_CONFIG">
+          <description>
+            The operational environment will ensure that administrators configuring the PSD and its operational
+            environment follow the applicable security configuration guidance.
+          </description>
+        </SOE>        
+      </SOEs>
     </section>
-    <section title="Security Objectives for the Operational Environment"
-      id="SecurityObjectivesTOEorEnvironment">The following security objectives for the operational
-      environment assist the OS in correctly providing its security functionality.
-      These track with the assumptions about the environment. <SOEs>
-        <SOE name="OE.PLATFORM">
-          <description>The OS relies on being installed on trusted
-            hardware.</description>
-        </SOE>
-        <SOE name="OE.PROPER_USER">
-          <description> The user of the OS is not willfully negligent or hostile,
-            and uses the software within compliance of the applied enterprise security policy.
-            Standard user accounts are provisioned in accordance with the least privilege model.
-            Users requiring higher levels of access should have a separate account dedicated for
-            that use. </description>
-        </SOE>
-        <SOE name="OE.PROPER_ADMIN">
-          <description> The administrator of the OS is not careless, willfully
-            negligent or hostile, and administers the OS within compliance of the applied enterprise
-            security policy. </description>
-        </SOE>
-      </SOEs></section>
+    
     <section title="Security Objectives Rationale" id="SOR">
       <!-- This section is populated by boilerplates.xsl in transforms. -->
       </section>
   </sec:Security_Objectives>
 
-  <sec:Security_Requirements>This chapter describes the security requirements
-    which have to be fulfilled by the OS. Those requirements comprise functional
-    components from Part 2 and assurance components from Part 3 of <xref g="CC"/>. The
-    following notations are used: <h:ul>
-      <h:li>
-        <h:b>Refinement</h:b> operation (denoted by <h:b>bold text</h:b>): is used to add details to a
-        requirement, and thus further restricts a requirement.</h:li>
-      <h:li>
-        <h:b>Selection</h:b> (denoted by <h:i>italicized text</h:i>): is used to select one or more options
-        provided by the [CC] in stating a requirement.</h:li>
-      <h:li>
-        <h:b>Assignment</h:b> operation (denoted by <h:span class="assignable-content">italicized text</h:span>): is used to assign a
-        specific value to an unspecified parameter, such as the length of a password. Showing the
-        value in square brackets indicates assignment.</h:li>
-      <h:li>
-        <h:b>Iteration</h:b> operation: are identified with a number inside parentheses (e.g.
-        "(1)")</h:li>
-    </h:ul>
+  <sec:Security_Requirements>
+    <section id="s-sfr" title="Security Functional Requirements">
+      <section id="ss-audit-table" title="Auditable Events for Mandatory SFRs"></section>
+        <audit-table table="mandatory" id="at-mandatory"/>
+  </section>
+  
+   <section title="Security Audit" id="FAU">
+     <f-component cc-id="fau_gen.1" name="Audit Data Generation" status="implementation-based">
+       <f-element id="fau-gen.1e1">
+         <title>
+           The TSF shall be able to generate an audit data of the following auditable events:
+           <h:ol type="a">
+             <h:li>Start-up and shutdown of the audit functions;</h:li>
+             <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
+             [<h:li><h:i>administrator login</h:i></h:li>
+             <h:li><h:i>administrator logout</h:i></h:li>
+             <h:li><h:i>self-test failures</h:i></h:li>
+             <h:li><h:i>>peripheral device acceptance and rejections</h:i></h:li>
+             <h:li><assignable>all administrative functions claimed in FMT_MOF.1 and
+               FMT_SMF.1</assignable></h:li>]</h:ol></title>
+       </f-element>
+       <f-element id="fau-gen.1e2">
+         <title>
+           The TSF shall record within the audit data at least the following information:
+           <h:ol type="a">
+             <h:li>Date and time of the event, type of event, subject identity (if applicable), and the
+               outcome (success or failure) of the event;</h:li>
+             <h:li>For each auditable event type, based on the auditable event definitions of the functional
+               components included in the PP, PP-Module, functional package, or ST, [<h:i>no other
+               information</h:i>].</h:li>
+           </h:ol>
+         </title>  
+         <note role="application">
+           If a peripheral device is rejected due to its incompatibility with the peripheral
+           interface, then this rejection need not be audited.
+         </note>
+       </f-element>
+       <aactivity>
+         <Isolation/>
+         <TSS>
+           The evaluator shall verify that the TSS describes the audit functionality
+           including which events are audited, what information is saved in each record
+           type, how the records are stored, the conditions in which audit records are
+           overwritten, and the means by which the audit records may be read.
+           Although the TOE may provide an interface for an administrator to view the
+           audit records, this is not a requirement.
+         </TSS>
+         <Guidance>
+           The evaluator shall verify that the operational guidance provides
+           instructions on how the audit logs can be viewed as well as any information
+           needed to interpret the audit logs.
+         </Guidance>
+         <Tests>
+           The evaluator shall perform each of the auditable functions to succeed, and
+           where possible, to fail. The evaluator shall use the means described in the
+           TSS to access the audit records and verify that each of the events has been
+           recorded, with all of the expected information.
+         </Tests>
+       </aactivity>
+     </f-component>
+   </section>
+    
+    <section title="User Data Protection" id="fdp">
+         <f-component cc-id="fdp_apc_ext.1" name="Active PSD Connections">
+          <f-element id="fdp-apc-ext.1e1">
+            <title> The TSF shall route user data only to or from the interfaces selected by the
+              user. 
+            </title>
+          </f-element>
+          <f-element id="fdp-apc-ext.1e2">
+            <title>The TSF shall ensure that no data flows between connected computers whether the
+              TOE is powered on or powered off.</title>
+          </f-element>
+          <f-element id="fdp-apc-ext.1e3">
+            <title>The TSF shall ensure that no data transits the TOE when the TOE is powered off.</title>
+          </f-element>         
+          <f-element id="fdp-apc-ext.1e4">
+            <title>The TSF shall ensure that no data transits the TOE when the TOE is in a failure
+              state.</title>
+          </f-element>
+           <aactivity>
+             <Isolation>
+               The evaluator shall review the Isolation Documentation and Assessment as
+               described in Appendix D of this PP and ensure that it adequately describes
+               the isolation concepts and implementation in the TOE and why it can be
+               relied upon to provide proper isolation between connected computers
+               whether the TOE is powered on or powered off.
+             </Isolation>
+             <TSS>
+               The evaluator shall verify that the TSS describes the conditions under which
+               the TOE enters a failure state.
+             </TSS>
+             <Guidance>
+               The evaluator shall verify that the operational user guidance describes how a
+               user knows when the TOE enters a failure state.
+             </Guidance>
+             <Tests/>
+           </aactivity>           
+         </f-component>
+        
+        <f-component cc-id="fdp_pdc_ext.1" name="Peripheral Device Connection">
+          <f-element id="fdp-pdc-ext.1e1">
+            <title>
+              The TSF shall reject connections with unauthorized devices upon TOE power up
+              and upon connection of a peripheral device to a powered‐on TOE.
+            </title>
+            <f-element id="fdp-pdc-ext.1e2">
+              <title>
+                The TSF shall reject connections with devices presenting unauthorized
+                interface protocols upon TOE power up and upon connection of a peripheral
+                device to a powered‐on TOE.
+              </title>
+            </f-element>
+            <f-element id="fdp-pdc-ext.1e3">
+              <title>
+                The TOE shall have no external interfaces other than those claimed by the TSF.
+              </title>
+            </f-element>
+            <f-element id="fdp-pdc-ext.1e4">
+              <title>
+                The TOE shall not have wireless interfaces.
+              </title>
+            </f-element>
+            <f-element id="fdp-pdc-ext.1e5">
+              <title>
+                The TOE shall provide a visual or auditory indication to the User when a
+                peripheral is rejected.
+              </title>
+            </f-element>
+            <note role="application">The list of unauthorized devices is in Appendix E: Peripheral Device Connections.</note>
+            <aactivity>
+              <Isolation/>
+              <TSS>
+                The evaluator shall verify that the TSS describes the compatible devices for
+                each peripheral port type supported by the TOE. The description must
+                include sufficient detail to justify any PP‐Modules that extend this PP and are
+                claimed by the TOE (e.g., if the ST claims the Audio Input PP‐Module, then
+                the TSS shall reference one or more audio input devices as supported
+                peripherals).<h:br/><h:br/>
+                The evaluator shall verify that the TSS describes the interfaces between the
+                PSD and computers and the PSD and peripherals, and ensure that the TOE
+                does not contain wireless connections for these interfaces.<h:br/><h:br/>
+                The evaluator shall verify that the list of peripheral devices and interfaces
+                supported by the TOE does not include any prohibited peripheral devices or
+                interface protocols specified in Appendix E.<h:br/><h:br/>
+                The evaluator shall verify that the TSS describes all external physical
+                interfaces implemented by the TOE, and that there are no external
+                interfaces that are not claimed by the TSF.
+              </TSS>
+              <Guidance>
+                The evaluator shall verify that the operational user guidance provides clear
+                direction for the connection of computers and peripheral devices to the TOE.<h:br/><h:br/>
+                The evaluator shall verify that the operational user guidance provides clear
+                direction for the usage and connection of TOE interfaces, including general
+                information for computer, power, and peripheral devices.<h:br/><h:br/>
+                The evaluator shall determine if interfaces that receive or transmit data to or
+                from the TOE present a risk that these interfaces could be misused to import
+                or export user data.<h:br/><h:br/>
+                The evaluator shall verify that the operational user guidance describes the
+                visual or auditory indications provided to a user when the TOE rejects the
+                connection of a device.
+              </Guidance>
+              <Tests>
+                <testlist>
+                  <test>
+                    The evaluator shall check the TOE and its supplied cables and
+                    accessories to ensure that there are no external wired interfaces other than
+                    computer interfaces, peripheral device interfaces, and power interfaces.
+                  </test>
+                  <test>
+                    The evaluator shall check the TOE for radio frequency certification
+                    information to ensure that the TOE does not support wireless interfaces.                    
+                  </test>
+                  <test>
+                    The evaluator shall verify that the TOE ports properly reject
+                    unauthorized devices and devices with unauthorized protocols as per the
+                    Peripheral Device Connections (Appendix E).<h:br/><h:br/>
+                    For this test, verify device rejection through TOE user indication in
+                    accordance with the operational user guidance, an immediate cessation of
+                    traffic following device detection or enumeration, or incompatibility of the
+                    device interface with the peripheral interface, and through no such device
+                    appearing in the real‐time hardware information console. <h:ol>
+                      <h:li>Ensure the TOE is powered off. Open a real‐time hardware
+                    information console on the connected computer.</h:li>
+                      <h:li>Attempt to connect a USB mass storage device to the TOE peripheral
+                    interface.</h:li>
+                      <h:li>.</h:li>
+                      <h:li>Ensure the USB mass storage device is disconnected, and then
+                    attempt to connect it to the TOE peripheral interface again.</h:li>
+                      <h:li>Verify the device is rejected.</h:li>
+                      <h:li>Power off the TOE. Connect an unauthorized USB device to a USB
+                    hub, and attempt to connect the USB hub to the TOE peripheral interface.</h:li>
+                      <h:li>Power on the TOE. Verify the device is rejected.</h:li>
+                      <h:li>Ensure the USB hub is disconnected, and then attempt to connect it
+                    to the TOE peripheral interface again.</h:li>
+                      <h:li>Verify the device is rejected.</h:li>
+                      <h:li>Power off the TOE. Attempt to connect any Personal System/2
+                    (PS/2) device directly to the TOE peripheral interface.</h:li>
+                      <h:li>Power on the TOE. Verify the device is rejected.</h:li>
+                      <h:li>Ensure the PS/2 device is disconnected, and then attempt to
+                    connect it directly to the TOE peripheral interface again.</h:li>
+                      <h:li>Verify the device is rejected.</h:li>
+                    </h:ol>
+                  </test>
+                </testlist>
+              </Tests>              
+            </aactivity>
+          </f-element>          
+         </f-component>
+        
+        <f-component  cc-id="fdp_rip_ext.1" name="Residual Information Protection">
+          <f-element id="fdp-rep-ext.1e1">
+            <title>
+              The TSF shall ensure that no user data is written to TOE non‐volatile memory or
+              storage.
+            </title>            
+            <aactivity>
+              <Isolation/>
+              <TSS>
+                The evaluator shall verify that the TSS includes a Letter of Volatility that
+                provides the following information:<h:ul>
+                <h:li>Which TOE components have non‐volatile memory, the non‐volatile
+                memory technology, manufacturer/part number, and memory sizes;</h:li>
+                <h:li>Any data and data types that the TOE may store on each one of
+                these components;</h:li>
+                <h:li>Whether or not each one of these parts is used to store user data
+                and how this data may remain in the TOE after power down; and</h:li>
+                <h:li>Whether the specific component may be independently powered by
+                something other than the TOE (e.g., by a connected computer).</h:li>
+                </h:ul>
+                Note that user configuration and TOE settings are not considered user data
+                for purposes of this requirement.<h:br/><h:br/>
+                The evaluator shall verify that the Letter of Volatility provides assurance that
+                user data is not stored in TOE non‐volatile memory or storage.
+              </TSS>
+              <Guidance/>
+              <Tests/>
+            </aactivity>
+          </f-element>
+        </f-component>
+      
+      
+      <f-component cc-id="fdp_rip_ext.2" name="Purge of Residual Information" status="implementation-based">
+        <f-element id="fdp-rip-ext.2e1">
+          <title>
+            The TOE shall have a purge memory or restore factory defaults function
+            accessible to the administrator to delete all TOE stored configuration and
+            settings except for logging.
+          </title>
+          <aactivity>
+            <Isolation/>
+            <TSS>
+              The evaluator shall verify that the TSS describes the TOE’s reaction to
+              memory purge or restore factory defaults.
+            </TSS>
+            <Guidance>
+              The evaluator shall verify that the Letter of Volatility included in the TSS
+              describes the effect that the TOE Restore Factory Default function has on
+              each component listed in the Letter of Volatility.
+            </Guidance>
+            <Tests>
+              Perform the TOE memory purge or restore factory defaults according
+              to the guidance and verify that the TOE enters a desirable secure state.<h:br/><h:br/>
+              The evaluator shall check that the log record is not deleted if a logging
+              function is supported by the TOE.
+            </Tests>
+          </aactivity>
+        </f-element>  
+      </f-component>      
+      
+        <f-component cc-id="fdp_swi_ext.1" name="PSD Switching">
+          <f-element id="fdp-swi-ext.1e1">
+            <title>
+              The TSF shall ensure that <selectables>
+                <selectable>the TOE supports only one connected computer</selectable>
+                <selectable>switching can be initiated only through express user action</selectable>
+              </selectables>.
+            </title>
+            <note role="application">
+              If "switching can be initiated only through express user action" is selected, the
+              ST must include the selection‐based requirements FDP_SWI_EXT.2 and FTA_CIN_EXT.1.
+            </note>
+            <aactivity>
+              <Isolation/>
+              <TSS>
+                If the ST includes the selection the "TOE supports only one connected
+                computer", the evaluator shall verify that the TSS indicates that the TOE
+                supports only one connected computer.<h:br/><h:br/>
+                If the ST includes the selection "switching can be initiated only through
+                express user action", the evaluator shall verify that the TSS describes the TOE
+                supported switching mechanisms and that those mechanisms can be
+                initiated only through express user action.
+              </TSS>
+              <Guidance>
+                If the ST includes the selection "switching can be initiated only through
+                express user action", the evaluator shall verify that the operational user
+                guidance describes the TOE supported switching mechanisms.
+              </Guidance>
+              <Tests/>
+            </aactivity>
+          </f-element>  
+        </f-component>
+       </section>
+    
+    <f-component cc-id="fdp_swi_ext.2" name="PSD Switching Methods" status="sel-based">
+      <f-element id="fdp-swi-ext-2e1">
+        <title>
+          The TSF shall ensure that no switching can be initiated through automatic port
+          scanning, control through a connected computer, or control through keyboard
+          shortcuts.
+        </title>
+      </f-element>
+      <f-element id="fdp-swi-ext-2e2">
+        <title>
+          The TSF shall ensure that switching can be initiated only through express user
+          action using <selectables>
+            <selectable>console buttons</selectable>
+            <selectable>console switches</selectable>
+            <selectable>console touch screen</selectable>
+            <selectable>wired remote control</selectable>
+            <selectable>peripheral devices using a guard</selectable>
+          </selectables>.
+        </title>
+      </f-element>
+        <note role="application">
+          This SFR must be claimed if "switching can be initiated only through express user
+          action" is chosen as the selection for FDP_SWI_EXT.1.1.<h:br/><h:br/>
+          If the TOE also claims conformance to the PP‐Module for Video/Display Devices
+          (Video Module) and if "peripheral devices using a guard" is selected here, the
+          TOE must claim the selection‐based requirement FDP_CDS_EXT.1 in the Video
+          Module and select "multiple connected displays" in FDP_CDS_EXT.1.1.
+        </note>
+        <aactivity>
+          <Isolation/>
+          <TSS>
+            The evaluator shall verify that the TSS describes the TOE supported
+            switching mechanisms. The evaluator shall verify that the TSS does not
+            include automatic port scanning, control through a connected computer,
+            and control through keyboard shortcuts as TOE supported switching
+            mechanisms. The evaluator shall verify that the described switching
+            mechanisms can be initiated only through express user action according to
+            the selections.
+          </TSS>
+          <Guidance>
+            The evaluator shall verify that the operational user guidance describes the
+            TOE supported switching mechanisms. The evaluator shall verify that the
+            operational user guidance does not include automatic port scanning, control
+            through a connected computer, and control through keyboard shortcuts as
+            TOE supported switching mechanisms.
+          </Guidance>
+          <Tests/>
+        </aactivity>        
+    </f-component>    
+    
+    <section title="Identification and Authentication" id="FIA">
+      <f-component cc-id="fia_uau.2" name="User Authentication Before Any Action" status="implementation-based">
+        <f-element id="fia-uau.2e1">
+          <title>
+            The TSF shall require each <h:b>administrator</h:b> to be successfully authenticated
+            before allowing any other TSF-mediated actions on behalf of that <h:b>administrator</h:b>.
+          </title>
+          <note role="application">
+            This requirement expects that the authentication methods be described (e.g.,
+            logon credential, specially assigned key, etc.).
+          </note>
+          <aactivity>
+            This SFR is evaluated by the Evaluation Activities in FMT_MOF.1 below.
+          </aactivity>
+        </f-element>  
+      </f-component>
 
-    <sec:SFRs title="Security Functional Requirements">
-      <sec:Something>
-          Here's where we talk about an audit table.
-          <audit-table table="mandatory" id="at-mandatory"/>
-      </sec:Something>
-      <section title="QQQQ" id="FOO">
-         <f-component cc-id="foo_foo.1" name="Foo Foo">
-          <f-element id="foo-foo-id">
-            <title> The TOE shall consiste of  
-              <selectables>
-                 <selectable id="soup">soup</selectable>
-                 <selectable id="salad">salad</selectable>
-              </selectables>
-              followed by 
-              <selectables>
-                 <selectable id="pizza">pizza</selectable>
-                 <selectable id="spaghetti">spaghetti</selectable>
-                 <selectable id="ratatouille">ratatouille</selectable>
-                 <selectable id="sushi">sushi</selectable>
-              </selectables> with 
-              <selectables>
-                 <selectable id="s-white">white</selectable>
-                 <selectable id="s-red">red</selectable>
+      <f-component cc-id="fia_uid.2" name="User Identification Before Any Action" status="implementation-based">
+        <f-element id="fia-uid.2e1">
+          <title>
+            The TSF shall require each <h:b>administrator</h:b> to be successfully identified before
+            allowing any other TSF-mediated actions on behalf of that <h:b>administrator</h:b>.
+          </title>          
+          <aactivity>
+          This SFR is evaluated by the Evaluation Activities in FMT_MOF.1 below.
+          </aactivity>
+        </f-element>  
+      </f-component>
+    </section>
+      
+      <section title="Security Management" id="FMT">
+        <f-component cc-id="fmt_mof.1" name="Management of Security Functions Behavior" status="implementation-based">
+        <f-element id="fmt-mof.1e1">
+          <title>
+            The TSF shall restrict the ability to [<h:i>modify the behavior of</h:i>] the functions
+            <assignable>list of functions</assignable> to [<h:i>the authorized administrators</h:i>].
+          </title>          
+          <aactivity>
+            <Isolation/>
+            <TSS>
+              The evaluator shall verify that the TSS describes the mechanism for preventing
+              non‐administrators from accessing the administrative functions stated above.<h:br/><h:br/>
+              If the TSF provides multiple administrative roles, the evaluator shall verify that the
+              authorized behavior for each separate administrative role is described.<h:br/><h:br/>
+              The evaluator shall check the TSS to verify that it describes at least the following:<h:ul>
+                <h:li>Administrator name limitations and syntax requirements;</h:li>
+                <h:li>Administrator password limitations and syntax requirements;</h:li>
+                <h:li>Restoring lost name or password;</h:li>
+                <h:li>Initial setting of administrator credentials;</h:li>
+                <h:li>Logon success, fail limitations, and logging; and</h:li>
+                <h:li>All functions identified in the above assignment.</h:li>
+              </h:ul>
+            </TSS>
+            <Guidance>
+              The evaluator shall check the user and administrative guidance to verify that the
+              administrative functions described above are only available to identified
+              administrators. If the TSF provides multiple administrative roles, the evaluator
+              shall verify that the authorized behavior for each separate administrative role is
+              described.
+            </Guidance>
+            <Tests>
+              <testlist>
+                <test>
+                  <h:ol>
+                    <h:li>Set up the TOE to enable administrator access per applicable TOE
+                      administrative guidance. Verify that the TOE is in factory default format.</h:li>
+                    <h:li>Attempt to set the initial administrator user name and password.</h:li>
+                    <h:li>Logon as a valid administrator and perform all authorized administrative
+                      functions to assure the logon was successful.</h:li>
+                    <h:li>Log off from the TOE.</h:li>
+                    <h:li>Attempt to logon with an incorrect administrator name. Verify that the
+                      logon is failing as expected and that administrative functions are unavailable.</h:li>
+                    <h:li>Attempt to access administrative functions while there is no logged on
+                      administrator. Verify that all attempts fail.</h:li>
+                    <h:li>If the TOE provides multiple administrative roles, repeat this test for each
+                      defined role to ensure that the authorizations for each role are consistent with
+                      what is described in the operational guidance.</h:li>
+                  </h:ol>
+                </test>
+              </testlist>
+            </Tests>
+          </aactivity>
+        </f-element>  
+      </f-component>
+      </section>
+    
+    <f-component cc-id="fmt_smf.1" name="Specification of Management Functions" status="implementation-based">
+      <f-element id="fmt-smf.1e1">
+        <title>
+          The TOE shall be capable of performing the following management functions:
+          <assignable>list of management functions to be provided by the TSF</assignable>.
+        </title>
+        <note role="application">
+          Supported management functions may depend on the PP‐Modules that are
+          claimed by the TOE alongside this PP. This could include Configurable Device
+          Filtration (CDF) for one or more supported peripheral types not defined in this
+          PP. A management function should also be included if the optional
+          FDP_RIP_EXT.2.1 requirement is included which specifies that the TOE shall
+          have a purge memory or restore factory defaults function accessible to the
+          administrator.
+        </note>
+        <aactivity>
+          <Isolation/>
+          <TSS>
+            The evaluator shall check to ensure the TSS describes the management functions
+            available to the administrators and user TOE configurations and how they are
+            used by the TOE.
+          </TSS>
+          <Guidance>
+            The evaluator shall check that every management function mandated in the ST for
+            this requirement is described in the operational user guidance and that the
+            description contains the information required to perform the management duties
+            associated with each management function.
+          </Guidance>
+          <Tests>
+            The evaluator shall test the TOE’s ability to provide the management functions by
+            configuring the TOE and testing each option assigned from above. The evaluator is
+            expected to test these functions in all the ways in which the ST and guidance
+            documentation state the configuration can be managed.
+          </Tests>
+        </aactivity>
+      </f-element>  
+    </f-component>
+    
+    <f-component cc-id="fmt_smr.1" name="Security Roles" status="implementation-based">
+      <f-element id="fmt-smr.1e1">
+        <title>
+          The TSF shall maintain the roles [<h:i>administrators</h:i>].
+        </title>
+      </f-element>
+      <f-element id="fmt-smf.1e2">
+          <title>
+            The TSF shall be able to associate users with roles.
+          </title>
+      </f-element>
+        <note role="application">
+          The intent of this SFR is to make clear the fact that the TSF is expected to
+          provide some sort of controlled access to administrative functions such that
+          ordinary users are not able to execute them without authorization. It does not
+          mandate that the TSF provide a single administrative role named
+          “administrator”; if multiple administrative roles with different authorizations
+          are provided, then the behavior can be described in the ST and tested
+          accordingly.
+        </note>
+        <aactivity>
+          Refer to the Evaluation Activities of FMT_MOF.1.1 above.
+        </aactivity>
+    </f-component>
+    
+       <section title="Protection of the TSF" id="FPT">
+         <f-component cc-id="fpt_fls_ext.1" name="Failure with Preservation of Secure State">
+          <f-element id="fpt-fls-ext.1e1">
+            <title>The TSF shall preserve a secure state when the following types of failures
+              occur: failure of the power‐on self‐test and<selectables>
+                <selectable>failure of the anti-tamper function</selectable>
+                <selectable>no other failures</selectable>
               </selectables>. 
             </title>
-            <note role="application"></note>
-            <aactivity>Something<TSS>ABC</TSS></aactivity>
-	    <!-- So an 'or' with one child means This OR NOTHING. -->
-	    <!-- So the following means -->
-	    <rule id="r-1">
-              <or>
-		<and>
-                  <ref-id>s-white</ref-id>
-                  <or><ref-id>ratatouille</ref-id>
-                  <ref-id>sushi</ref-id></or>
-		</and>
-		<and>
-                  <ref-id>s-red</ref-id>
-                  <or><ref-id>spaghetti</ref-id>
-                     <ref-id>pizza</ref-id></or>
-		</and>
-              </or>
-	    </rule>
-          </f-element>
-        </f-component>
-        <f-component cc-id="foo_bar.1" name="Foo Bar">
-          <f-element id="foo-bar-id">
-            <title> The TOE shall drink  <selectables><selectable id="tea">tea</selectable><selectable>coffee</selectable></selectables>. 
-            </title>
-            <note role="application"></note>
-            <aactivity>Something<TSS>ABC</TSS></aactivity>
-          </f-element>
-          <f-element id="foo-bar-cookie">
-            <title> The TOE shall eat <selectables><selectable id="crackers">crackers</selectable><selectable>nothing</selectable></selectables></title>
-            <note role="application">Deonstrating rules across elements</note>
-            <aactivity>Something <Guidance></Guidance></aactivity>
-	    <rule id="r-tea-and-crackers">
-              <or><and><ref-id>tea</ref-id><ref-id>crackers</ref-id></and></or>
-	    </rule>
-          </f-element>
-
-         </f-component>
-       </section>
-       <section title="QQQQ" id="QQQQ">
-         <f-component cc-id="fqq_qqq.1" name="QQQQQ">
-          <f-element id="a-unique-id">
-            <title> The TOE shall do either <selectables><selectable id="aaa">this</selectable><selectable>that</selectable></selectables>. 
-            </title>
-            <note role="application"></note>
+            <note role="application">
+              In the context of this PP, a 'secure state' is defined by the TOE disabling all
+              peripheral and connected computer interfaces when the correctness of its own
+              functions cannot be assured.<h:br/><h:br/>
+              Failure of the anti‐tamper function should be selected if FPT_PHP.3 is included
+              in the ST.
+            </note>
             <aactivity>
-              <TSS>
-Activities assoiated with the TSS.
-              </TSS>
+              This SFR is evaluated in conjunction with FPT_TST.1
+	          </aactivity>
+          </f-element>
+ 	       <audit-event>
+            <audit-event-descr>
+	          </audit-event-descr>
+            <audit-event-info></audit-event-info>
+          </audit-event>
+  	    </f-component>
+         
+         <f-component cc-id="fpt_nta_ext.1" name="No Access to TOE" >
+           <f-element id="fpt-nta-ext.1e1">
+             <title>
+               TOE firmware, software, and memory shall not be accessible via the TOE’s
+               external ports, with the following exceptions:<selectables>
+                 <selectable>the Extended Display Identification Data (EDID) memory of 
+                   Video TOEs may be accessible from connected computers;</selectable>
+                 <selectable>the configuration data, settings, and logging data that
+                   may be accessible by authorized administrators</selectable>
+                 <selectable>no other exceptions</selectable>
+               </selectables>                              
+             </title>            
+             <aactivity>
+               <Isolation/>
+               <TSS>
+                 The evaluator shall examine the TSS to ensure that the TSS documents that
+                 connected computers and peripherals do not have access to TOE software,
+                 firmware, and TOE memory, except as described above.
+               </TSS>
                <Guidance>
-Activities assoiated with guidance
-              </Guidance>
-             <Tests>
+                 The evaluator shall check the operational user guidance to ensure any
+                 configurations required to comply with this SFR are defined.
+               </Guidance>
+               <Tests/>
+             </aactivity>
+           </f-element>  
+         </f-component>
+         
+         <f-component cc-id="fpt_php.1" name="Passive Detection of Physical Attack">
+           <f-element id="fpt-php-1e1">
+             <title>
+               The TSF shall provide unambiguous detection of physical tampering that might
+               compromise the TSF.
+             </title>
+           <f-element id="fpt-php-1e2">
+             <title>
+               The TSF shall provide the capability to determine whether physical tampering
+               with the TSF’s devices or TSF’s elements has occurred.
+             </title>               
+           </f-element>
+             <note role="application">
+               FPT_PHP.1.1 include indications generated from application of optional SFR
+               FPT_PHP.3
+             </note>
+             <aactivity>
+               <Isolation/>
+               <TSS>
+                 The evaluator shall verify that the TSS indicates that the TOE provides
+                 unambiguous detection of physical tampering of the TOE enclosure and TOE
+                 remote controller (if applicable). The evaluator shall verify that the TSS
+                 provides information that describes how the TOE indicates that it has been
+                 tampered with.
+               </TSS>
+               <Guidance>
+                 The evaluator shall verify that the operational user guidance describes the
+                 mechanism by which the TOE provides unambiguous detection of physical tampering and
+                 provides the user with instructions for verifying that the TOE has not been
+                 tampered with.
+               </Guidance>
+               <Tests>
                  <testlist>
-                    <test>
-                     Make shadow puppets.
-                       <Objective>This is the motivation behind the tests.</Objective>
-                       <Evidence>A warm fuzzy feeling </Evidence>
-                     </test>
+                   <test>
+                     The evaluator shall verify, for each tamper evident seal or label
+                     affixed to the TOE enclosure and TOE remote controller (if applicable), that
+                     any attempts to open the enclosure or remove the seal results in the seal
+                     being damaged in a manner that is consistent with the operational user
+                     guidance.
+                   </test>
+                   <test>
+                     The evaluator shall verify that it is not possible to administratively
+                     disable or otherwise prevent the display of any tampering indicators.
+                   </test>
                  </testlist>
-Activities assoiated with the Tests. 
-                 <h:div><depends on="virtual"/>
-					 Great tests for something virtual.
-				 </h:div>
-                 <h:div><depends on="physical"/>
-					 Great tests for something tangible or in my mind.
-				 </h:div>
-
-              </Tests>
-	    </aactivity>
-          </f-element>
- 	  <audit-event>
-                <audit-event-descr>
-	On failure of audit data capture due to lack of disk space or pre-defined limit.
-                </audit-event-descr>
-                <audit-event-info>None.</audit-event-info>
-          </audit-event>
-  	  <audit-event table="turtle">
-	    <optional/>
-                <audit-event-descr>
-	On number of turtles in the area.
-                </audit-event-descr>
-          </audit-event>
-        </f-component>
-        <f-component cc-id="fqq_qqq.3" name="BQQQQQ">
-	  <objective/>
-          <f-element id="objective-example">
-            <title> The TOE shall do <assignable>guidance on what things should be assignable </assignable>. </title>
-            <note role="application">Notes. Notes. Notes.</note>
-            <aactivity>
-              <Guidance>
-Activities assoiated with guidance
-              </Guidance>
-	    </aactivity>
-          </f-element>
-        </f-component>
-        <f-component cc-id="fqq_qqq.2" name="TQQQQQ" id="optional-comp-example">
-	  <optional/>
-          <f-element id="optional-example">
-            <title> The TOE shall do soemthing.</title>
-            <note role="application"></note>
-            <aactivity>
-              <TSS>
-Activities assoiated with the TSS.
-              </TSS>
-	    </aactivity>
-          </f-element>
-        </f-component>
-         <f-component cc-id="fqq_qqq.4" name="UQQQQQ">
-          <depends id="aaa"/>
-          <f-element id="selbased-example">
-            <title> The TOE shall do something great.</title>
-            <note role="application"></note>
-            <aactivity>
-              <TSS>
-Activities assoiated with the TSS.
-              </TSS>
-	    </aactivity>
-          </f-element>
-        </f-component>
-        <f-component cc-id="fqq_qqq.6" name="WQQQQQ">
-          <depends on="a-feature-id"/>
-          <f-element id="feat-based-example">
-            <title> The TOE shall do something with regards to some implementation.</title>
-            <note role="application"></note>
-            <aactivity>
-              <TSS>
-Activities assoiated with the TSS.
-              </TSS>
-	    </aactivity>
-          </f-element>
-        </f-component>
+               </Tests>
+             </aactivity>
+           </f-element>  
+         </f-component>
+         
+         <f-component cc-id="fpt_php.3" name="Resistance to Physical Attack" status="implementation-based">
+           <f-element id="fpt-php-3e1">
+             <title>
+               The TSF shall resist [<h:i>a physical attack for the purpose of gaining access to the
+               internal components, to damage the anti‐tamper battery, to drain or exhaust
+               the anti‐tamper battery</h:i>] to the [<h:i>TOE enclosure</h:i>] by <h:b>becoming permanently
+               disabled</h:b>.
+             </title>
+             <note role="application">
+               'Becoming permanently disabled' is interpreted to mean that connected peripheral
+               devices will cease to function.               
+             </note>
+             <aactivity>
+               <Isolation/>
+               <TSS>
+                 The evaluator shall verify that the TSS describes the TOE’s reaction to
+                 opening the device enclosure or damaging and exhausting the anti‐tampering
+                 battery associated with the enclosure.
+               </TSS>
+               <Guidance>
+                 The evaluator shall examine the operational user guidance and verify that
+                 the guidance provides users with information on how to recognize a device
+                 where the anti‐tampering functionality has been activated.<h:br/><h:br/>
+                 The evaluator shall verify that the operational user guidance warns the user
+                 of the actions that will cause the anti‐tampering functionality to disable the
+                 device.
+               </Guidance>
+               <Tests>
+                 In the following testing the evaluator shall attempt to gain physical access to
+                 the TOE internal circuitry (enough access to allow the insertion of tools to
+                 tamper with the internal circuitry). The TOE anti‐ tampering function is
+                 expected to trigger, causing an irreversible change to the TOE functionality.
+                 The evaluator then shall verify that the anti‐tampering triggering provides
+                 the expected user indications and also disables the TOE.<h:br/><h:br/>
+                 TOE disabling means that the user would not be able to use the TOE for any
+                 purpose – all peripheral devices and computers are isolated.<h:br/><h:br/>
+                 Note that it is obvious that if the TOE was physically tampered with, then the
+                 attacker may easily circumvent the tamper indication means (for example
+                 cut the relevant TOE front panel wires). Nevertheless, the following test
+                 verifies that the user would be unable to ignore the TOE tampering
+                 indications and resume normal work.<h:br/><h:br/>
+                 The evaluator shall perform the following steps: <h:ol>
+                 <h:li>The evaluator shall attempt to open the PSD enclosure enough to
+                 gain access to its internal circuitry and observe that the TOE is both
+                 permanently disabled and provides the proper indication that it has been
+                 tampered with in accordance with the operational user guidance.</h:li>
+                 <h:li>[conditional: this step is applicable for TOEs having a remote
+                 controller] The evaluator shall attempt to open the PSD remote controller
+                 enclosure enough to gain access to its internal circuitry and observe that the
+                 TOE is both permanently disabled and provides the proper indication that it
+                 has been tampered with in accordance with the operational user guidance.</h:li>
+                 <h:li>The evaluator shall attempt to access the TOE settings to reset the
+                 tampering state and verify that it is not possible to recover from the
+                 tampered state.</h:li>
+                 <h:li>The evaluator shall acquire a copy of the TOE that has been
+                 previously tampered with.</h:li>
+                 <h:li>The evaluator shall power on the TOE and verify that the tampering
+                 indicator is displayed.</h:li></h:ol>
+               </Tests>
+             </aactivity>
+           </f-element>  
+         </f-component>        
+         
+         <f-component cc-id="fpt_stm.1" name="Reliable Time Stamps" status="implementation-based">
+           <f-element id="fpt-stm-1e1">
+             <title>
+               The TSF shall be able to provide reliable time stamps.
+             </title>
+             <note role="application">
+               Reliable time stamps are expected to be used with other TSF, e.g., for the
+               generation of audit data, to allow the Administrator to investigate incidents by
+               checking the order of events and to determine the actual local time when events
+               occurred. The decision about the required level of accuracy of that information is
+               up to the Administrator.
+             </note>
+             <aactivity>
+               <Isolation/>
+               <TSS>
+                 The evaluator shall check to ensure the TSS describes how the TOE provides
+                 reliable timestamps.
+               </TSS>
+               <Guidance>
+                 The evaluator shall check that the operational user guidance describes how the
+                 TOE provides reliable timestamps and if there are any management functions for
+                 configuring the time.
+               </Guidance>
+               <Tests>
+                 The evaluator shall test the TOE’s ability to provide time stamps. It is expected
+                 that this test be performed in conjunction with FAU_GEN.1.
+               </Tests>
+             </aactivity>
+           </f-element>  
+         </f-component>         
+         
+         <f-component cc-id="fpt_tst.1" name="TSF Testing">
+           <f-element id="fpt-tst.1e1">
+             <title>
+               The TSF shall run a suite of self‐tests [<h:i>during initial start‐up and at the
+               conditions</h:i> <selectables>
+                 <selectable>upon reset button activation</selectable>
+                 <selectable>no other conditions</selectable>
+               </selectables>] to demonstrate the correct operation of [<h:i>user control functions
+                 and</h:i><selectables>
+                   <selectable>active anti-tamper functionality</selectable>
+                   <selectable>no other functions</selectable>
+                 </selectables>].
+             </title>
+           <f-element id="fpt-tst.1e2">
+             <title>
+               The TSF shall provide authorized users with the capability to verify the integrity
+               of <selectables>
+                 <selectable><assignable>parts of TSF data</assignable></selectable>
+                 <selectable>TSF data</selectable>
+               </selectables>].
+             </title>
+           </f-element>
+           <f-element id="fpt-tst.1e3">
+               <title>
+                 The TSF shall provide authorized users with the capability to verify the integrity
+                 of <selectables>
+                   <selectable><assignable>parts of TSF</assignable></selectable>
+                   <selectable>TSF</selectable>
+                 </selectables>].
+               </title>
+           </f-element>
+             <note role="application">
+               Reset button activation should be selected if the TOE includes such
+               functionality.<h:br/><h:br/>
+               If "active anti‐tamper functionality" is selected, portions of the evaluation
+               activities will test functions from the optional active anti‐tamper SFR
+               FPT_PHP.3.<h:br/><h:br/>
+               Anyone with physical access to the TOE can be considered an authorized user.
+             </note>
+             <aactivity>
+               <Isolation/>
+               <TSS>
+                 The evaluator shall verify that the TSS describes the self‐ tests that are
+                 performed on start up or on reset (if "upon reset button activation" is
+                 selected). The evaluator shall verify that the self‐tests cover at least the
+                 following:<h:ul>
+                   <h:li>
+                     a test of the user interface – in particular, tests of the user control
+                     mechanism (e.g., checking that the front panel push‐buttons are not
+                     jammed) and
+                   </h:li>
+                   <h:li>
+                     if "active anti‐tamper functionality" is selected, a test of any antitampering
+                     mechanism (e.g., checking that the backup battery is functional).
+                   </h:li>
+                 </h:ul>
+                 The evaluator shall verify that the TSS describes how the TOE ensures a
+                 shutdown upon a self‐test failure or a failed anti‐tampering function, if
+                 present. If there are instances when a shutdown does not occur (e.g., a
+                 failure is deemed non‐security relevant), those cases are identified and a
+                 rationale is provided explaining why the TOE’s ability to enforce its security
+                 policies is not affected.<h:br/><h:br/>
+                 The evaluator shall check the TSS to verify that it describes the TOE behavior
+                 in case of self‐test failure. The evaluator shall verify that the described TOE
+                 behavior includes shutting down the PSD functionality once the failure is
+                 detected.<h:br/><h:br/>
+                 The evaluator shall examine the TSS to verify that it describes how users
+                 verify the integrity of the selections in FPT_TST.1.2 and FPT_TST.1.3. This
+                 method can include restarting the TOE, a dedicated self‐test, or some other
+                 method.
+               </TSS>
+               <Guidance>
+                 The evaluators shall verify that the operational user guidance describes how
+                 users verify the integrity of the selections in FPT_TST.1.2 and FPT_TST.1.3.
+                 This method can include restarting the TOE, a dedicated self‐test, or some
+                 other method.
+               </Guidance>
+               <Tests>
+                 The evaluator shall trigger the conditions specified in the TSS that are used
+                 to initiate TSF self‐testing and verify that successful completion of the selftests
+                 can be determined by following the corresponding steps in the
+                 operational guidance.
+               </Tests>
+             </aactivity>
+           </f-element>  
+         </f-component>
+         
+         <f-component cc-id="fpt_tst_ext.1" name="TSF Testing">
+           <f-element id="fpt-tst-ext.1e1">
+             <title>
+               The TSF shall respond to a self‐test failure by providing users with a <selectables>
+                 <selectable>visual</selectable>
+                 <selectable>auditory</selectable>
+               </selectables> indication of failure and by shutdown of normal TSF functions.
+             </title>
+             <aactivity>
+               <Isolation/>
+               <TSS>
+                 The evaluator shall check the TSS to verify that it describes the TOE behavior
+                 in case of self‐test failure. The evaluator shall verify that the described TOE
+                 behavior includes shutting down the PSD functionality once the failure is
+                 detected.
+               </TSS>
+               <Guidance>
+                 The evaluator shall verify that the operational user guidance: <h:ul>
+                   <h:li>describes how the results of self-tests are indicated to the user</h:li>
+                   <h:li>provides the user with a clear indication of how to recognize a failed
+                     self-test; and</h:li>
+                   <h:li>details the appropriate actions to be completed in the event of a failed
+                     self-test.</h:li>                   
+                 </h:ul>
+                 The evaluator shall verify that the operational user guidance provides adequate
+                 information on TOE self-test failures, their causes, and their indications.
+               </Guidance>
+               <Tests>
+                 The evaluator shall cause a TOE self-test failure and verify that the TOE responds by
+                 disabling normal functions and provides proper indications to the user.
+               </Tests>
+             </aactivity>
+           </f-element>  
+         </f-component>         
       </section>
 
-      <section title="Security Management (FMT)" id="fmt-2">
-          <f-component cc-id="fmt_smf.1" iteration="HOST" name="Specification of Management Functions (EDR Management of Host Agent)">
-            <f-element id="iteration-example">
-              <title>The EDR shall be capable of performing the following functions that control
-                behavior of the Host Agent:<h:br/>
-                <management-function-set default="O">
-                  <manager cid="a">Administrator</manager>
-                  <manager cid="s">SOC Analyst</manager>
-                  <manager cid="u">Read-Only User</manager>
-                  <management-function>
-                    <text>Configure the time frame for sending Host Agent data to the EDR
-                        <assignable>list of configurable time frames</assignable>
-                    </text>
-                    <M ref="a"/><O ref="s"/><NA ref="u"/>
-                  </management-function>
-                  <management-function>
-                    <text>Assign a label or tag to categorize or group individual endpoint systems </text>
-                    <M ref="a"/><O ref="s"/><NA ref="u"/>
-                  </management-function>
-                </management-function-set>
-              </title>
-              <note role="application">This requirement captures all the configuration
-                functionality the EDR provides the administrator to configure the
-                EDR Host Agents. <h:br/><h:br/>
-              Chart legend: X = Mandatory, O = Optional, - = N/A</note>
-              <aactivity>
-                <TSS>The evaluator shall verify the ST contains a list of roles and what functions they can perform.  
-                  The evaluator shall verify the list matches the chart in the requirement.</TSS>
-                <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
-                documented capabilities to perform the management functions.</Guidance>
-                <Tests>The evaluator shall perform the below tests:
-                 <testlist>
-                   <test>The evaluator shall modify the time frame for sending Host Agent data to the EDR
-                   and verify that an affected Host Agent is sending data at the intended interval.</test>
-                   <test>The evaluator shall tag or categorize a group of individual endpoint systems and
-                   verify that the tag or categorization persists within the EDR management dashboard for
-                   other users.</test>
-                   <test>The evaluator shall attempt each function with each role and verify access conforms with the chart in the requirement.</test>
-                 </testlist>
-                 <Objective>This is the motivation behind the tests.</Objective>
-                 <Evidence>A check should appear.</Evidence>
-                </Tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-         </section> 
-          <!-- FAU_GEN.1 -->
-            <section id="fau" title="Security Audit (FAU)">
-                <f-component cc-id="fau_gen.1" name="Audit Data Generation">
-                    <f-element id="fel-audit-gen">
-                        <title>The TSF shall be able to generate an audit record of the following auditable events:
-                            <h:ol type="a">
-                                <h:li>Start-up and shutdown of audit functions</h:li>
-                                <h:li>All administrative actions</h:li>
-                                <h:li>[Specifically defined auditable events in Table 1]</h:li>
-                                <h:li><selectables>
-
-				<!-- It makes no sense to have a selection for the various audit tables. The entries in those 
-				tables are automatically included in the ST is the associated SFR is included. The audit events are effectively
-				part of their corresponding SFRs. Selecting them here has no effect. 
-				-->
-                                    <selectable id="table2">additional information defined in Table 2</selectable>
-				    <selectable>additional information defined in Table 3</selectable>
-                                    <selectable>additional information defined in Table 4</selectable>
-                                    <selectable>additional information defined in in Table 5</selectable>
-                                    <selectable>no other information</selectable>
-
-				 </selectables></h:li>
-                            </h:ol>
-                        </title>
-                    </f-element>
-                    <f-element id="fel-audit-record">
-                        <title>The TSF shall record within each audit record at least the following information:
-                            <h:ol type="a">
-                                <h:li>Date and time of the event</h:li>
-                                <h:li>Type of event</h:li>
-                                <h:li>Subject and object identity (if applicable)</h:li>
-                                <h:li>The outcome (success or failure) of the event</h:li>
-                                <h:li>[Additional information defined in Table 1]</h:li>
-                                <h:li><selectables>
-<!-- XXX Table 2 is Optional.
-        Depending on the specific optional SFRs from Annex A that are claimed in the ST, the ST author shall
-	include the appropriate auditable events from Table 2 for FAU_GEN.1.<h:br></h:br><h:br></h:br>
-
-        Depending on the specific selection-based SFRs from Annex B that are claimed in the ST, the ST author shall
-	include the appropriate auditable events from Table 4 for FAU_GEN.1.<h:br></h:br><h:br></h:br>
-
-        Depending on the specific objective SFRs from Annex C that are claimed in the ST, the ST author shall
-	include the appropriate auditable events from Table 4 for FAU_GEN.1.<h:br></h:br><h:br></h:br>
-	
-	FIA_UIA_EXT.1 is a mandatory requirement that has both mandatory and optional audit events. I think
- 	I should handle this with a selection within the audit event table.
- 
--->
-                                    <selectable>additional information defined in Table 2</selectable>
-                                    <selectable>additional information defined in Table 3</selectable>
-                                    <selectable>additional information defined in Table 4</selectable>
-                                    <selectable>additional information defined in in Table 5</selectable>
-                                    <selectable>no other information</selectable>
-                                </selectables></h:li>
-                            </h:ol>
-                        </title>
-                        <note role="application">
-                            The ST author can include other auditable events directly in Table 1; they are not limited to the list presented. The ST author should update the table in FAU_GEN.1.2 with any additional information generated. “Subject identity” in FAU_GEN.1.2 could be a user id or an identifier specifying a VM, for example.<h:br></h:br><h:br></h:br>
-                            If ‘additional information defined in Table 3’ is selected, it is acceptable to include individual
-                            entries from Table 3 without including the entirety of Table 3.  Appropriate entries from Tables 2, 4,
-                            and 5 should be included in the ST if the associated SFRs and selections are included.<h:br></h:br><h:br></h:br>
-                            The Table 1 entry for FDP_VNC_EXT.1 refers to configuration settings that attach VMs to virtualized network components. Changes to these configurations can be made during VM execution or when VMs are not running. Audit records must be generated for either case.<h:br></h:br><h:br></h:br>
-                            The intent of the audit requirement for FDP_PPR_EXT.1 is to log that the VM is connected to a physical device (when the device becomes part of the VM’s hardware view), not to log every time that the device is accessed. Generally, this is only once at VM startup. However, some devices can be connected and disconnected during operation (e.g., virtual USB devices such as CD-ROMs). All such connection/disconnection events must be logged.
-                        </note>
-			<aactivity>
-                            <TSS>
-                                The evaluator shall check the TSS and ensure that it lists all of the auditable events 
-                                and provides a format for audit records. Each audit record format type shall be covered, along with a 
-                                brief description of each field. The evaluator shall check to make sure that every audit event type 
-                                mandated by the PP is described in the TSS.<h:br></h:br><h:br></h:br>
-                            </TSS>
-                            <Guidance>
-                                The evaluator shall also make a determination of the administrative actions that are relevant in the 
-                                context of this PP. The evaluator shall examine the administrative guide and make a determination of which 
-                                administrative commands, including subcommands, scripts, and configuration files, are related to the 
-                                configuration (including enabling or disabling) of the mechanisms implemented in the TOE 
-                                that are necessary to enforce the requirements specified in the PP. The evaluator shall document the 
-                                methodology or approach taken while determining which actions in the administrative guide are 
-                                security-relevant with respect to this PP.<h:br></h:br><h:br></h:br>
-                            </Guidance>
-                            <Tests>
-                                The evaluator shall test the TOE’s ability to correctly generate audit records by 
-                                having the TOE generate audit records for the events listed and administrative actions. 
-                                For administrative actions, the evaluator shall test that each action determined by the evaluator above to 
-                                be security relevant in the context of this PP is auditable. When verifying the test results, the 
-                                evaluator shall ensure the audit records generated during testing match the format specified in the 
-                                administrative guide, and that the fields in each audit record have the proper entries.<h:br></h:br>
-                                <h:br></h:br>
-                                Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms 
-                                directly.<h:br></h:br>
-				    
-				    							
-			See <xref to="at-mandatory"/> for more information.
-
-			<!-- AUDIT TABLE for MANDATORY SFRs. This needs to move outside the EAs -->
-<!-- Bob killed this 
-                       <ctr id="man-table" ctr-type="Table">: Auditable Events</ctr>
-                        <audit-events table="mandatory"/><h:br/>
-			    
-                        <audit-events table="turtle">
-                            <ctr id="turtle-table" ctr-type="Table">: Auditable Events</ctr>
-			    <depends on="selection"><ref-id>table2</ref-id></depends>
-			</audit-events><h:br/>
--->
-
-                            </Tests>   
-                        </aactivity>
-                    </f-element>
-                </f-component>
-                
-                <!-- FAU_SAR.1 -->
-                <f-component cc-id="fau_sar.1" name="Audit Review">
-                    <f-element id="fel-audit-cap">
-                        <title>The TSF shall provide [administrators] with the capability to read [all information] from the audit records.
-                        </title>
-                    </f-element>
-                    <f-element id="fel-audit-present">
-                        <title>The TSF shall provide the audit records in a manner suitable for the user to interpret the information.
-                        </title>
-                        <aactivity>
-                            <Guidance>
-                                The evaluator shall review the operational guidance for the procedure on how to review the audit 
-                                records.
-                            </Guidance>
-                            <Tests>
-                                The evaluator shall verify that the audit records provide all of the information specified in 
-                                FAU_GEN.1 and that this information is suitable for human interpretation. The assurance 
-                                activity for this requirement is performed in conjunction with the assurance activity for 
-                                FAU_GEN.1.
-                            </Tests>
-                        </aactivity>
-                    </f-element>
-                </f-component>
-                
-                <!-- FAU_STG.1 -->
-                <f-component cc-id="fau_stg.1" name="Protected Audit Trail Storage">
-                    <f-element id="fel-audit-del">
-                        <title>The TSF shall protect the stored audit records in the audit trail from unauthorized deletion.
-                        </title>
-                    </f-element>
-                    <f-element id="fel-audit-mod">
-                        <title>The TSF shall be able to [prevent] modifications to the stored audit records in the audit trail.
-                        </title>
-                        <note role="application">The assurance activity for this SFR is not intended to imply that the TOE must support an administrator’s ability to designate individual audit records for deletion. That level of granularity is not required.</note>
-			<aactivity><elev/>Element-level eas.
-			<Tests>
-			  <testlist>
-			    <test>Do something</test>
-			  </testlist>
-			</Tests>
-			</aactivity>
-                        <aactivity>The evaluator shall ensure that the TSS describes how the audit records are protected from unauthorized modification or deletion. The evaluator shall ensure that the TSS describes the conditions that must be met for authorized deletion of audit records. The evaluator shall perform the following tests:<h:br></h:br><h:br></h:br>
-                            <Tests>
-                                <testlist>
-                                    <test>The evaluator shall access the audit trail as an unauthorized Administrator and attempt 
-                                        to modify and delete the audit records. The evaluator shall verify that these attempts 
-                                        fail.
-                                    </test>
-                                    <test>The evaluator shall access the audit trail as an authorized Administrator and attempt 
-                                        to delete the audit records. The evaluator shall verify that these attempts succeed. 
-                                        The evaluator shall verify that only the records authorized for deletion are deleted.
-                                    </test>
-                                </testlist>
-                            </Tests>
-                        </aactivity>
-                    </f-element>
-					
-                </f-component>
-
-                <!-- FAU_STG_EXT.1 -->
-                <f-component cc-id="fau_stg_ext.1" name="Off-Loading of Audit Data">
-                    <f-element id="fel-audit-mov">
-                        <title>The TSF shall be able to transmit the generated audit data to an external IT entity using a trusted channel as specified in FTP_ITC_EXT.1.
-                        </title>
-                        <aactivity>
-                            Protocols used for implementing the trusted channel must be selected in FTP_ITC_EXT.1.
-                            <TSS>
-                                The evaluator shall examine the TSS to ensure it describes the means by which 
-                                the audit data are transferred to the external audit server, and how the trusted channel is 
-                                provided. 
-                            </TSS>
-                            <Guidance>
-                                The evaluator shall examine the operational guidance to ensure it describes how to establish the trusted channel to the audit server, as well as describe any requirements 
-                                on the audit server (particular audit server protocol, version of the protocol required, etc.), as well 
-                                as configuration of the TOE needed to communicate with the audit server.
-                            </Guidance>
-                            <Tests>
-                                Testing of the trusted channel mechanism is to be performed as specified in the assurance 
-                                activities for FTP_ITC_EXT.1. <h:br></h:br><h:br></h:br>
-                                The evaluator shall perform the following test for this requirement:<h:br></h:br><h:br></h:br>
-                                <testlist>
-                                    <test>The evaluator shall establish a session between the TOE and the audit server according to the configuration guidance provided. The evaluator shall then examine the traffic that passes between the audit server and the TOE during several activities of the evaluator’s choice designed to generate audit data to be transferred to the audit server. The evaluator shall observe that these data are not able to be viewed in the clear during this transfer, and that they are successfully received by the audit server. The evaluator shall record the particular software (name, version) used on the audit server during testing.</test>
-                                </testlist>
-                            </Tests>
-                        </aactivity>
-                    </f-element>
-                    <f-element id="fel-audit-full">
-                        <title>The TSF shall
-                            <selectables>
-                                <selectable>drop new audit data</selectable>
-                                <selectable>overwrite previous audit records according to the following rule:
-                                    <assignable>rule for overwriting previous audit records</assignable></selectable>
-                                <selectable><assignable>other action</assignable></selectable>
-                            </selectables>
-                            when the local storage space for audit data is full.
-                        </title>
-                        <note role="application">An external log server, if available, might be used as alternative storage space in case the local storage space is full. An ‘other action’ could be defined in this case as ‘send the new audit data to an external IT entity’.</note>
-                        <aactivity>
-                            <TSS>
-                                The evaluator shall examine the TSS to ensure it describes what happens when the 
-                                local audit data store is full. 
-                            </TSS>
-                            <Guidance>
-                                The evaluator shall also examine the operational guidance to 
-                                determine that it describes the relationship between the local audit data and the audit data that 
-                                are sent to the audit log server. For example, when an audit event is generated, is it simultaneously
-                                sent to the external server and the local store, or is the local store used as a buffer and “cleared”
-                                periodically by sending the data to the audit server.
-                            </Guidance>
-                            <Tests>
-                                The evaluator shall perform operations that generate audit data and verify that this data is 
-                                stored locally. The evaluator shall perform operations that generate audit data until the local 
-                                storage space is exceeded and verifies that the TOE complies with the behavior 
-                                defined in the ST for FAU_STG_EXT.1.2.
-                            </Tests>
-                        </aactivity>
-                    </f-element>
-		    <audit-event table="mandatory">
-                        <audit-event-descr>
-				Failure of audit data capture due to lack of disk space or pre-defined limit.
-                                On failure of logging function, capture record of failure and record upon restart of logging function.
-					</audit-event-descr>
-		    </audit-event>
-                </f-component>
- 					
-                
-                <!-- FAU_ARP.1 -->
-                <f-component cc-id="fau_arp.1" name="Security Audit Automatic Response" >
-		  <optional/>
-                    <f-element id="fel-counter">
-                        <title>The TSF shall take <assignable>list of actions</assignable> upon detection of a potential security violation.
-                        </title>
-                        <note role="application">In certain cases, it may be useful for Virtualization Systems to perform automated responses to certain security events. An example may include halting a VM which has taken some action to violate a key system security policy. This may be especially useful with headless endpoints when there is no human user in the loop.<h:br></h:br><h:br></h:br>
-                            The potential security violation mentioned in FAU_ARP.1.1 refers to FAU_SAA.1. </note>
-                        <aactivity>
-                            <Tests>
-                                The evaluator shall generate a potential security violation as defined in FAU_SAA.1 and verify 
-                                that each action in the assignment in FAU_ARP.1.1 is performed by the TSF as a 
-                                result. The evaluator shall perform this action for each security violation that is defined in 
-                                FAU_SAA.1.
-                            </Tests>
-                        </aactivity>
-                    </f-element>
-		    <audit-event table="optional">
-                        <audit-event-descr>Actions taken due to potential security violations.</audit-event-descr>
-		    </audit-event>
-	        </f-component>
-                
-                <!-- FAU_SAA.1 -->
-                <f-component cc-id="fau_saa.1" name="Security Audit Analysis">
-		  <optional/>
-                    <f-element id="fel-audit-mon">
-                        <title>The TSF shall be able to apply a set of rules in monitoring the audited events and based upon these rules indicate a potential violation of the enforcement of the SFRs.
-                        </title>
-                    </f-element>
-                    <f-element id="fel-audit-rules">
-                        <title>The TSF shall enforce the following rules for monitoring audited events:
-                            <h:ol type="a">
-                                <h:li>accumulation or combination of <assignable>subset of defined auditable events</assignable> known to indicate a potential security violation</h:li>
-                                <h:li><assignable>any other rules</assignable></h:li>
-                            </h:ol>
-                        </title>
-                        <note role="application">The potential security violation described in FAU_SAA.1 can be used as a trigger for automated responses as defined in FAU_ARP.1.</note>
-                        <aactivity>
-                            <Tests>
-                                The evaluator shall cause each combination of auditable events defined in FAU_SAA.1.2 to occur,
-                                and verify that a potential security violation is indicated by the TSF.
-                            </Tests>
-                        </aactivity>
-                    </f-element>
-		    <audit-event table="optional">
-                        <audit-event-descr>
-				Enabling and disabling of any of the analysis mechanisms
-                    		Automated responses performed by the TSF.
-			</audit-event-descr>
-		    </audit-event>
-	        </f-component>
-            </section>
-    </sec:SFRs>
+    <section title="TOE Access" id="FTA">
+      <f-component cc-id="fta_cin_ext.1" name="Continuous Indications" status="sel-based">
+        <f-element id="fta-cin-ext-1e1">
+          <title>
+            The TSF shall display a visible indication of the selected computers at all times
+            when the TOE is powered.
+          </title>
+        </f-element>
+        <f-element id="fta-cin-ext-1e2">
+          <title>
+            The TSF shall implement the visible indication using the following mechanism: <selectables>
+              <selectable>a button</selectable>
+              <selectable>a panel with lights</selectable>
+              <selectable>a screen with dimming function</selectable>
+              <selectable>a screen with no dimming function</selectable>
+              <selectable><assignable>description of visible indication</assignable></selectable>
+            </selectables>.            
+          </title>
+        </f-element>
+        <f-element id="fta-cin-ext-1e3">
+          <title>
+            The TSF shall ensure that while the TOE is powered the current switching status
+            is reflected by <selectables>
+              <selectable>the indicator</selectable>
+              <selectable>multiple indicators that never display conflicting information</selectable>
+            </selectables>.
+          </title>
+        </f-element>
+          <note role="application">
+            This SFR must be claimed if "switching can be initiated only through express user
+            action" is chosen as the selection for FDP_SWI_EXT.1.1.<h:br/><h:br/>
+            FTA_CIN_EXT.1.3’s selection of "multiple indicators which never display
+            conflicting information' should be selected when the TOE has multiple
+            indicators, and concerns TOEs with multiple authorized switching mechanisms
+            that have distinct switching status indicators. Such indicators must never
+            convey conflicting information to the user regarding the currently selected
+            interfaces. In general, all indicators must always reflect the same status. It is
+            permissible for the most recently used switching mechanism to reflect the
+            current status while all other indicators to reflect no status. It is also permissible
+            for a TOE that supports split control (i.e., different peripherals pointing to
+            different computers) to have separate indicators for individual peripherals.
+            Note however that a TOE that supports keyboard/mouse peripherals is not
+            permitted to have the keyboard and mouse peripherals split in this manner, as
+            per the requirements in the PP‐Module for Keyboard/Mouse (KM) Devices.<h:br/><h:br/>
+            If multiple products with single and multiple indicators are part of the TOE, then
+            it is recommended that FTA_CIN_EXT.1.3 be iterated for each selection rather
+            than do a different evaluation for each model.
+          </note>
+          <aactivity>
+            <Isolation/>
+            <TSS>
+              The evaluator shall verify that the TSS describes how the TOE behaves on
+              power up and on reset, if applicable, regarding which computer interfaces
+              are active, if any.<h:br/><h:br/>
+              The evaluator shall verify that the TSS documents the behavior of all
+              indicators when each switching mechanism is in use, and that no conflicting
+              information is displayed by any indicators.
+            </TSS>
+            <Guidance>
+              The evaluator shall verify that the operational user guidance notes which
+              computer connection is active on TOE power up or on recovery from reset, if
+              applicable. If a reset option is available, use of this feature must be described
+              in the operational user guidance.<h:br/><h:br/>
+              The evaluator shall verify that the operational user guidance documents the
+              behavior of all indicators when each switching mechanism is in use, and that
+              no conflicting information is displayed by any indicators.
+            </Guidance>
+            <Tests>
+              <h:ol type="a">
+                <h:li>The evaluator shall configure the TOE and its operational
+                  environment in accordance with the operational user guidance.</h:li>
+                <h:li>The evaluator shall select a connected computer and power down
+                  the TOE, then power up the TOE and verify that the expected selected
+                  computer is indicated in accordance with the TSS and that the connection is
+                  active.</h:li>
+                <h:li>The evaluator shall repeat this process for every possible selected
+                  TOE configuration.</h:li>
+                <h:li>[Conditional] If "upon reset button activation" is selected in
+                  FPT_TST.1.1, then the evaluator shall repeat this process for each TOE
+                  configuration using the reset function rather than power‐down and powerup.</h:li>
+                <h:li>The evaluator shall verify that the TOE selected computer indications
+                  are always on (i.e., continuous) and fully visible to the TOE user.</h:li>
+                <h:li>[Conditional] If the TOE allows peripherals to have active interfaces
+                  with different computers at the same time, the evaluator shall verify that
+                  each permutation has its own selection indications.</h:li>
+                <h:li>[Conditional] If "a screen with dimming function" is selected, the
+                  evaluator shall verify that indications are visible at minimum brightness
+                  settings in standard room illumination conditions.</h:li>
+                <h:li>If "multiple indicators which never display conflicting
+                  information" is selected, the evaluator shall verify that either all indicators
+                  reflect the same status at all times, or the indicator for the most recently
+                  used switching mechanism displays the correct switching status and that all
+                  other indicators display the correct status or no status.</h:li>                
+              </h:ol>
+            </Tests>
+          </aactivity>          
+      </f-component>      
+    </section>
+    
     <section title="Security Assurance Requirements" id="SARs">
       The Security Objectives in <xref to="Security_Objectives"/> were constructed
       to address threats identified in
