@@ -1803,9 +1803,9 @@
               <note role="application">
 		            This portion of the operational user guidance should be presented
 		            in the form of a checklist that can be quickly executed by IT personnel (or end-users, 
-		            when necessary) and suitable for use in compliance activities.
+		            when necessary) and suitable for use in compliance activities.<h:br/><h:br/>
 		            When possible, this guidance is to be expressed in the eXtensible Configuration 
-		            Checklist Description Format (XCCDF) to support security automation.  
+		            Checklist Description Format (XCCDF) to support security automation.  <h:br/><h:br/>
 		            Minimally, it should be presented in a structured 
 		            format which includes a title for each configuration item, 
 		            instructions for achieving the secure configuration, and any relevant rationale.  
@@ -1819,7 +1819,7 @@
             </a-element>
             <a-element type="C">
               <title>The operational user guidance shall identify all possible modes of operation of
-              the OS (including operation following failure or operational
+              the TOE (including operation following failure or operational
               error), their consequences, and implications for maintaining secure operation.</title>
             </a-element>
             <a-element type="C">
@@ -1835,22 +1835,25 @@
               <title>The evaluator shall confirm that the information provided meets all requirements
               for content and presentation of evidence. </title>
               <aactivity>Some of the contents of the operational guidance are verified by the
-              assurance activities in <xref to="SFRs"/> and evaluation of the OS according to the <xref to="bibCEM"/>. The following additional
-              information is also required. If cryptographic functions are provided by the OS, the operational guidance shall contain instructions for configuring
-              the cryptographic engine associated with the evaluated configuration of the OS. It shall provide a warning to the administrator that use of other
-              cryptographic engines was not evaluated nor tested during the CC evaluation of the
-              OS. The documentation must describe the process for verifying
-              updates to the OS by verifying a digital signature – this may be
-              done by the OS or the underlying platform. The evaluator will
-              verify that this process includes the following steps: Instructions for obtaining the
-              update itself. This should include instructions for making the update accessible to
-              the OS (e.g., placement in a specific directory). Instructions for
-              initiating the update process, as well as discerning whether the process was
-              successful or unsuccessful. This includes generation of the hash/digital signature.
-              The OS will likely contain security functionality that does not
-              fall in the scope of evaluation under this PP. The operational guidance shall make it
-              clear to an administrator which security functionality is covered by the evaluation
-              activities. </aactivity>
+                assurance activities in <xref to="SFRs"/> and evaluation of the TOE according to the
+                <xref to="bibCEM"/>. The following additional information is also required. If 
+                cryptographic functions are provided by the TOE, the operational guidance shall
+                contain instructions for configuring the cryptographic engine associated with 
+                the evaluated configuration of the TOE. It shall provide a warning to the administrator
+                that use of other cryptographic engines was not evaluated nor tested during the CC 
+                evaluation of the TOE. The documentation must describe the process for verifying
+                updates to the OS by verifying a digital signature – this may be
+                done by the OS or the underlying platform. The evaluator shall
+                verify that this process includes the following steps: Instructions for obtaining the
+                update itself. This should include instructions for making the update accessible to
+                the TOE (e.g., placement in a specific directory). Instructions for
+                initiating the update process, as well as discerning whether the process was
+                successful or unsuccessful. This includes generation of the hash or digital signature.
+                The TOE will likely contain security functionality that does not
+                fall in the scope of evaluation under this PP. The operational guidance shall make it
+                clear to an administrator which security functionality is covered by the evaluation
+                activities.
+              </aactivity>
           </a-element>
 	  
         </a-component>
