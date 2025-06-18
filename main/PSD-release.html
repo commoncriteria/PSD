@@ -644,7 +644,7 @@ function showTarget(id){
     </span></a><a href="#sel-based-reqs" style="text-indent:0px">Appendix B - <span>Selection-based  Requirements
     </span></a><a href="#sel-based-reqs-audit" style="text-indent:10px">B.1<span>
               Auditable Events for Selection-based  Requirements
-           </span></a><a href="#-sel-based" style="text-indent:10px">B.2<span></span></a><a href="#FTA-sel-based" style="text-indent:10px">B.3<span>TOE Access</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix C - <span>Inherently Satisfied Requirements</span></a><a href="#" style="text-indent:0px">Appendix D - <span>Use Case Templates</span></a><a href="#appendix-supsd-loc-mon-loc-con" style="text-indent:10px">D.1<span>Single User with PSD, Local Monitoring, and Local Control</span></a><a href="#appendix-supsd-sin-comp-iso-or-fil" style="text-indent:10px">D.2<span>Single User with PSD and a Single Computer (Isolator or Filter)</span></a><a href="#appendix-psd-sin-int-vid-disp-comb-or-mv" style="text-indent:10px">D.3<span>PSD with Single Integrated Video Display (Combiner or Multi-Viewer)</span></a><a href="#acronyms" style="text-indent:0px">Appendix E - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix F - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
+           </span></a><a href="#-sel-based" style="text-indent:10px">B.2<span></span></a><a href="#FTA-sel-based" style="text-indent:10px">B.3<span>TOE Access</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.1<span>Protection of the TSF</span></a><a href="#ext-comp-FPT_FLS_EXT" style="text-indent:30px">C.2.1.1<span>FPT_FLS_EXT Failure with Preservation of Secure State</span></a><a href="#ext-comp-FPT_NTA_EXT" style="text-indent:30px">C.2.1.2<span>FPT_NTA_EXT No Access to TOE</span></a><a href="#ext-comp-FPT_TLS_EXT" style="text-indent:30px">C.2.1.3<span>FPT_TLS_EXT TSF Testing</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.2<span>TOE Access</span></a><a href="#ext-comp-FTA_CIN_EXT" style="text-indent:30px">C.2.2.1<span>FTA_CIN_EXT Continuous Indications</span></a><a href="#ext-comp-" style="text-indent:20px">C.2.3<span>User Data Protection</span></a><a href="#ext-comp-FDP_APC_EXT" style="text-indent:30px">C.2.3.1<span>FDP_APC_EXT Active PSD Connections</span></a><a href="#ext-comp-FDP_PDC_EXT" style="text-indent:30px">C.2.3.2<span>FDP_PDC_EXT Peripheral Device Connection</span></a><a href="#ext-comp-FDP_RIP_EXT" style="text-indent:30px">C.2.3.3<span>FDP_RIP_EXT Residual Information Protection</span></a><a href="#ext-comp-FDP_SWI_EXT" style="text-indent:30px">C.2.3.4<span>FDP_SWI_EXT PSD Switching</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Inherently Satisfied Requirements</span></a><a href="#" style="text-indent:0px">Appendix E - <span>Use Case Templates</span></a><a href="#appendix-supsd-loc-mon-loc-con" style="text-indent:10px">E.1<span>Single User with PSD, Local Monitoring, and Local Control</span></a><a href="#appendix-supsd-sin-comp-iso-or-fil" style="text-indent:10px">E.2<span>Single User with PSD and a Single Computer (Isolator or Filter)</span></a><a href="#appendix-psd-sin-int-vid-disp-comb-or-mv" style="text-indent:10px">E.3<span>PSD with Single Integrated Video Display (Combiner or Multi-Viewer)</span></a><a href="#acronyms" style="text-indent:0px">Appendix F - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix G - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
   <h2 class="indexable" data-level="2" id="ppoverview">1.1 Overview</h2>
     This Protection Profile (<abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>) describes common security requirements for Peripheral Sharing Devices
     (PSDs). A PSD is a device that provides a mechanism for securely connecting a set of peripherals to one or
@@ -870,7 +870,7 @@ The following sections list Common Criteria and technology terms used in this do
                 
                             
             </span><p>
-            For changes to included <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, selections, and assignments required for this use case, see <a href="#appendix-supsd-loc-mon-loc-con" class="dynref">D.1 Single User with PSD, Local Monitoring, and Local Control</a>.
+            For changes to included <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, selections, and assignments required for this use case, see <a href="#appendix-supsd-loc-mon-loc-con" class="dynref">E.1 Single User with PSD, Local Monitoring, and Local Control</a>.
           </p></dd><dt id="supsd-sin-comp-iso-or-fil"> [USE CASE 2] Single User with PSD and a Single Computer (Isolator or Filter)</dt><dd><span class="description">
             In this use case, the PSD sits between a set of connected peripherals and a single connected
             computer. The connected computer may change over time, such as different laptops connected
@@ -878,7 +878,7 @@ The following sections list Common Criteria and technology terms used in this do
             does not specifically mandate or exclude the use of any one type of peripheral that is defined by
             this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and its <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>‐Modules.
           </span><p>
-            For changes to included <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, selections, and assignments required for this use case, see <a href="#appendix-supsd-sin-comp-iso-or-fil" class="dynref">D.2 Single User with PSD and a Single Computer (Isolator or Filter)</a>.
+            For changes to included <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, selections, and assignments required for this use case, see <a href="#appendix-supsd-sin-comp-iso-or-fil" class="dynref">E.2 Single User with PSD and a Single Computer (Isolator or Filter)</a>.
           </p></dd><dt id="psd-sin-int-vid-disp-comb-or-mv"> [USE CASE 3] PSD with Single Integrated Video Display (Combiner or Multi-Viewer)</dt><dd><span class="description">
             A Combiner is used to simultaneously display output from multiple connected computers to one or more
             display devices. A Combiner PSD may combine the display output from multiple connected computers
@@ -887,7 +887,7 @@ The following sections list Common Criteria and technology terms used in this do
             support this use case must have the ability to support display peripherals. Other supported peripherals
             can be claimed at the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author’s discretion.
           </span><p>
-            For changes to included <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, selections, and assignments required for this use case, see <a href="#appendix-psd-sin-int-vid-disp-comb-or-mv" class="dynref">D.3 PSD with Single Integrated Video Display (Combiner or Multi-Viewer)</a>.
+            For changes to included <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, selections, and assignments required for this use case, see <a href="#appendix-psd-sin-int-vid-disp-comb-or-mv" class="dynref">E.3 PSD with Single Integrated Video Display (Combiner or Multi-Viewer)</a>.
           </p></dd></dl>
     
   <h1 class="indexable" data-level="1" id="sec-cclaims">2 Conformance Claims</h1>
@@ -1028,8 +1028,9 @@ The following sections list Common Criteria and technology terms used in this do
    
     <h2 id="s-sfr" class="indexable" data-level="2">5.1 Security Functional Requirements</h2>
       <h3 class="indexable" data-level="3" id="ss-audit-table">5.1.1 Auditable Events for Mandatory SFRs</h3>
-        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-mandatory" data-counter-type="ct-Table" id="at-mandatory">Table <span class="counter">2</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FPT_FLS_EXT.1"><td rowspan="2"><a href="#FPT_FLS_EXT.1">FPT_FLS_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_FLS_EXT.1#"><td></td></tr><tr data-sortkey="FPT_FLS_EXT.1.1"><td>
-	          </td><td></td></tr></table>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-mandatory" data-counter-type="ct-Table" id="at-mandatory">Table <span class="counter">2</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FDP_APC_EXT.1"><td rowspan="2"><a href="#FDP_APC_EXT.1">FDP_APC_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FDP_APC_EXT.1#"><td></td></tr><tr data-sortkey="FDP_APC_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FDP_RIP_EXT.1"><td rowspan="2"><a href="#FDP_RIP_EXT.1">FDP_RIP_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FDP_RIP_EXT.1#"><td></td></tr><tr data-sortkey="FDP_RIP_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FDP_SWI_EXT.1"><td rowspan="2"><a href="#FDP_SWI_EXT.1">FDP_SWI_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FDP_SWI_EXT.1#"><td></td></tr><tr data-sortkey="FDP_SWI_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FPT_FLS_EXT.1"><td rowspan="2"><a href="#FPT_FLS_EXT.1">FPT_FLS_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_FLS_EXT.1#"><td></td></tr><tr data-sortkey="FPT_FLS_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FPT_NTA_EXT.1"><td rowspan="2"><a href="#FPT_NTA_EXT.1">FPT_NTA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_NTA_EXT.1#"><td></td></tr><tr data-sortkey="FPT_NTA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FPT_PHP.1"><td rowspan="2"><a href="#FPT_PHP.1">FPT_PHP.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_PHP.1#"><td></td></tr><tr data-sortkey="FPT_PHP.1.1"><td>Detection of intrusion.</td><td>None</td></tr><tr data-sortkey="FPT_TST.1"><td rowspan="2"><a href="#FPT_TST.1">FPT_TST.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_TST.1#"><td></td></tr><tr data-sortkey="FPT_TST.1.1"><td>Execution of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> self-tests</td><td>Results of the tests</td></tr><tr data-sortkey="FPT_TST_EXT.1"><td rowspan="2"><a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_TST_EXT.1#"><td></td></tr><tr data-sortkey="FPT_TST_EXT.1.6"><td>
+               Execution of self-tests.
+             </td><td>None.</td></tr></table>
   <h3 id="obj-req-map" class="indexable" data-level="3">5.1.2 TOE Security Functional Requirements Rationale</h3><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="2"><a href="#T.DATA_LEAK">T.DATA_​LEAK</a></td><td><a href="#FDP_APC_EXT.1">FDP_APC_EXT.1</a></td><td></td></tr>
 <tr><td><a href="#FDP_PDC_EXT.1">FDP_PDC_EXT.1</a></td><td></td></tr>
@@ -1062,7 +1063,21 @@ The following sections list Common Criteria and technology terms used in this do
    
     
     <h2 id="fdp" class="indexable" data-level="2">5.2 User Data Protection</h2>
+      
+      
+      
+      
+      
+      
+      
+      
+            
          <div class="comp" id="FDP_APC_EXT.1"><h4>FDP_APC_EXT.1 Active PSD Connections</h4>
+           
+           
+           
+           
+           
           <div class="element"><div class="reqid" id="FDP_APC_EXT.1.1"><a href="#FDP_APC_EXT.1.1" class="abbr">FDP_APC_EXT.1.1</a></div><div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall route user data only to or from the interfaces selected by the
               user. 
             </div></div>
@@ -1072,23 +1087,6 @@ The following sections list Common Criteria and technology terms used in this do
           <div class="element"><div class="reqid" id="FDP_APC_EXT.1.4"><a href="#FDP_APC_EXT.1.4" class="abbr">FDP_APC_EXT.1.4</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that no data transits the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is in a failure
               state.</div></div>
            
-             
-               The evaluator shall review the Isolation Documentation and Assessment as
-               described in Appendix D of this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and ensure that it adequately describes
-               the isolation concepts and implementation in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and why it can be
-               relied upon to provide proper isolation between connected computers
-               whether the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is powered on or powered off.
-             
-             
-               The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the conditions under which
-               the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> enters a failure state.
-             
-             
-               The evaluator shall verify that the operational user guidance describes how a
-               user knows when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> enters a failure state.
-             
-             
-                      
          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_APC_EXT.1">FDP_APC_EXT.1</a></div>
              
                The evaluator shall review the Isolation Documentation and Assessment as
@@ -1110,12 +1108,17 @@ The following sections list Common Criteria and technology terms used in this do
 			There are no test activities for this component.<br/></div></div></div></div>
         
         <div class="comp" id="FDP_PDC_EXT.1"><h4>FDP_PDC_EXT.1 Peripheral Device Connection</h4>
+          
+          
+          
+          
+          
+          
           <div class="element"><div class="reqid" id="FDP_PDC_EXT.1.1"><a href="#FDP_PDC_EXT.1.1" class="abbr">FDP_PDC_EXT.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall reject connections with unauthorized devices upon <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> power up
               and upon connection of a peripheral device to a powered‐on <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-            <div class="appnote"><span class="note-header">Application
-      Note:
-    </span><span class="note">The list of unauthorized devices is in Appendix E: Peripheral Device Connections.</span></div></div></div>          
+            </div></div>
+          
          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_PDC_EXT.1">FDP_PDC_EXT.1</a></div>
               
               
@@ -1198,10 +1201,17 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div></div></div></div>
         
         <div class="comp" id="FDP_RIP_EXT.1"><h4>FDP_RIP_EXT.1 Residual Information Protection</h4>
+          
+          
+          
+          
+          
+          
           <div class="element"><div class="reqid" id="FDP_RIP_EXT.1.1"><a href="#FDP_RIP_EXT.1.1" class="abbr">FDP_RIP_EXT.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that no user data is written to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> non‐volatile memory or
               storage.
             </div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_RIP_EXT.1">FDP_RIP_EXT.1</a></div>
               
               
@@ -1225,12 +1235,17 @@ The following sections list Common Criteria and technology terms used in this do
                 user data is not stored in <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> non‐volatile memory or storage.
               </div></div><div class="eacategory">Guidance</div><div class="ea">
 			There are no additional Guidance evaluation activities for this component.<br/></div><div class="eacategory">Tests</div><div class="ea">
-			There are no test activities for this component.<br/></div></div></div></div>
-      
+			There are no test activities for this component.<br/></div></div></div></div>      
       
             
       
         <div class="comp" id="FDP_SWI_EXT.1"><h4>FDP_SWI_EXT.1 PSD Switching</h4>
+          
+          
+          
+          
+          
+          
           <div class="element"><div class="reqid" id="FDP_SWI_EXT.1.1"><a href="#FDP_SWI_EXT.1.1" class="abbr">FDP_SWI_EXT.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that [<b>selection</b>: <span class="selectable-content" id="_s_1">the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports only one connected computer</span>, <span class="selectable-content" id="_s_2">switching can be initiated only through express user action</span>].
             <div class="appnote"><span class="note-header">Application
@@ -1238,7 +1253,8 @@ The following sections list Common Criteria and technology terms used in this do
     </span><span class="note">
               If "switching can be initiated only through express user action" is selected, the
               <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must include the selection‐based requirements <a href="#FDP_SWI_EXT.2">FDP_SWI_EXT.2</a> and <a href="#FTA_CIN_EXT.1">FTA_CIN_EXT.1</a>.
-            </span></div></div></div>  
+            </span></div></div></div> 
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_SWI_EXT.1">FDP_SWI_EXT.1</a></div>
               
               
@@ -1271,9 +1287,22 @@ The following sections list Common Criteria and technology terms used in this do
     
     
        <h2 id="FPT" class="indexable" data-level="2">5.3 Protection of the TSF</h2>
+         
+         
+         
+         
+         
+         
+         
          <div class="comp" id="FPT_FLS_EXT.1"><h4>FPT_FLS_EXT.1 Failure with Preservation of Secure State</h4>
+           
+           
+           
+           
+           
+           
           <div class="element"><div class="reqid" id="FPT_FLS_EXT.1.1"><a href="#FPT_FLS_EXT.1.1" class="abbr">FPT_FLS_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall preserve a secure state when the following types of failures
-              occur: failure of the power‐on self‐test and[<b>selection</b>: <span class="selectable-content" id="_s_8">failure of the anti-tamper function</span>, <span class="selectable-content" id="_s_9">no other failures</span>]. 
+              occur: failure of the power‐on self‐test and [<b>selection</b>: <span class="selectable-content" id="_s_8">failure of the anti-tamper function</span>, <span class="selectable-content" id="_s_9">no other failures</span>]. 
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1283,18 +1312,25 @@ The following sections list Common Criteria and technology terms used in this do
               Failure of the anti‐tamper function should be selected if FPT_PHP.3 is included
               in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
             </span></div></div></div>
- 	       
+ 	                   
   	    <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FPT_FLS_EXT.1">FPT_FLS_EXT.1</a></div>
               This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is evaluated in conjunction with <a href="#FPT_TST.1">FPT_TST.1</a>
 	          </div></div></div>
          
          <div class="comp" id="FPT_NTA_EXT.1"><h4>FPT_NTA_EXT.1 No Access to TOE</h4>
+           
+           
+           
+           
+           
+           
            <div class="element"><div class="reqid" id="FPT_NTA_EXT.1.1"><a href="#FPT_NTA_EXT.1.1" class="abbr">FPT_NTA_EXT.1.1</a></div><div class="reqdesc">
                <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> firmware, software, and memory shall not be accessible via the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s
                external ports, with the following exceptions:[<b>selection</b>: <span class="selectable-content" id="_s_10">the Extended Display Identification Data (EDID) memory of 
                    Video <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> may be accessible from connected computers;</span>, <span class="selectable-content" id="_s_11">the configuration data, settings, and logging data that
                    may be accessible by authorized administrators</span>, <span class="selectable-content" id="_s_12">no other exceptions</span>]                              
-             </div></div>  
+             </div></div> 
+           
          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FPT_NTA_EXT.1">FPT_NTA_EXT.1</a></div>
                
                
@@ -1319,7 +1355,8 @@ The following sections list Common Criteria and technology terms used in this do
     </span><span class="note">
                <a href="#FPT_PHP.1.1">FPT_PHP.1.1</a> include indications generated from application of optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
                FPT_PHP.3
-             </span></div></div></div>  
+             </span></div></div></div>
+                      
          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FPT_PHP.1">FPT_PHP.1</a></div>
                
                
@@ -1372,7 +1409,9 @@ The following sections list Common Criteria and technology terms used in this do
                activities will test functions from the optional active anti‐tamper <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>
                FPT_PHP.3.<br/><br/>
                Anyone with physical access to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> can be considered an authorized user.
-             </span></div></div></div>  
+             </span></div></div></div>
+           
+           
          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FPT_TST.1">FPT_TST.1</a></div>
                
                
@@ -1420,9 +1459,16 @@ The following sections list Common Criteria and technology terms used in this do
                </div></div></div></div></div>
          
          <div class="comp" id="FPT_TST_EXT.1"><h4>FPT_TST_EXT.1 TSF Testing</h4>
+           
+           
+           
+           
+           
+           
            <div class="element"><div class="reqid" id="FPT_TST_EXT.1.1"><a href="#FPT_TST_EXT.1.1" class="abbr">FPT_TST_EXT.1.1</a></div><div class="reqdesc">
                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall respond to a self‐test failure by providing users with a [<b>selection</b>: <span class="selectable-content" id="_s_21">visual</span>, <span class="selectable-content" id="_s_22">auditory</span>] indication of failure and by shutdown of normal <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> functions.
-             </div></div>  
+             </div></div>
+           
          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FPT_TST_EXT.1">FPT_TST_EXT.1</a></div>
                
                
@@ -1452,46 +1498,82 @@ The following sections list Common Criteria and technology terms used in this do
     
     
     <h2 class="indexable" data-level="2" id="SARs">5.4 Security Assurance Requirements</h2>
-      The Security Objectives in <a href="#Security_Objectives" class="dynref">Section 4 Security Objectives</a> were constructed
-      to address threats identified in
-      <a href="#Threats" class="dynref">Section 3.1 Threats</a>. The Security Functional Requirements (<abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>)
-      in <a href="#SFRs" class="dynref" data-format=""></a> are a formal instantiation of the Security Objectives. The <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>
-      identifies the Security Assurance Requirements (<abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>) to frame the extent to
-      which the evaluator assesses the documentation applicable for the evaluation and performs
-      independent testing. <br/> This section lists the set of <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> from <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> part 3
-      that are required in evaluations against this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. Individual Assurance Activities
-      o be performed are specified both in 
-      <a href="#SFRs" class="dynref" data-format=""></a> as well as in this section. <br/>
-      The general model for evaluation of OSs against <abbr class="dyn-abbr"><a href="#abbr_ST">STs</a></abbr> written to conform to this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is as follows: <br/>
-      After the  <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> has been approved for evaluation, the TSEF will obtain the
-        OS, supporting environmental IT, and the administrative/user guides for
-      the OS. The ITSEF is expected to perform actions mandated by the Common Evaluation
-      Methodology (<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>) for the ASE and ALC <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>. The ITSEF also performs the Assurance Activities
-      contained within <a href="#SFRs" class="dynref" data-format=""></a>, which are intended to be an interpretation of the
-      other <abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr> assurance requirements as they apply to the specific technology instantiated in the
-      OS. The Assurance Activities that are captured in <a href="#SFRs" class="dynref" data-format=""></a> also provide
-      clarification as to what the developer needs to provide to demonstrate the OS is compliant
-      with the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-     <h3 class="indexable" data-level="3" id="ase">5.4.1 Class ASE: Security Target</h3>As per ASE activities
-        defined in <a href="#bibCEM">[CEM]</a>.
-      <h3 class="indexable" data-level="3" id="adv">5.4.2 Class ADV: Development</h3>The information about the OS is contained in the guidance documentation available to the end user as
-        well as the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> portion of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. The OS developer must concur with the description of the product that is
-        contained in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> as it relates to the functional requirements. The Assurance Activities
-        contained in <a href="#SFRs" class="dynref" data-format=""></a> should provide the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> authors with
-        sufficient information to determine the appropriate content for the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section.
-          <div class="comp" id="ADV_FSP.1"><h4>ADV_FSP.1 Basic Functional Specification (ADV_FSP.1)</h4>The
-          functional specification describes the <abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFIs</a></abbr>. It is not
-          necessary to have a formal or complete specification of these interfaces. Additionally,
-          because OSs conforming to this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> will necessarily have interfaces to
-          the Operational Environment that are not directly invokable by OS
-          users, there is little point specifying that such interfaces be described in and of
-          themselves since only indirect testing of such interfaces may be possible. For this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>,
-          the activities for this family should focus on understanding the interfaces presented in
-          the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in response to the functional requirements and the interfaces
-          presented in the AGD documentation. No additional “functional specification” documentation
-          is necessary to satisfy the assurance activities specified. The interfaces that need to be
-          evaluated are characterized through the information needed to perform the assurance
-          activities listed, rather than as an independent, abstract list. 
+      The Security Objectives in <a href="#Security_Objectives" class="dynref">Section 4 Security Objectives</a> were constructed to address threats identified in
+      <a href="#Threats" class="dynref">Section 3.1 Threats</a>. The Security Functional Requirements (<abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>) in <a href="#SFRs" class="dynref" data-format=""></a> are a formal instantiation
+      of the Security Objectives. The <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> identifies the Security Assurance Requirements (<abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>) to frame the extent to
+      which the evaluator assesses the documentation applicable for the evaluation and performs independent testing.<br/><br/>
+      This section lists the set of <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> from <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> part 3 that are required in evaluations against this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. Individual 
+      Assurance Activities to be performed are specified both in <a href="#SFRs" class="dynref" data-format=""></a> as well as in this section.<br/><br/>
+      The general model for evaluation of OSs against <abbr class="dyn-abbr"><a href="#abbr_ST">STs</a></abbr> written to conform to this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is as follows.<br/><br/>
+      After the  <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> has been approved for evaluation, the TSEF will obtain the OS, supporting environmental IT, and the
+      administrative/user guides for the OS. The ITSEF is expected to perform actions mandated by the Common Evaluation
+      Methodology (<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>) for the ASE and ALC <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>. The ITSEF also performs the Assurance Activities contained within 
+      <a href="#SFRs" class="dynref" data-format=""></a>, which are intended to be an interpretation of the other <abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr> assurance requirements as they 
+      apply to the specific technology instantiated in the OS. The Assurance Activities that are captured in 
+      <a href="#SFRs" class="dynref" data-format=""></a> also provide clarification as to what the developer needs to provide to demonstrate the OS is 
+      compliant with the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.<br/><br/>
+      The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> security assurance requirements are identified in <a onclick="showTarget('sar')" href="#sar" class="sar-ref">Table  <span class="counter">4</span></a>. 
+      <center><H4><span class="ctr" data-myid="sar" data-counter-type="ct-Table" id="sar">Table  <span class="counter">4</span>:Security Assurance Requirements</span></H4></center>
+      <table>
+        <TR>
+          <TD><b>Assurance Class</b></TD>
+          <TD><b>Assurance Components</b></TD>
+        </TR>
+        <TR>
+          <TD>Security Target (<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>) (ASE)</TD>
+          <TD>
+            Conformance Claims (ASE_CCL.1)<br/><br/>
+            Extended Components Definition (ASE_ECD.1)<br/><br/>
+            <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> Introduction (ASE_INT.1)<br/><br/>
+            Security Objectives (ASE_OBJ.2)<br/><br/>            
+            Derived Security Requirements (ASE_REQ.2)<br/><br/>
+            Security Problem Definition (ASE_SPD.1)<br/><br/>
+            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Summary Specification (ASE_TSS.1)
+          </TD>
+        </TR>
+        <TR>
+          <TD>Development (ADV)</TD>
+          <TD> Basic Functional Specification (<a href="#ADV_FSP.1">ADV_FSP.1</a>) </TD>
+        </TR>
+        <TR>
+          <TD>Guidance Documents (AGD)</TD>
+          <TD> Operational User Guidance (<a href="#AGD_OPE.1">AGD_OPE.1</a>)<br/><br/> 
+            Preparative Procedures (<a href="#AGD_PRE.1">AGD_PRE.1</a>)
+          </TD>
+        </TR>
+        <TR>
+          <TD>Life-Cycle Support (ALC)</TD>
+          <TD> Labeling of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (<a href="#ALC_CMC.1">ALC_CMC.1</a>)<br/><br/>
+            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> CM Coverage (<a href="#ALC_CMS.1">ALC_CMS.1</a>) </TD>
+        </TR>
+        <TR>
+          <TD>Tests (ATE)</TD>
+          <TD> Independent Testing - Conformance (<a href="#ATE_IND.1">ATE_IND.1</a>) </TD>
+        </TR>
+        <TR>
+          <TD>Vulnerability Assessment (AVA)</TD>
+          <TD> Vulnerability Survey (<a href="#AVA_VAN.1">AVA_VAN.1</a>) </TD>
+        </TR>
+      </table>
+      
+      <h3 class="indexable" data-level="3" id="ase">5.4.1 Class ASE: Security Target</h3>As per ASE activities defined in <a href="#bibCEM">[CEM]</a>.
+      
+      <h3 class="indexable" data-level="3" id="adv">5.4.2 Class ADV: Development</h3>The information about the OS is contained in the guidance 
+        documentation available to the end user as well as the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> portion of the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. The OS developer must concur
+        with the description of the product that is contained in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> as it relates to the functional requirements.
+        The Assurance Activities contained in <a href="#SFRs" class="dynref" data-format=""></a> should provide the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> authors with sufficient 
+        information to determine the appropriate content for the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> section.
+        <div class="comp" id="ADV_FSP.1"><h4>ADV_FSP.1 Basic Functional Specification (ADV_FSP.1)</h4>The functional specification
+          describes the Target Security Functions Interfaces (<abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFIs</a></abbr>). It is not necessary to have a formal or complete
+          specification of these interfaces. Additionally, because <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> conforming to this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> will necessarily have 
+          interfaces to the Operational Environment that are not directly able to be invoked by <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> users, there is
+          little point specifying that such interfaces be described in and of themselves since only indirect testing
+          of such interfaces may be possible. For this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the activities for this family should focus on understanding
+          the interfaces presented in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in response to the functional requirements and the interfaces presented
+          in the AGD documentation. No additional "functional specification" documentation is necessary to satisfy the
+          Evaluation Activities specified.<br/><br/>
+          The interfaces that need to be evaluated are characterized through the information needed to perform
+          the Evaluation Activities listed, rather than as an independent, abstract list. 
             
             
 	  
@@ -1501,9 +1583,8 @@ The following sections list Common Criteria and technology terms used in this do
             
 	  
             
-            
-	  
-        <h4>Developer action elements: </h4><div class="element"><div class="reqid" id="ADV_FSP.1.1D"><a href="#ADV_FSP.1.1D" class="abbr">ADV_FSP.1.1D</a></div><div class="reqdesc">The developer shall provide a functional specification.</div></div><h4>Content and presentation elements: </h4><div class="element"><div class="reqid" id="ADV_FSP.1.1C"><a href="#ADV_FSP.1.1C" class="abbr">ADV_FSP.1.1C</a></div><div class="reqdesc">The developer shall provide a tracing from the functional specification to the
+            	  
+        <h4>Developer action elements: </h4><div class="element"><div class="reqid" id="ADV_FSP.1.1D"><a href="#ADV_FSP.1.1D" class="abbr">ADV_FSP.1.1D</a></div><div class="reqdesc">The developer shall provide a functional specification.</div></div><div class="element"><div class="reqid" id="ADV_FSP.1.2D"><a href="#ADV_FSP.1.2D" class="abbr">ADV_FSP.1.2D</a></div><div class="reqdesc">The developer shall provide a tracing from the functional specification to the
               <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">As indicated in the introduction to this section, the
@@ -1512,14 +1593,11 @@ The following sections list Common Criteria and technology terms used in this do
               developers and the evaluator. The assurance activities in the functional requirements
               point to evidence that should exist in the documentation and <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>
               section; since these are directly associated with the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, the tracing in element
-              <a href="#ADV_FSP.1">ADV_FSP.1</a>.2D is implicitly already done and no additional documentation is
-              necessary.</span></div></div></div><div class="element"><div class="reqid" id="ADV_FSP.1.2C"><a href="#ADV_FSP.1.2C" class="abbr">ADV_FSP.1.2C</a></div><div class="reqdesc">The functional specification shall describe the purpose and method of use for
-              each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>-enforcing and <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>-supporting <abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFI</a></abbr>.</div></div><div class="element"><div class="reqid" id="ADV_FSP.1.3C"><a href="#ADV_FSP.1.3C" class="abbr">ADV_FSP.1.3C</a></div><div class="reqdesc">The functional specification shall identify all parameters associated with each
-              <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>-enforcing and <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>-supporting <abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFI</a></abbr>.</div></div><div class="element"><div class="reqid" id="ADV_FSP.1.4C"><a href="#ADV_FSP.1.4C" class="abbr">ADV_FSP.1.4C</a></div><div class="reqdesc">The functional specification shall provide rationale for the implicit
-              categorization of interfaces as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>-non-interfering.</div></div><div class="element"><div class="reqid" id="ADV_FSP.1.5C"><a href="#ADV_FSP.1.5C" class="abbr">ADV_FSP.1.5C</a></div><div class="reqdesc">
-		The tracing shall demonstrate that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> trace to 
-		<abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFIs</a></abbr> in the functional specification.
-	      </div></div><h4>Evaluator action elements: </h4><div class="element"><div class="reqid" id="ADV_FSP.1.1E"><a href="#ADV_FSP.1.1E" class="abbr">ADV_FSP.1.1E</a></div><div class="reqdesc">The evaluator shall confirm that the information provided meets all requirements
+              <a href="#ADV_FSP.1.2D">ADV_FSP.1.2D</a> is implicitly already done and no additional documentation is
+              necessary.</span></div></div></div><h4>Content and presentation elements: </h4><div class="element"><div class="reqid" id="ADV_FSP.1.1C"><a href="#ADV_FSP.1.1C" class="abbr">ADV_FSP.1.1C</a></div><div class="reqdesc">The functional specification shall describe the purpose and method of use for
+              each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>-enforcing and <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>-supporting <abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFI</a></abbr>.</div></div><div class="element"><div class="reqid" id="ADV_FSP.1.2C"><a href="#ADV_FSP.1.2C" class="abbr">ADV_FSP.1.2C</a></div><div class="reqdesc">The functional specification shall identify all parameters associated with each
+              <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>-enforcing and <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>-supporting <abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFI</a></abbr>.</div></div><div class="element"><div class="reqid" id="ADV_FSP.1.3C"><a href="#ADV_FSP.1.3C" class="abbr">ADV_FSP.1.3C</a></div><div class="reqdesc">The functional specification shall provide rationale for the implicit
+              categorization of interfaces as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>-non-interfering.</div></div><div class="element"><div class="reqid" id="ADV_FSP.1.4C"><a href="#ADV_FSP.1.4C" class="abbr">ADV_FSP.1.4C</a></div><div class="reqdesc">The tracing shall demonstrate that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> trace to <abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFIs</a></abbr> in the functional specification.</div></div><h4>Evaluator action elements: </h4><div class="element"><div class="reqid" id="ADV_FSP.1.1E"><a href="#ADV_FSP.1.1E" class="abbr">ADV_FSP.1.1E</a></div><div class="reqdesc">The evaluator shall confirm that the information provided meets all requirements
               for content and presentation of evidence.</div></div><div class="element"><div class="reqid" id="ADV_FSP.1.2E"><a href="#ADV_FSP.1.2E" class="abbr">ADV_FSP.1.2E</a></div><div class="reqdesc">The evaluator shall determine that the functional specification is an accurate
               and complete instantiation of the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</div></div><div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#ADV_FSP.1">ADV_FSP.1</a></div>There are no specific assurance activities associated with these <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>, except
               ensuring the information is provided. The functional specification documentation is
@@ -1529,7 +1607,8 @@ The following sections list Common Criteria and technology terms used in this do
               other assurance activities being performed; if the evaluator is unable to perform an
               activity because there is insufficient interface information, then an adequate
               functional specification has not been provided.
-	      </div></div></div>
+	            </div></div></div>
+      
       
       <h3 class="indexable" data-level="3" id="agd">5.4.3 Class AGD: Guidance Documentation</h3>The guidance documents will be
         provided with the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. Guidance must include a description of how the IT
@@ -1558,31 +1637,30 @@ The following sections list Common Criteria and technology terms used in this do
         <h4>Developer action elements: </h4><div class="element"><div class="reqid" id="AGD_OPE.1.1D"><a href="#AGD_OPE.1.1D" class="abbr">AGD_OPE.1.1D</a></div><div class="reqdesc">The developer shall provide operational user guidance.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">The operational user guidance does not have to be contained in a
-	      single document. Guidance to users, administrators and application developers can be
-              spread among documents or web pages. 
-	      Rather than repeat information here, the developer should
-              review the assurance activities for this component to ascertain the specifics of the
-              guidance that the evaluator will be checking for. This will provide the necessary
-              information for the preparation of acceptable guidance.</span></div></div></div><h4>Content and presentation elements: </h4><div class="element"><div class="reqid" id="AGD_OPE.1.1C"><a href="#AGD_OPE.1.1C" class="abbr">AGD_OPE.1.1C</a></div><div class="reqdesc">The operational user guidance shall describe, for each user role, the
+	           single document. Guidance to users, administrators and application developers can be
+             spread among documents or web pages.<br/><br/> 
+	           Rather than repeat information here, the developer should
+             review the assurance activities for this component to ascertain the specifics of the
+             guidance that the evaluator will be checking for. This will provide the necessary
+             information for the preparation of acceptable guidance.</span></div></div></div><h4>Content and presentation elements: </h4><div class="element"><div class="reqid" id="AGD_OPE.1.1C"><a href="#AGD_OPE.1.1C" class="abbr">AGD_OPE.1.1C</a></div><div class="reqdesc">The operational user guidance shall describe, for each user role, the
               user-accessible functions and privileges that should be controlled in a secure
               processing environment, including appropriate warnings.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">User and administrator are to be considered in the definition
               of user role.</span></div></div></div><div class="element"><div class="reqid" id="AGD_OPE.1.2C"><a href="#AGD_OPE.1.2C" class="abbr">AGD_OPE.1.2C</a></div><div class="reqdesc">The operational user guidance shall describe, for each user role, how to use the
-              available interfaces provided by the OS in a secure manner.</div></div><div class="element"><div class="reqid" id="AGD_OPE.1.3C"><a href="#AGD_OPE.1.3C" class="abbr">AGD_OPE.1.3C</a></div><div class="reqdesc">The operational user guidance shall describe, for each user role, the available
+              available interfaces provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in a secure manner.</div></div><div class="element"><div class="reqid" id="AGD_OPE.1.3C"><a href="#AGD_OPE.1.3C" class="abbr">AGD_OPE.1.3C</a></div><div class="reqdesc">The operational user guidance shall describe, for each user role, the available
               functions and interfaces, in particular all security parameters under the control of
               the user, indicating secure values as appropriate.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-		This portion of the operational user guidance should be presented
-		in the form of a checklist that can be quickly executed by IT personnel (or end-users, 
-		when necessary) and suitable for use in compliance activities.
-		When possible, this guidance is to be expressed in the eXtensible Configuration 
-		Checklist Description Format (XCCDF) to
-		support security automation.  
-		Minimally, it should be presented in a structured 
-		format which includes a title for each configuration item, 
-		instructions for achieving the secure configuration, and any relevant rationale.  
+		            This portion of the operational user guidance should be presented
+		            in the form of a checklist that can be quickly executed by IT personnel (or end-users, 
+		            when necessary) and suitable for use in compliance activities.
+		            When possible, this guidance is to be expressed in the eXtensible Configuration 
+		            Checklist Description Format (XCCDF) to support security automation.  
+		            Minimally, it should be presented in a structured 
+		            format which includes a title for each configuration item, 
+		            instructions for achieving the secure configuration, and any relevant rationale.  
               </span></div></div></div><div class="element"><div class="reqid" id="AGD_OPE.1.4C"><a href="#AGD_OPE.1.4C" class="abbr">AGD_OPE.1.4C</a></div><div class="reqdesc">The operational user guidance shall, for each user role, clearly present each
               type of security-relevant event relative to the user-accessible functions that need to
               be performed, including changing the security characteristics of entities under the
@@ -1890,7 +1968,13 @@ The following sections list Common Criteria and technology terms used in this do
  	</p>
 		 </span><h2 id="sel-based-reqs-audit" class="indexable" data-level="2">B.1 
               Auditable Events for Selection-based  Requirements
-           </h2><table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="t-audit-sel-based" data-counter-type="ct-Table" id="t-audit-sel-based">Table <span class="counter">4</span></span>: Auditable Events for Selection-based Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr></table><h2 id="-sel-based" class="indexable" data-level="2">B.2</h2><div class="comp" id="FDP_SWI_EXT.2"><h4>FDP_SWI_EXT.2 PSD Switching Methods</h4><div class="statustag"></div>
+           </h2><table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="t-audit-sel-based" data-counter-type="ct-Table" id="t-audit-sel-based">Table <span class="counter">5</span></span>: Auditable Events for Selection-based Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FDP_SWI_EXT.2"><td rowspan="2"><a href="#FDP_SWI_EXT.2">FDP_SWI_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FDP_SWI_EXT.2#"><td></td></tr><tr data-sortkey="FDP_SWI_EXT.2.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTA_CIN_EXT.1"><td rowspan="2"><a href="#FTA_CIN_EXT.1">FTA_CIN_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_CIN_EXT.1#"><td></td></tr><tr data-sortkey="FTA_CIN_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table><h2 id="-sel-based" class="indexable" data-level="2">B.2</h2><div class="comp" id="FDP_SWI_EXT.2"><h4>FDP_SWI_EXT.2 PSD Switching Methods</h4><div class="statustag"></div>
+      
+      
+      
+      
+      
+      
       <div class="element"><div class="reqid" id="FDP_SWI_EXT.2.1"><a href="#FDP_SWI_EXT.2.1" class="abbr">FDP_SWI_EXT.2.1</a></div><div class="reqdesc">
           The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that no switching can be initiated through automatic port
           scanning, control through a connected computer, or control through keyboard
@@ -1899,7 +1983,6 @@ The following sections list Common Criteria and technology terms used in this do
       <div class="element"><div class="reqid" id="FDP_SWI_EXT.2.2"><a href="#FDP_SWI_EXT.2.2" class="abbr">FDP_SWI_EXT.2.2</a></div><div class="reqdesc">
           The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that switching can be initiated only through express user
           action using [<b>selection</b>: <span class="selectable-content" id="_s_3">console buttons</span>, <span class="selectable-content" id="_s_4">console switches</span>, <span class="selectable-content" id="_s_5">console touch screen</span>, <span class="selectable-content" id="_s_6">wired remote control</span>, <span class="selectable-content" id="_s_7">peripheral devices using a guard</span>].
-        </div></div>
         <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1909,27 +1992,8 @@ The following sections list Common Criteria and technology terms used in this do
           (Video Module) and if "peripheral devices using a guard" is selected here, the
           <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> must claim the selection‐based requirement FDP_CDS_EXT.1 in the Video
           Module and select "multiple connected displays" in FDP_CDS_EXT.1.1.
-        </span></div>
-        
-          
-          
-            The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supported
-            switching mechanisms. The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> does not
-            include automatic port scanning, control through a connected computer,
-            and control through keyboard shortcuts as <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supported switching
-            mechanisms. The evaluator shall verify that the described switching
-            mechanisms can be initiated only through express user action according to
-            the selections.
-          
-          
-            The evaluator shall verify that the operational user guidance describes the
-            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supported switching mechanisms. The evaluator shall verify that the
-            operational user guidance does not include automatic port scanning, control
-            through a connected computer, and control through keyboard shortcuts as
-            <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supported switching mechanisms.
-          
-          
-                
+        </span></div></div></div>
+      
     <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_SWI_EXT.2">FDP_SWI_EXT.2</a></div>
           
           
@@ -1951,6 +2015,11 @@ The following sections list Common Criteria and technology terms used in this do
             <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supported switching mechanisms.
           </div></div><div class="eacategory">Tests</div><div class="ea">
 			There are no test activities for this component.<br/></div></div></div></div><h2 id="FTA-sel-based" class="indexable" data-level="2">B.3 TOE Access</h2><div class="comp" id="FTA_CIN_EXT.1"><h4>FTA_CIN_EXT.1 Continuous Indications</h4><div class="statustag"></div>
+        
+        
+        
+        
+        
         <div class="element"><div class="reqid" id="FTA_CIN_EXT.1.1"><a href="#FTA_CIN_EXT.1.1" class="abbr">FTA_CIN_EXT.1.1</a></div><div class="reqdesc">
             The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall display a visible indication of the selected computers at all times
             when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is powered.
@@ -1962,7 +2031,6 @@ The following sections list Common Criteria and technology terms used in this do
         <div class="element"><div class="reqid" id="FTA_CIN_EXT.1.3"><a href="#FTA_CIN_EXT.1.3" class="abbr">FTA_CIN_EXT.1.3</a></div><div class="reqdesc">
             The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that while the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is powered the current switching status
             is reflected by [<b>selection</b>: <span class="selectable-content" id="_s_28">the indicator</span>, <span class="selectable-content" id="_s_29">multiple indicators that never display conflicting information</span>].
-          </div></div>
           <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1984,55 +2052,8 @@ The following sections list Common Criteria and technology terms used in this do
             If multiple products with single and multiple indicators are part of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, then
             it is recommended that <a href="#FTA_CIN_EXT.1.3">FTA_CIN_EXT.1.3</a> be iterated for each selection rather
             than do a different evaluation for each model.
-          </span></div>
-          
-            
-            
-              The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> behaves on
-              power up and on reset, if applicable, regarding which computer interfaces
-              are active, if any.<br/><br/>
-              The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> documents the behavior of all
-              indicators when each switching mechanism is in use, and that no conflicting
-              information is displayed by any indicators.
-            
-            
-              The evaluator shall verify that the operational user guidance notes which
-              computer connection is active on <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> power up or on recovery from reset, if
-              applicable. If a reset option is available, use of this feature must be described
-              in the operational user guidance.<br/><br/>
-              The evaluator shall verify that the operational user guidance documents the
-              behavior of all indicators when each switching mechanism is in use, and that
-              no conflicting information is displayed by any indicators.
-            
-            
-              <ol type="a">
-                <li>The evaluator shall configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and its operational
-                  environment in accordance with the operational user guidance.</li>
-                <li>The evaluator shall select a connected computer and power down
-                  the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, then power up the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and verify that the expected selected
-                  computer is indicated in accordance with the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and that the connection is
-                  active.</li>
-                <li>The evaluator shall repeat this process for every possible selected
-                  <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> configuration.</li>
-                <li>[Conditional] If "upon reset button activation" is selected in
-                  <a href="#FPT_TST.1.1">FPT_TST.1.1</a>, then the evaluator shall repeat this process for each <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
-                  configuration using the reset function rather than power‐down and powerup.</li>
-                <li>The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> selected computer indications
-                  are always on (i.e., continuous) and fully visible to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> user.</li>
-                <li>[Conditional] If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> allows peripherals to have active interfaces
-                  with different computers at the same time, the evaluator shall verify that
-                  each permutation has its own selection indications.</li>
-                <li>[Conditional] If "a screen with dimming function" is selected, the
-                  evaluator shall verify that indications are visible at minimum brightness
-                  settings in standard room illumination conditions.</li>
-                <li>If "multiple indicators which never display conflicting
-                  information" is selected, the evaluator shall verify that either all indicators
-                  reflect the same status at all times, or the indicator for the most recently
-                  used switching mechanism displays the correct switching status and that all
-                  other indicators display the correct status or no status.</li>                
-              </ol>
-            
-                    
+          </span></div></div></div>
+        
       <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTA_CIN_EXT.1">FTA_CIN_EXT.1</a></div>
             
             
@@ -2080,7 +2101,112 @@ The following sections list Common Criteria and technology terms used in this do
                   used switching mechanism displays the correct switching status and that all
                   other indicators display the correct status or no status.</li>                
               </ol>
-            </div></div></div></div></div><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix C -  Inherently Satisfied Requirements</h1> This
+            </div></div></div></div></div><h1 id="ext-comp-defs" class="indexable" data-level="A">Appendix C -  Extended Component Definitions</h1>
+	This appendix contains the definitions for all extended requirements specified in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
+
+    <h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.1 Extended Components Table</h2>
+
+	All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> are listed in this table:
+
+<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">6</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Protection of the TSF"><td>Protection of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></td><td>FPT_FLS_EXT Failure with Preservation of Secure State<br/>FPT_NTA_EXT No Access to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><br/>FPT_TLS_EXT <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Testing<br/></td></tr><tr data-sortkey="TOE Access"><td><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Access</td><td>FTA_CIN_EXT Continuous Indications<br/></td></tr><tr data-sortkey="User Data Protection"><td>User Data Protection</td><td>FDP_APC_EXT Active PSD Connections<br/>FDP_PDC_EXT Peripheral Device Connection<br/>FDP_RIP_EXT Residual Information Protection<br/>FDP_SWI_EXT PSD Switching<br/></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Protection of the TSF"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.1 Protection of the TSF</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the following extended components as part of the
+	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
+	<h3 id="ext-comp-FPT_FLS_EXT" class="indexable" data-level="4">C.2.1.1 FPT_FLS_EXT Failure with Preservation of Secure State</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define the secure failure requirements for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FPT_FLS_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FPT_FLS_EXT.1">FPT_FLS_EXT.1</a>,
+             Failure with Preservation of Secure State,
+             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to go into a secure state upon
+             the detection of selected failures.</p><h4>Management: FPT_FLS_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FPT_FLS_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FPT_FLS_EXT.1 Failure with Preservation of Secure State</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
+             <a href="#FPT_TST.1">FPT_TST.1</a> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Testing <br/><br/>
+             FPT_PHP.3 Resistance to Physical Attack
+           </td></tr></table><h4 id="ext-comp-FPT_FLS_EXT.1.1">FPT_FLS_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall preserve a secure state when the following types of failures
+              occur: failure of the power‐on self‐test and [<b>selection</b>: <span class="selectable-content" id="_s_8">failure of the anti-tamper function</span>, <span class="selectable-content" id="_s_9">no other failures</span>]. 
+            </div></div><h3 id="ext-comp-FPT_NTA_EXT" class="indexable" data-level="4">C.2.1.2 FPT_NTA_EXT No Access to TOE</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define what <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> information may be externally
+           accessible.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FPT_NTA_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FPT_NTA_EXT.1">FPT_NTA_EXT.1</a>,
+             No Access to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>,
+             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to block access to non‐authorized <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> data via
+             external ports.</p><h4>Management: FPT_NTA_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FPT_NTA_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FPT_NTA_EXT.1 No Access to TOE</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies</td></tr></table><h4 id="ext-comp-FPT_NTA_EXT.1.1">FPT_NTA_EXT.1.1</h4>
+               <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> firmware, software, and memory shall not be accessible via the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>’s
+               external ports, with the following exceptions:[<b>selection</b>: <span class="selectable-content" id="_s_10">the Extended Display Identification Data (EDID) memory of 
+                   Video <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> may be accessible from connected computers;</span>, <span class="selectable-content" id="_s_11">the configuration data, settings, and logging data that
+                   may be accessible by authorized administrators</span>, <span class="selectable-content" id="_s_12">no other exceptions</span>]                              
+             </div></div><h3 id="ext-comp-FPT_TLS_EXT" class="indexable" data-level="4">C.2.1.3 FPT_TLS_EXT TSF Testing</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> responds to a self-test failure.</div><h4>Component Leveling</h4><svg style="max-height: 10px;"><text x="4" fill="black" font-size="15" y="24">FPT_TLS_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect></svg></div></span><span data-sortkey="TOE Access"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.2 TOE Access</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the following extended components as part of the
+	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
+	<h3 id="ext-comp-FTA_CIN_EXT" class="indexable" data-level="4">C.2.2.1 FTA_CIN_EXT Continuous Indications</h3><div style="margin-left: 1em;"><p><a href="#FTA_CIN_EXT.1">FTA_CIN_EXT.1</a>,
+             Continuous Indications,
+             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to display a visual indication of what computers are selected.</p><h4>Management: FTA_CIN_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FTA_CIN_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FTA_CIN_EXT.1 Continuous Indications</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><a href="#FDP_APC_EXT.1">FDP_APC_EXT.1</a> Active PSD Connections</td></tr></table><h4 id="ext-comp-FTA_CIN_EXT.1.1">FTA_CIN_EXT.1.1</h4>
+            The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall display a visible indication of the selected computers at all times
+            when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is powered.
+          <h4 id="ext-comp-FTA_CIN_EXT.1.2">FTA_CIN_EXT.1.2</h4>
+            The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall implement the visible indication using the following mechanism: [<b>selection</b>: <span class="selectable-content" id="_s_23">a button</span>, <span class="selectable-content" id="_s_24">a panel with lights</span>, <span class="selectable-content" id="_s_25">a screen with dimming function</span>, <span class="selectable-content" id="_s_26">a screen with no dimming function</span>, <span class="selectable-content" id="_s_27">[<b>assignment</b>: 
+     <span class="assignable-content">description of visible indication</span>]</span>].            
+          <h4 id="ext-comp-FTA_CIN_EXT.1.3">FTA_CIN_EXT.1.3</h4>
+            The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that while the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is powered the current switching status
+            is reflected by [<b>selection</b>: <span class="selectable-content" id="_s_28">the indicator</span>, <span class="selectable-content" id="_s_29">multiple indicators that never display conflicting information</span>].
+          </div></div></span><span data-sortkey="User Data Protection"><h3 id="ext-comp-" class="indexable" data-level="3">C.2.3 User Data Protection</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the following extended components as part of the
+	  class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
+	<h3 id="ext-comp-FDP_APC_EXT" class="indexable" data-level="4">C.2.3.1 FDP_APC_EXT Active PSD Connections</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>
+          Components in this family define the requirements for when an external interface to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
+          authorized to transmit data related to peripheral sharing.
+        </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FDP_APC_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FDP_APC_EXT.1">FDP_APC_EXT.1</a>,
+             Active PSD Connections,
+             restricts the flow of data through the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</p><h4>Management: FDP_APC_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FDP_APC_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FDP_APC_EXT.1 Active PSD Connections</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies</td></tr></table><h4 id="ext-comp-FDP_APC_EXT.1.1">FDP_APC_EXT.1.1</h4> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall route user data only to or from the interfaces selected by the
+              user. 
+            <h4 id="ext-comp-FDP_APC_EXT.1.2">FDP_APC_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that no data flows between connected computers whether the
+              <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is powered on or powered off.<h4 id="ext-comp-FDP_APC_EXT.1.3">FDP_APC_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that no data transits the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is powered off.<h4 id="ext-comp-FDP_APC_EXT.1.4">FDP_APC_EXT.1.4</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that no data transits the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> when the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is in a failure
+              state.</div></div><h3 id="ext-comp-FDP_PDC_EXT" class="indexable" data-level="4">C.2.3.2 FDP_PDC_EXT Peripheral Device Connection</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>
+          Components in this family define the requirements for peripheral device connections.
+        </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FDP_PDC_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FDP_PDC_EXT.1">FDP_PDC_EXT.1</a>,
+             Peripheral Device Connection,
+             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to limit external connections to only
+            authorized devices.</p><h4>Management: FDP_PDC_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FDP_PDC_EXT.1</h4><p>The following actions should be auditable if FAU_GEN.1 Audit Data Generation is included in the
+            <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:<ul>
+              <li>Acceptance or rejection of a peripheral</li>
+            </ul>
+          </p><h4>FDP_PDC_EXT.1 Peripheral Device Connection</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies</td></tr></table><h4 id="ext-comp-FDP_PDC_EXT.1.1">FDP_PDC_EXT.1.1</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall reject connections with unauthorized devices upon <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> power up
+              and upon connection of a peripheral device to a powered‐on <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+            </div></div><h3 id="ext-comp-FDP_RIP_EXT" class="indexable" data-level="4">C.2.3.3 FDP_RIP_EXT Residual Information Protection</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>
+          Components in this family define the requirements for how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> prevents data disclosure from its
+          memory.
+        </div><h4>Component Leveling</h4><svg style="max-height: 50px;"><text x="4" fill="black" font-size="15" y="44">FDP_RIP_EXT</text><rect x="2" y="31" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="17" stroke="black"></line><text x="234" fill="black" font-size="15" y="44">2</text><rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="37" stroke="black"></line></svg><p><a href="#FDP_RIP_EXT.1">FDP_RIP_EXT.1</a>,
+             Residual Information Protection,
+             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to prevent the writing of user data to
+            non‐volatile memory.</p><p>FDP_RIP_EXT.2,
+             Purge of Residual Information,
+             requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to have a purge function to clear its
+          memory of all stored non‐audit data.</p><h4>Management: FDP_RIP_EXT.1</h4><p>The following actions could be considered for the management functions in
+            FMT:<ul>
+              <li>Ability to trigger the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s purge function</li>
+            </ul></p><h4>Audit: FDP_RIP_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FDP_RIP_EXT.1 Residual Information Protection</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies</td></tr></table><h4 id="ext-comp-FDP_RIP_EXT.1.1">FDP_RIP_EXT.1.1</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that no user data is written to <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> non‐volatile memory or
+              storage.
+            </div><h4>Management: FDP_RIP_EXT.2</h4><p>The following actions could be considered for the management functions in
+          FMT:<ul>
+            <li>Ability to trigger the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s purge function</li>
+          </ul></p><h4>Audit: FDP_RIP_EXT.2</h4><p>The following actions should be auditable if FAU_GEN.1 Audit Data Generation is included in the
+          <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:<ul>
+            <li>Purging of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>'s memory</li>
+          </ul></p><h4>FDP_RIP_EXT.2 Purge of Residual Information</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies</td></tr></table><h4 id="ext-comp-FDP_RIP_EXT.2.1">FDP_RIP_EXT.2.1</h4>
+            The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> shall have a purge memory or restore factory defaults function
+            accessible to the administrator to delete all <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> stored configuration and
+            settings except for logging.
+          </div></div><h3 id="ext-comp-FDP_SWI_EXT" class="indexable" data-level="4">C.2.3.4 FDP_SWI_EXT PSD Switching</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>
+          Components in this family define the requirements for how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> protects against inadvertent data
+          switching.
+        </div><h4>Component Leveling</h4><svg style="max-height: 50px;"><text x="4" fill="black" font-size="15" y="44">FDP_SWI_EXT</text><rect x="2" y="31" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="17" stroke="black"></line><text x="234" fill="black" font-size="15" y="44">2</text><rect x="232" y="31" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="37" x2="231" y2="37" stroke="black"></line></svg><p><a href="#FDP_SWI_EXT.1">FDP_SWI_EXT.1</a>,
+             PSD Switching,
+             requires action on the part of a user in order for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>’s switching
+            mechanisms to be activated.</p><p><a href="#FDP_SWI_EXT.2">FDP_SWI_EXT.2</a>,
+             PSD Switching Methods,
+             places restrictions on how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>’s switching mechanisms can
+        be controlled.</p><h4>Management: FDP_SWI_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FDP_SWI_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FDP_SWI_EXT.1 PSD Switching</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies</td></tr></table><h4 id="ext-comp-FDP_SWI_EXT.1.1">FDP_SWI_EXT.1.1</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that [<b>selection</b>: <span class="selectable-content" id="_s_1">the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports only one connected computer</span>, <span class="selectable-content" id="_s_2">switching can be initiated only through express user action</span>].
+            </div><h4>Management: FDP_SWI_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FDP_SWI_EXT.2</h4><p>There are no auditable events foreseen.</p><h4>FDP_SWI_EXT.2 PSD Switching Methods</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><a href="#FDP_SWI_EXT.1">FDP_SWI_EXT.1</a> PSD Switching</td></tr></table><h4 id="ext-comp-FDP_SWI_EXT.2.1">FDP_SWI_EXT.2.1</h4>
+          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that no switching can be initiated through automatic port
+          scanning, control through a connected computer, or control through keyboard
+          shortcuts.
+        <h4 id="ext-comp-FDP_SWI_EXT.2.2">FDP_SWI_EXT.2.2</h4>
+          The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that switching can be initiated only through express user
+          action using [<b>selection</b>: <span class="selectable-content" id="_s_3">console buttons</span>, <span class="selectable-content" id="_s_4">console switches</span>, <span class="selectable-content" id="_s_5">console touch screen</span>, <span class="selectable-content" id="_s_6">wired remote control</span>, <span class="selectable-content" id="_s_7">peripheral devices using a guard</span>].
+        </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Inherently Satisfied Requirements</h1> This
 	appendix lists requirements that should be considered satisfied by products
 	successfully evaluated against this Protection Profile.  
 	However, these requirements are not featured explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be
@@ -2172,19 +2298,19 @@ The following sections list Common Criteria and technology terms used in this do
 	</tr>
     </table>
 
-  <h1 id="" class="indexable" data-level="A">Appendix D -  Use Case Templates</h1><h2 id="appendix-supsd-loc-mon-loc-con" class="indexable" data-level="2">D.1 Single User with PSD, Local Monitoring, and Local Control</h2>
+  <h1 id="" class="indexable" data-level="A">Appendix E -  Use Case Templates</h1><h2 id="appendix-supsd-loc-mon-loc-con" class="indexable" data-level="2">E.1 Single User with PSD, Local Monitoring, and Local Control</h2>
 		The configuration for <i><a href="#supsd-loc-mon-loc-con" class="dynref">[USE CASE 1] Single User with PSD, Local Monitoring, and Local Control</a></i> modifies
 		the base requirements as follows:<br/>
                         
-          <h2 id="appendix-supsd-sin-comp-iso-or-fil" class="indexable" data-level="2">D.2 Single User with PSD and a Single Computer (Isolator or Filter)</h2>
+          <h2 id="appendix-supsd-sin-comp-iso-or-fil" class="indexable" data-level="2">E.2 Single User with PSD and a Single Computer (Isolator or Filter)</h2>
 		The configuration for <i><a href="#supsd-sin-comp-iso-or-fil" class="dynref">[USE CASE 2] Single User with PSD and a Single Computer (Isolator or Filter)</a></i> modifies
 		the base requirements as follows:<br/>
                         
-          <h2 id="appendix-psd-sin-int-vid-disp-comb-or-mv" class="indexable" data-level="2">D.3 PSD with Single Integrated Video Display (Combiner or Multi-Viewer)</h2>
+          <h2 id="appendix-psd-sin-int-vid-disp-comb-or-mv" class="indexable" data-level="2">E.3 PSD with Single Integrated Video Display (Combiner or Multi-Viewer)</h2>
 		The configuration for <i><a href="#psd-sin-int-vid-disp-comb-or-mv" class="dynref">[USE CASE 3] PSD with Single Integrated Video Display (Combiner or Multi-Viewer)</a></i> modifies
 		the base requirements as follows:<br/>
                         
-          <h1 id="acronyms" class="indexable" data-level="A">Appendix E -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">5</span></span>: Acronyms
+          <h1 id="acronyms" class="indexable" data-level="A">Appendix F -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">7</span></span>: Acronyms
 		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_Base-PP" data-plural="Base-PPs"><abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span></td><td><span id="long_abbr_Base-PP">Base Protection Profile</span></td></tr>
 <tr><td><span class="term" id="abbr_CC"><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr></span></td><td><span id="long_abbr_CC">Common Criteria</span></td></tr>
 <tr><td><span class="term" id="abbr_CDF"><abbr class="dyn-abbr"><a href="#abbr_CDF">CDF</a></abbr></span></td><td><span id="long_abbr_CDF">Configurable Device Filtration</span></td></tr>
@@ -2208,7 +2334,7 @@ The following sections list Common Criteria and technology terms used in this do
 <tr><td><span class="term" id="abbr_TSFI" data-plural="TSFIs"><abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFI</a></abbr></span></td><td><span id="long_abbr_TSFI"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Interface</span></td></tr>
 <tr><td><span class="term" id="abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></span></td><td><span id="long_abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Summary Specification</span></td></tr>
 <tr><td><span class="term" id="abbr_USB"><abbr class="dyn-abbr"><a href="#abbr_USB">USB</a></abbr></span></td><td><span id="long_abbr_USB">Universal Serial Bus</span></td></tr>
-</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix F -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">6</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
+</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix G -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">8</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
             <li><a href="https://www.commoncriteriaportal.org/files/ccfiles/CC2022PART1R1.pdf">Part 1: 
 				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART2R1.pdf">Part 2: 

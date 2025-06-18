@@ -3,7 +3,9 @@ output/PSD-release-linkable.html: 5C
 output/PSD-release-linkable.html: 6C
 output/PSD-release-linkable.html: 7C
 output/PSD-release-linkable.html: AFL
+output/PSD-release-linkable.html: CCL
 output/PSD-release-linkable.html: CDS
+output/PSD-release-linkable.html: ECD
 output/PSD-release-linkable.html: EDID
 output/PSD-release-linkable.html: PSD
 output/PSD-release-linkable.html: PSDs
@@ -19,7 +21,9 @@ output/PSD-release.html: 5C
 output/PSD-release.html: 6C
 output/PSD-release.html: 7C
 output/PSD-release.html: AFL
+output/PSD-release.html: CCL
 output/PSD-release.html: CDS
+output/PSD-release.html: ECD
 output/PSD-release.html: EDID
 output/PSD-release.html: PSD
 output/PSD-release.html: PSDs
@@ -37,7 +41,9 @@ output/PSD.html: 5C
 output/PSD.html: 6C
 output/PSD.html: 7C
 output/PSD.html: AFL
+output/PSD.html: CCL
 output/PSD.html: CDS
+output/PSD.html: ECD
 output/PSD.html: EDID
 output/PSD.html: PSD
 output/PSD.html: PSDs
