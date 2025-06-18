@@ -1655,9 +1655,9 @@ The following sections list Common Criteria and technology terms used in this do
     </span><span class="note">
 		            This portion of the operational user guidance should be presented
 		            in the form of a checklist that can be quickly executed by IT personnel (or end-users, 
-		            when necessary) and suitable for use in compliance activities.
+		            when necessary) and suitable for use in compliance activities.<br/><br/>
 		            When possible, this guidance is to be expressed in the eXtensible Configuration 
-		            Checklist Description Format (XCCDF) to support security automation.  
+		            Checklist Description Format (XCCDF) to support security automation.  <br/><br/>
 		            Minimally, it should be presented in a structured 
 		            format which includes a title for each configuration item, 
 		            instructions for achieving the secure configuration, and any relevant rationale.  
@@ -1665,27 +1665,30 @@ The following sections list Common Criteria and technology terms used in this do
               type of security-relevant event relative to the user-accessible functions that need to
               be performed, including changing the security characteristics of entities under the
               control of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</div></div><div class="element"><div class="reqid" id="AGD_OPE.1.5C"><a href="#AGD_OPE.1.5C" class="abbr">AGD_OPE.1.5C</a></div><div class="reqdesc">The operational user guidance shall identify all possible modes of operation of
-              the OS (including operation following failure or operational
+              the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (including operation following failure or operational
               error), their consequences, and implications for maintaining secure operation.</div></div><div class="element"><div class="reqid" id="AGD_OPE.1.6C"><a href="#AGD_OPE.1.6C" class="abbr">AGD_OPE.1.6C</a></div><div class="reqdesc">The operational user guidance shall, for each user role, describe the security
               measures to be followed in order to fulfill the security objectives for the
               operational environment as described in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.</div></div><div class="element"><div class="reqid" id="AGD_OPE.1.7C"><a href="#AGD_OPE.1.7C" class="abbr">AGD_OPE.1.7C</a></div><div class="reqdesc">The operational user guidance shall be clear and reasonable.</div></div><h4>Evaluator action elements: </h4><div class="element"><div class="reqid" id="AGD_OPE.1.1E"><a href="#AGD_OPE.1.1E" class="abbr">AGD_OPE.1.1E</a></div><div class="reqdesc">The evaluator shall confirm that the information provided meets all requirements
               for content and presentation of evidence. </div></div><div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#AGD_OPE.1">AGD_OPE.1</a></div>Some of the contents of the operational guidance are verified by the
-              assurance activities in <a href="#SFRs" class="dynref" data-format=""></a> and evaluation of the OS according to the <a href="#bibCEM">[CEM]</a>. The following additional
-              information is also required. If cryptographic functions are provided by the OS, the operational guidance shall contain instructions for configuring
-              the cryptographic engine associated with the evaluated configuration of the OS. It shall provide a warning to the administrator that use of other
-              cryptographic engines was not evaluated nor tested during the <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> evaluation of the
-              OS. The documentation must describe the process for verifying
-              updates to the OS by verifying a digital signature – this may be
-              done by the OS or the underlying platform. The evaluator will
-              verify that this process includes the following steps: Instructions for obtaining the
-              update itself. This should include instructions for making the update accessible to
-              the OS (e.g., placement in a specific directory). Instructions for
-              initiating the update process, as well as discerning whether the process was
-              successful or unsuccessful. This includes generation of the hash/digital signature.
-              The OS will likely contain security functionality that does not
-              fall in the scope of evaluation under this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The operational guidance shall make it
-              clear to an administrator which security functionality is covered by the evaluation
-              activities. </div></div></div>
+                assurance activities in <a href="#SFRs" class="dynref" data-format=""></a> and evaluation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> according to the
+                <a href="#bibCEM">[CEM]</a>. The following additional information is also required. If 
+                cryptographic functions are provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the operational guidance shall
+                contain instructions for configuring the cryptographic engine associated with 
+                the evaluated configuration of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. It shall provide a warning to the administrator
+                that use of other cryptographic engines was not evaluated nor tested during the <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> 
+                evaluation of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The documentation must describe the process for verifying
+                updates to the OS by verifying a digital signature – this may be
+                done by the OS or the underlying platform. The evaluator shall
+                verify that this process includes the following steps: Instructions for obtaining the
+                update itself. This should include instructions for making the update accessible to
+                the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (e.g., placement in a specific directory). Instructions for
+                initiating the update process, as well as discerning whether the process was
+                successful or unsuccessful. This includes generation of the hash or digital signature.
+                The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> will likely contain security functionality that does not
+                fall in the scope of evaluation under this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. The operational guidance shall make it
+                clear to an administrator which security functionality is covered by the evaluation
+                activities.
+              </div></div></div>
         <div class="comp" id="AGD_PRE.1"><h4>AGD_PRE.1 Preparative Procedures (AGD_PRE.1)</h4>
             
 	  
