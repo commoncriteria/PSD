@@ -523,7 +523,7 @@
      <f-component cc-id="fau_gen.1" name="Audit Data Generation" status="implementation-based">
        <f-element id="fau-gen.1e1">
          <title>
-           The TSF shall be able to generate an audit data of the following auditable events:
+           The TSF shall be able to generate audit data of the following auditable events:
            <h:ol type="a">
              <h:li>Start-up and shutdown of the audit functions;</h:li>
              <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
@@ -549,7 +549,7 @@
            If a peripheral device is rejected due to its incompatibility with the peripheral
            interface, then this rejection need not be audited.
          </note>
-       </f-element>
+       
        <aactivity>
          <Isolation/>
          <TSS>
@@ -572,11 +572,46 @@
            recorded, with all of the expected information.
          </Tests>
        </aactivity>
+       </f-element>
+       <audit-event/>
      </f-component>
    </section>
     
     <section title="User Data Protection" id="fdp">
+      
+      <ext-comp-def title="Active PSD Connections" fam-id="FDP_APC_EXT">
+        <fam-behavior>
+          Components in this family define the requirements for when an external interface to the TOE is
+          authorized to transmit data related to peripheral sharing.
+        </fam-behavior>
+      </ext-comp-def>
+      
+      <ext-comp-def title="Peripheral Device Connection" fam-id="FDP_PDC_EXT">
+        <fam-behavior>
+          Components in this family define the requirements for peripheral device connections.
+        </fam-behavior>
+      </ext-comp-def>
+      
+      <ext-comp-def title="Residual Information Protection" fam-id="FDP_RIP_EXT">
+        <fam-behavior>
+          Components in this family define the requirements for how the TSF prevents data disclosure from its
+          memory.
+        </fam-behavior>
+      </ext-comp-def>
+      
+      <ext-comp-def title="PSD Switching" fam-id="FDP_SWI_EXT">
+        <fam-behavior>
+          Components in this family define the requirements for how the TSF protects against inadvertent data
+          switching.
+        </fam-behavior>
+      </ext-comp-def>
+            
          <f-component cc-id="fdp_apc_ext.1" name="Active PSD Connections">
+           <consistency-rationale/>
+           <comp-lev>restricts the flow of data through the TSF.</comp-lev>
+           <management>No specific management functions are identified.</management>
+           <audit>There are no auditable events foreseen.</audit>
+           <dependencies>No dependencies</dependencies>
           <f-element id="fdp-apc-ext.1e1">
             <title> The TSF shall route user data only to or from the interfaces selected by the
               user. 
@@ -592,7 +627,7 @@
           <f-element id="fdp-apc-ext.1e4">
             <title>The TSF shall ensure that no data transits the TOE when the TOE is in a failure
               state.</title>
-          </f-element>
+          
            <aactivity>
              <Isolation>
                The evaluator shall review the Isolation Documentation and Assessment as
@@ -610,10 +645,23 @@
                user knows when the TOE enters a failure state.
              </Guidance>
              <Tests/>
-           </aactivity>           
+           </aactivity>
+          </f-element>
+           <audit-event/>
          </f-component>
         
         <f-component cc-id="fdp_pdc_ext.1" name="Peripheral Device Connection">
+          <consistency-rationale/>
+          <comp-lev>requires the TSF to limit external connections to only
+            authorized devices.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>The following actions should be auditable if FAU_GEN.1 Audit Data Generation is included in the
+            PP/ST:<h:ul>
+              <h:li>Acceptance or rejection of a peripheral</h:li>
+            </h:ul>
+          </audit>
+          <dependencies>No dependencies</dependencies>
+          
           <f-element id="fdp-pdc-ext.1e1">
             <title>
               The TSF shall reject connections with unauthorized devices upon TOE power up
@@ -641,7 +689,7 @@
                 The TOE shall provide a visual or auditory indication to the User when a
                 peripheral is rejected.
               </title>
-            </f-element>
+            
             <note role="application">The list of unauthorized devices is in Appendix E: Peripheral Device Connections.</note>
             <aactivity>
               <Isolation/>
@@ -720,10 +768,26 @@
                 </testlist>
               </Tests>              
             </aactivity>
-          </f-element>          
+            </f-element>
+            <audit-event>
+              <audit-event-descr>Self-test failures</audit-event-descr>
+              <audit-event-info>None</audit-event-info>
+            </audit-event>
+          </f-element>
+          
          </f-component>
         
         <f-component  cc-id="fdp_rip_ext.1" name="Residual Information Protection">
+          <consistency-rationale/>
+          <comp-lev>requires the TSF to prevent the writing of user data to
+            non‐volatile memory.</comp-lev>
+          <management>The following actions could be considered for the management functions in
+            FMT:<h:ul>
+              <h:li>Ability to trigger the TSF's purge function</h:li>
+            </h:ul></management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>No dependencies</dependencies>
+          
           <f-element id="fdp-rep-ext.1e1">
             <title>
               The TSF shall ensure that no user data is written to TOE non‐volatile memory or
@@ -752,10 +816,23 @@
               <Tests/>
             </aactivity>
           </f-element>
-        </f-component>
-      
+          <audit-event/>
+        </f-component>      
       
       <f-component cc-id="fdp_rip_ext.2" name="Purge of Residual Information" status="implementation-based">
+        <consistency-rationale/>
+        <comp-lev>requires the TSF to have a purge function to clear its
+          memory of all stored non‐audit data.</comp-lev>
+        <management>The following actions could be considered for the management functions in
+          FMT:<h:ul>
+            <h:li>Ability to trigger the TSF's purge function</h:li>
+          </h:ul></management>
+        <audit>The following actions should be auditable if FAU_GEN.1 Audit Data Generation is included in the
+          PP/ST:<h:ul>
+            <h:li>Purging of the TSF's memory</h:li>
+          </h:ul></audit>
+        <dependencies>No dependencies</dependencies>
+        
         <f-element id="fdp-rip-ext.2e1">
           <title>
             The TOE shall have a purge memory or restore factory defaults function
@@ -780,10 +857,18 @@
               function is supported by the TOE.
             </Tests>
           </aactivity>
-        </f-element>  
+        </f-element>
+        <audit-event/>
       </f-component>      
       
         <f-component cc-id="fdp_swi_ext.1" name="PSD Switching">
+          <consistency-rationale/>
+          <comp-lev>requires action on the part of a user in order for the TSF’s switching
+            mechanisms to be activated.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>No dependencies</dependencies>
+          
           <f-element id="fdp-swi-ext.1e1">
             <title>
               The TSF shall ensure that <selectables>
@@ -813,11 +898,19 @@
               </Guidance>
               <Tests/>
             </aactivity>
-          </f-element>  
+          </f-element> 
+          <audit-event/>
         </f-component>
        </section>
     
     <f-component cc-id="fdp_swi_ext.2" name="PSD Switching Methods" status="sel-based">
+      <consistency-rationale/>
+      <comp-lev>places restrictions on how the TSF’s switching mechanisms can
+        be controlled.</comp-lev>
+      <management>No specific management functions are identified.</management>
+      <audit>There are no auditable events foreseen.</audit>
+      <dependencies>FDP_SWI_EXT.1 PSD Switching</dependencies>
+      
       <f-element id="fdp-swi-ext-2e1">
         <title>
           The TSF shall ensure that no switching can be initiated through automatic port
@@ -836,7 +929,7 @@
             <selectable>peripheral devices using a guard</selectable>
           </selectables>.
         </title>
-      </f-element>
+      
         <note role="application">
           This SFR must be claimed if "switching can be initiated only through express user
           action" is chosen as the selection for FDP_SWI_EXT.1.1.<h:br/><h:br/>
@@ -864,7 +957,9 @@
             TOE supported switching mechanisms.
           </Guidance>
           <Tests/>
-        </aactivity>        
+        </aactivity>
+      </f-element>
+      <audit-event/>
     </f-component>    
     
     <section title="Identification and Authentication" id="FIA">
@@ -881,7 +976,11 @@
           <aactivity>
             This SFR is evaluated by the Evaluation Activities in FMT_MOF.1 below.
           </aactivity>
-        </f-element>  
+        </f-element>
+        <audit-event>
+          <audit-event-descr>Use of the authentication mechanism</audit-event-descr>
+          <audit-event-info>None</audit-event-info>
+        </audit-event>
       </f-component>
 
       <f-component cc-id="fia_uid.2" name="User Identification Before Any Action" status="implementation-based">
@@ -893,7 +992,11 @@
           <aactivity>
           This SFR is evaluated by the Evaluation Activities in FMT_MOF.1 below.
           </aactivity>
-        </f-element>  
+        </f-element> 
+        <audit-event>
+          <audit-event-descr>Use of the user identification mechanism</audit-event-descr>
+          <audit-event-info>None</audit-event-info>
+        </audit-event>
       </f-component>
     </section>
       
@@ -949,7 +1052,12 @@
               </testlist>
             </Tests>
           </aactivity>
-        </f-element>  
+        </f-element>
+          <audit-event>
+            <audit-event-descr>Modifications in the behaviour of functions</audit-event-descr>
+            <audit-event-info>None</audit-event-info>
+          </audit-event>
+          
       </f-component>
       </section>
     
@@ -988,7 +1096,12 @@
             documentation state the configuration can be managed.
           </Tests>
         </aactivity>
-      </f-element>  
+      </f-element>
+      <audit-event>
+        <audit-event-descr>Use of management functions</audit-event-descr>
+        <audit-event-info>None</audit-event-info>
+      </audit-event>
+      
     </f-component>
     
     <f-component cc-id="fmt_smr.1" name="Security Roles" status="implementation-based">
@@ -1001,7 +1114,7 @@
           <title>
             The TSF shall be able to associate users with roles.
           </title>
-      </f-element>
+      
         <note role="application">
           The intent of this SFR is to make clear the fact that the TSF is expected to
           provide some sort of controlled access to administrative functions such that
@@ -1014,13 +1127,46 @@
         <aactivity>
           Refer to the Evaluation Activities of FMT_MOF.1.1 above.
         </aactivity>
+      </f-element>
+      <audit-event>
+        <audit-event-descr>Modifications to the group of users</audit-event-descr>
+        <audit-event-info>None</audit-event-info>
+      </audit-event>
+      <audit-event>
+        <audit-event-descr>Unsuccessful attempts to use a role</audit-event-descr>
+        <audit-event-info>Due to the given conditions on the roles</audit-event-info>
+      </audit-event>
     </f-component>
     
        <section title="Protection of the TSF" id="FPT">
+         
+         <ext-comp-def title="Failure with Preservation of Secure State" fam-id="FPT_FLS_EXT">
+         <fam-behavior>Components in this family define the secure failure requirements for the TSF.</fam-behavior>
+         </ext-comp-def>
+         
+         <ext-comp-def title="No Access to TOE" fam-id="FPT_NTA_EXT">
+         <fam-behavior>Components in this family define what TSF information may be externally
+           accessible.</fam-behavior>
+         </ext-comp-def>
+         
+         <ext-comp-def title="TSF Testing" fam-id="FPT_TLS_EXT">
+         <fam-behavior>Components in this family define how the TSF responds to a self-test failure.</fam-behavior>
+         </ext-comp-def>
+         
          <f-component cc-id="fpt_fls_ext.1" name="Failure with Preservation of Secure State">
+           <consistency-rationale/>
+           <comp-lev>requires the TSF to go into a secure state upon
+             the detection of selected failures.</comp-lev>
+           <management>No specific management functions are identified.</management>
+           <audit>There are no auditable events foreseen.</audit>
+           <dependencies>
+             FPT_TST.1 TSF Testing <h:br/><h:br/>
+             FPT_PHP.3 Resistance to Physical Attack
+           </dependencies>
+           
           <f-element id="fpt-fls-ext.1e1">
             <title>The TSF shall preserve a secure state when the following types of failures
-              occur: failure of the power‐on self‐test and<selectables>
+              occur: failure of the power‐on self‐test and <selectables>
                 <selectable>failure of the anti-tamper function</selectable>
                 <selectable>no other failures</selectable>
               </selectables>. 
@@ -1036,14 +1182,17 @@
               This SFR is evaluated in conjunction with FPT_TST.1
 	          </aactivity>
           </f-element>
- 	       <audit-event>
-            <audit-event-descr>
-	          </audit-event-descr>
-            <audit-event-info></audit-event-info>
-          </audit-event>
+ 	       <audit-event/>            
   	    </f-component>
          
          <f-component cc-id="fpt_nta_ext.1" name="No Access to TOE" >
+           <consistency-rationale/>
+           <comp-lev>requires the TSF to block access to non‐authorized TSF data via
+             external ports.</comp-lev>
+           <management>No specific management functions are identified.</management>
+           <audit>There are no auditable events foreseen.</audit>
+           <dependencies>No dependencies</dependencies>
+           
            <f-element id="fpt-nta-ext.1e1">
              <title>
                TOE firmware, software, and memory shall not be accessible via the TOE’s
@@ -1068,7 +1217,8 @@
                </Guidance>
                <Tests/>
              </aactivity>
-           </f-element>  
+           </f-element> 
+           <audit-event/>
          </f-component>
          
          <f-component cc-id="fpt_php.1" name="Passive Detection of Physical Attack">
@@ -1118,7 +1268,11 @@
                  </testlist>
                </Tests>
              </aactivity>
-           </f-element>  
+           </f-element>
+           <audit-event>
+             <audit-event-descr>Detection of intrusion.</audit-event-descr>
+             <audit-event-info>None</audit-event-info>
+           </audit-event>           
          </f-component>
          
          <f-component cc-id="fpt_php.3" name="Resistance to Physical Attack" status="implementation-based">
@@ -1181,7 +1335,8 @@
                  indicator is displayed.</h:li></h:ol>
                </Tests>
              </aactivity>
-           </f-element>  
+           </f-element>
+           <audit-event/>
          </f-component>        
          
          <f-component cc-id="fpt_stm.1" name="Reliable Time Stamps" status="implementation-based">
@@ -1212,7 +1367,12 @@
                  that this test be performed in conjunction with FAU_GEN.1.
                </Tests>
              </aactivity>
-           </f-element>  
+           </f-element>
+           <audit-event>
+             <audit-event-descr>Changes to the time</audit-event-descr>
+             <audit-event-info>None.</audit-event-info>
+           </audit-event>
+           
          </f-component>         
          
          <f-component cc-id="fpt_tst.1" name="TSF Testing">
@@ -1299,10 +1459,26 @@
                  operational guidance.
                </Tests>
              </aactivity>
-           </f-element>  
+           </f-element>
+           <audit-event>
+             <audit-event-descr>Execution of the TSF self-tests</audit-event-descr>
+             <audit-event-info>Results of the tests</audit-event-info>
+           </audit-event>
+           
          </f-component>
          
          <f-component cc-id="fpt_tst_ext.1" name="TSF Testing">
+           <consistency-rationale/>
+           <comp-lev>requires the TSF to shutdown normal functions and provide a visual or
+             auditory indication that a self‐test has failed.</comp-lev>
+           <management>No specific management functions are identified.</management>
+           <audit>The following actions should be auditable if FAU_GEN.1 Audit Data Generation is included in the
+             PP/ST: <h:ul>
+               <h:li>Indication that the TSF self-test was completed</h:li>
+               <h:li>Failure of self-test</h:li>
+             </h:ul></audit>
+           <dependencies>FPT_TST.1 TSF Testing</dependencies>
+           
            <f-element id="fpt-tst-ext.1e1">
              <title>
                The TSF shall respond to a self‐test failure by providing users with a <selectables>
@@ -1334,12 +1510,30 @@
                  disabling normal functions and provides proper indications to the user.
                </Tests>
              </aactivity>
-           </f-element>  
+           </f-element>
+           <audit-event>
+             <audit-event-descr>
+               Execution of self-tests.
+             </audit-event-descr>
+             <audit-event-info>None.</audit-event-info>
+           </audit-event>
          </f-component>         
       </section>
 
     <section title="TOE Access" id="FTA">
+      
+      <ext-comp-def title="Continuous Indications" fam-id="FTA_CIN_EXT">
+          <family-behavior>
+            Components in this family define how the TSF displays its switching status.
+          </family-behavior>
+        </ext-comp-def>
+      
       <f-component cc-id="fta_cin_ext.1" name="Continuous Indications" status="sel-based">
+        <consistency-rationale/>
+        <comp-lev>requires the TSF to display a visual indication of what computers are selected.</comp-lev>
+        <management>No specific management functions are identified.</management>
+        <audit>There are no auditable events foreseen.</audit>
+        <dependencies>FDP_APC_EXT.1 Active PSD Connections</dependencies>
         <f-element id="fta-cin-ext-1e1">
           <title>
             The TSF shall display a visible indication of the selected computers at all times
@@ -1365,7 +1559,7 @@
               <selectable>multiple indicators that never display conflicting information</selectable>
             </selectables>.
           </title>
-        </f-element>
+        
           <note role="application">
             This SFR must be claimed if "switching can be initiated only through express user
             action" is chosen as the selection for FDP_SWI_EXT.1.1.<h:br/><h:br/>
@@ -1433,55 +1627,93 @@
                   other indicators display the correct status or no status.</h:li>                
               </h:ol>
             </Tests>
-          </aactivity>          
+          </aactivity>
+        </f-element>
+        <audit-event/>
       </f-component>      
     </section>
     
     <section title="Security Assurance Requirements" id="SARs">
-      The Security Objectives in <xref to="Security_Objectives"/> were constructed
-      to address threats identified in
-      <xref to="Threats"/>. The Security Functional Requirements (SFRs)
-      in <xref to="SFRs"/> are a formal instantiation of the Security Objectives. The PP
-      identifies the Security Assurance Requirements (SARs) to frame the extent to
-      which the evaluator assesses the documentation applicable for the evaluation and performs
-      independent testing. <h:br/> This section lists the set of SARs from CC part 3
-      that are required in evaluations against this PP. Individual Assurance Activities
-      o be performed are specified both in 
-      <xref to="SFRs"/> as well as in this section. <h:br/>
-      The general model for evaluation of OSs against STs written to conform to this PP is as follows: <h:br/>
-      After the  ST has been approved for evaluation, the TSEF will obtain the
-        OS, supporting environmental IT, and the administrative/user guides for
-      the OS. The ITSEF is expected to perform actions mandated by the Common Evaluation
-      Methodology (CEM) for the ASE and ALC SARs. The ITSEF also performs the Assurance Activities
-      contained within <xref to="SFRs"/>, which are intended to be an interpretation of the
-      other CEM assurance requirements as they apply to the specific technology instantiated in the
-      OS. The Assurance Activities that are captured in <xref to="SFRs"/> also provide
-      clarification as to what the developer needs to provide to demonstrate the OS is compliant
-      with the PP.
-     <section title="Class ASE: Security Target" id="ase">As per ASE activities
-        defined in <xref to="bibCEM"/>.</section>
-      <section title="Class ADV: Development" id="adv">The information about the OS is contained in the guidance documentation available to the end user as
-        well as the TSS portion of the ST. The OS developer must concur with the description of the product that is
-        contained in the TSS as it relates to the functional requirements. The Assurance Activities
-        contained in <xref to="SFRs"/> should provide the ST authors with
-        sufficient information to determine the appropriate content for the TSS section.
-          <a-component cc-id="adv_fsp.1" name="Basic Functional Specification (ADV_FSP.1)">The
-          functional specification describes the TSFIs. It is not
-          necessary to have a formal or complete specification of these interfaces. Additionally,
-          because OSs conforming to this PP will necessarily have interfaces to
-          the Operational Environment that are not directly invokable by OS
-          users, there is little point specifying that such interfaces be described in and of
-          themselves since only indirect testing of such interfaces may be possible. For this PP,
-          the activities for this family should focus on understanding the interfaces presented in
-          the TSS in response to the functional requirements and the interfaces
-          presented in the AGD documentation. No additional “functional specification” documentation
-          is necessary to satisfy the assurance activities specified. The interfaces that need to be
-          evaluated are characterized through the information needed to perform the assurance
-          activities listed, rather than as an independent, abstract list. 
+      The Security Objectives in <xref to="Security_Objectives"/> were constructed to address threats identified in
+      <xref to="Threats"/>. The Security Functional Requirements (SFRs) in <xref to="SFRs"/> are a formal instantiation
+      of the Security Objectives. The PP identifies the Security Assurance Requirements (SARs) to frame the extent to
+      which the evaluator assesses the documentation applicable for the evaluation and performs independent testing.<h:br/><h:br/>
+      This section lists the set of SARs from CC part 3 that are required in evaluations against this PP. Individual 
+      Assurance Activities to be performed are specified both in <xref to="SFRs"/> as well as in this section.<h:br/><h:br/>
+      The general model for evaluation of OSs against STs written to conform to this PP is as follows.<h:br/><h:br/>
+      After the  ST has been approved for evaluation, the TSEF will obtain the OS, supporting environmental IT, and the
+      administrative/user guides for the OS. The ITSEF is expected to perform actions mandated by the Common Evaluation
+      Methodology (CEM) for the ASE and ALC SARs. The ITSEF also performs the Assurance Activities contained within 
+      <xref to="SFRs"/>, which are intended to be an interpretation of the other CEM assurance requirements as they 
+      apply to the specific technology instantiated in the OS. The Assurance Activities that are captured in 
+      <xref to="SFRs"/> also provide clarification as to what the developer needs to provide to demonstrate the OS is 
+      compliant with the PP.<h:br/><h:br/>
+      The TOE security assurance requirements are identified in <xref to="sar"/>. 
+      <h:center><h:H4><ctr ctr-type="Table" pre="Table " id="sar">:Security Assurance Requirements</ctr></h:H4></h:center>
+      <h:table>
+        <h:TR>
+          <h:TD><h:b>Assurance Class</h:b></h:TD>
+          <h:TD><h:b>Assurance Components</h:b></h:TD>
+        </h:TR>
+        <h:TR>
+          <h:TD>Security Target (ST) (ASE)</h:TD>
+          <h:TD>
+            Conformance Claims (ASE_CCL.1)<h:br/><h:br/>
+            Extended Components Definition (ASE_ECD.1)<h:br/><h:br/>
+            ST Introduction (ASE_INT.1)<h:br/><h:br/>
+            Security Objectives (ASE_OBJ.2)<h:br/><h:br/>            
+            Derived Security Requirements (ASE_REQ.2)<h:br/><h:br/>
+            Security Problem Definition (ASE_SPD.1)<h:br/><h:br/>
+            TOE Summary Specification (ASE_TSS.1)
+          </h:TD>
+        </h:TR>
+        <h:TR>
+          <h:TD>Development (ADV)</h:TD>
+          <h:TD> Basic Functional Specification (ADV_FSP.1) </h:TD>
+        </h:TR>
+        <h:TR>
+          <h:TD>Guidance Documents (AGD)</h:TD>
+          <h:TD> Operational User Guidance (AGD_OPE.1)<h:br/><h:br/> 
+            Preparative Procedures (AGD_PRE.1)
+          </h:TD>
+        </h:TR>
+        <h:TR>
+          <h:TD>Life-Cycle Support (ALC)</h:TD>
+          <h:TD> Labeling of the TOE (ALC_CMC.1)<h:br/><h:br/>
+            TOE CM Coverage (ALC_CMS.1) </h:TD>
+        </h:TR>
+        <h:TR>
+          <h:TD>Tests (ATE)</h:TD>
+          <h:TD> Independent Testing - Conformance (ATE_IND.1) </h:TD>
+        </h:TR>
+        <h:TR>
+          <h:TD>Vulnerability Assessment (AVA)</h:TD>
+          <h:TD> Vulnerability Survey (AVA_VAN.1) </h:TD>
+        </h:TR>
+      </h:table>
+      
+      <section title="Class ASE: Security Target" id="ase">As per ASE activities defined in <xref to="bibCEM"/>.
+      </section>
+      <section title="Class ADV: Development" id="adv">The information about the OS is contained in the guidance 
+        documentation available to the end user as well as the TSS portion of the ST. The OS developer must concur
+        with the description of the product that is contained in the TSS as it relates to the functional requirements.
+        The Assurance Activities contained in <xref to="SFRs"/> should provide the ST authors with sufficient 
+        information to determine the appropriate content for the TSS section.
+        <a-component cc-id="adv_fsp.1" name="Basic Functional Specification (ADV_FSP.1)">The functional specification
+          describes the Target Security Functions Interfaces (TSFIs). It is not necessary to have a formal or complete
+          specification of these interfaces. Additionally, because TOEs conforming to this PP will necessarily have 
+          interfaces to the Operational Environment that are not directly able to be invoked by TOE users, there is
+          little point specifying that such interfaces be described in and of themselves since only indirect testing
+          of such interfaces may be possible. For this PP, the activities for this family should focus on understanding
+          the interfaces presented in the TSS in response to the functional requirements and the interfaces presented
+          in the AGD documentation. No additional "functional specification" documentation is necessary to satisfy the
+          Evaluation Activities specified.<h:br/><h:br/>
+          The interfaces that need to be evaluated are characterized through the information needed to perform
+          the Evaluation Activities listed, rather than as an independent, abstract list. 
             <a-element type="D">
               <title>The developer shall provide a functional specification.</title>
             </a-element>
-            <a-element type="C">
+            <a-element type="D">
               <title>The developer shall provide a tracing from the functional specification to the
               SFRs.</title>
               <note role="application">As indicated in the introduction to this section, the
@@ -1507,10 +1739,7 @@
               categorization of interfaces as SFR-non-interfering.</title>
             </a-element>
             <a-element type="C">
-              <title>
-		The tracing shall demonstrate that the SFRs trace to 
-		TSFIs in the functional specification.
-	      </title>
+              <title>The tracing shall demonstrate that the SFRs trace to TSFIs in the functional specification.</title>
             </a-element>
 	  
             <a-element type="E">
@@ -1528,11 +1757,11 @@
               other assurance activities being performed; if the evaluator is unable to perform an
               activity because there is insufficient interface information, then an adequate
               functional specification has not been provided.
-	      </aactivity>
-            </a-element>
-	  
+	            </aactivity>
+            </a-element>	  
         </a-component>
       </section>
+      
       <section id="agd" title="Class AGD: Guidance Documentation">The guidance documents will be
         provided with the ST. Guidance must include a description of how the IT
         personnel verifies that the Operational Environment can fulfill its role for the security
@@ -1548,12 +1777,12 @@
 	    <a-element type="D">
 	      <title>The developer shall provide operational user guidance.</title>
 	      <note role="application">The operational user guidance does not have to be contained in a
-	      single document. Guidance to users, administrators and application developers can be
-              spread among documents or web pages. 
-	      Rather than repeat information here, the developer should
-              review the assurance activities for this component to ascertain the specifics of the
-              guidance that the evaluator will be checking for. This will provide the necessary
-              information for the preparation of acceptable guidance.</note>
+	           single document. Guidance to users, administrators and application developers can be
+             spread among documents or web pages.<h:br/><h:br/> 
+	           Rather than repeat information here, the developer should
+             review the assurance activities for this component to ascertain the specifics of the
+             guidance that the evaluator will be checking for. This will provide the necessary
+             information for the preparation of acceptable guidance.</note>
             </a-element>
           
             <a-element type="C">
@@ -1565,22 +1794,21 @@
             </a-element>
             <a-element type="C">
               <title>The operational user guidance shall describe, for each user role, how to use the
-              available interfaces provided by the OS in a secure manner.</title>
+              available interfaces provided by the TOE in a secure manner.</title>
             </a-element>
             <a-element type="C">
               <title>The operational user guidance shall describe, for each user role, the available
               functions and interfaces, in particular all security parameters under the control of
               the user, indicating secure values as appropriate.</title>
               <note role="application">
-		This portion of the operational user guidance should be presented
-		in the form of a checklist that can be quickly executed by IT personnel (or end-users, 
-		when necessary) and suitable for use in compliance activities.
-		When possible, this guidance is to be expressed in the eXtensible Configuration 
-		Checklist Description Format (XCCDF) to
-		support security automation.  
-		Minimally, it should be presented in a structured 
-		format which includes a title for each configuration item, 
-		instructions for achieving the secure configuration, and any relevant rationale.  
+		            This portion of the operational user guidance should be presented
+		            in the form of a checklist that can be quickly executed by IT personnel (or end-users, 
+		            when necessary) and suitable for use in compliance activities.
+		            When possible, this guidance is to be expressed in the eXtensible Configuration 
+		            Checklist Description Format (XCCDF) to support security automation.  
+		            Minimally, it should be presented in a structured 
+		            format which includes a title for each configuration item, 
+		            instructions for achieving the secure configuration, and any relevant rationale.  
               </note>
             </a-element>
             <a-element type="C">
