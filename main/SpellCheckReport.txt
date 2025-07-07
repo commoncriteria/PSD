@@ -7,11 +7,13 @@ output/PSD-release-linkable.html: CDS
 output/PSD-release-linkable.html: ECD
 output/PSD-release-linkable.html: EDID
 output/PSD-release-linkable.html: PSD
+output/PSD-release-linkable.html: PSDand
 output/PSD-release-linkable.html: PSDs
 output/PSD-release-linkable.html: SPD
 output/PSD-release-linkable.html: TSEF
 output/PSD-release-linkable.html: XCCDF
 output/PSD-release-linkable.html: antitampering
+output/PSD-release-linkable.html: behaviour
 output/PSD-release-linkable.html: carrierss
 output/PSD-release-linkable.html: microcontrollers
 output/PSD-release-linkable.html: powerup
@@ -26,12 +28,14 @@ output/PSD-release.html: CDS
 output/PSD-release.html: ECD
 output/PSD-release.html: EDID
 output/PSD-release.html: PSD
+output/PSD-release.html: PSDand
 output/PSD-release.html: PSDs
 output/PSD-release.html: PSD’s
 output/PSD-release.html: SPD
 output/PSD-release.html: TSEF
 output/PSD-release.html: XCCDF
 output/PSD-release.html: antitampering
+output/PSD-release.html: behaviour
 output/PSD-release.html: carrierss
 output/PSD-release.html: computers’
 output/PSD-release.html: microcontrollers
@@ -47,6 +51,7 @@ output/PSD.html: CDS
 output/PSD.html: ECD
 output/PSD.html: EDID
 output/PSD.html: PSD
+output/PSD.html: PSDand
 output/PSD.html: PSDs
 output/PSD.html: PSD’s
 output/PSD.html: SPD
