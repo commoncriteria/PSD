@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
+<?xml-model href="../transforms/schemas/CCProtectionProfile.rng" type="application/xml"?>
 
 <PP xmlns="https://niap-ccevs.org/cc/v1" target-product="Peripheral Sharing Device"
     xmlns:sec="https://niap-ccevs.org/cc/v1/section" short="PSD"
-    xmlns:h="http://www.w3.org/1999/xhtml" boilerplate="yest">  
+    xmlns:h="http://www.w3.org/1999/xhtml" boilerplate="yes">  
   <!-- <inline-comment color='green'>Initial PSD Template on 5/8.</inline-comment> -->
   <!-- <inline-comment color='blue' linebreak='yes'> Hello World QQQQ </inline-comment> -->
   
@@ -248,10 +249,8 @@
       The following use cases are examples of PSDs covered by this PP.
       <usecases>
         <usecase title="Single User with PSD, Local Monitoring, and Local Control" id="supsd-loc-mon-loc-con">
-          <config>
-            <ref-id><comment>Add Single user with PSD, local monitoring, and local control Figure here</comment></ref-id>            
-          </config>
-            <description>In this use case, the user controls the PSD through a user interface on the PSD itself or through
+            <description><comment>Single user with PSD, local monitoring, and local control Figure here</comment><h:br/><h:br/>
+            In this use case, the user controls the PSD through a user interface on the PSD itself or through
             a directly connected remote controller. Peripheral devices are connected directly to the PSD
             using cables. Since the PSD resides in close physical proximity to the user, the user is expected
             to have physical access and full visibility of the PSD monitoring and control functions.<h:br/><h:br/>
@@ -260,18 +259,14 @@
             Note that the Operational Environment of this PSD may include peripherals that are connected
             directly to the connected computers (unconnected to the PSD) and multiple peripherals of the
             same type (for display or audio output only) each connected to the PSD, as shown in the figures
-            below:
-              <config>
-                <ref-id><comment>Add Single user with KM PSDand peripherals connected directly to computers Figure here</comment></ref-id>
-                <ref-id><comment>Add Single user with PSD and multiple peripherals of the same type Figure here</comment></ref-id>
-              </config>              
+            below:              
+              <comment>Add Single user with KM PSDand peripherals connected directly to computers Figure here</comment><h:br/><h:br/>
+              <comment>Add Single user with PSD and multiple peripherals of the same type Figure here</comment>                            
             </description>
         </usecase>
         <usecase title="Single User with PSD and a Single Computer (Isolator or Filter)" id="supsd-sin-comp-iso-or-fil">
-          <config>
-            <ref-id><comment>Add Single User with PSD and a Single Computer (Isolator or Filter) Figure here</comment></ref-id>            
-          </config>          
           <description>
+            <comment>Add Single User with PSD and a Single Computer (Isolator or Filter) Figure here</comment>
             In this use case, the PSD sits between a set of connected peripherals and a single connected
             computer. The connected computer may change over time, such as different laptops connected
             to an Isolator or Filter that persistently resides in a conference room. Once again, this use case
@@ -279,11 +274,8 @@
             this PP and its PP‐Modules.
           </description>
         </usecase>
-        <usecase title="PSD with Single Integrated Video Display (Combiner or Multi-Viewer)" id="psd-sin-int-vid-disp-comb-or-mv">
-          <config>
-            <ref-id><comment>Add PSD with Single Integrated Video Display (Combiner or Multi-Viewer) Figure here</comment></ref-id>            
-          </config>
-          <description>
+        <usecase title="PSD with Single Integrated Video Display (Combiner or Multi-Viewer)" id="psd-sin-int-vid-disp-comb-or-mv">          
+          <description><comment>Add PSD with Single Integrated Video Display (Combiner or Multi-Viewer) Figure here</comment> <h:br/><h:br/>
             A Combiner is used to simultaneously display output from multiple connected computers to one or more
             display devices. A Combiner PSD may combine the display output from multiple connected computers
             onto a single monitor (as shown in Figure 6 above) or output the display from one connected computer
@@ -543,14 +535,16 @@
   </sec:Security_Objectives>
 
   <sec:Security_Requirements>
+    
     <section id="s-sfr" title="Security Functional Requirements">
-      <section id="ss-audit-table" title="Auditable Events for Mandatory SFRs"></section>
-        <audit-table table="mandatory" id="at-mandatory"/>
+      
+      <section id="ss-audit-table" title="Auditable Events for Mandatory SFRs">          
+        <audit-table id="t-audit-mandatory" table="mandatory"/>        
   </section>
   
    <section title="Security Audit" id="FAU">
-     <f-component cc-id="fau_gen.1" name="Audit Data Generation" status="implementation-based">
-       <f-element id="fau-gen.1e1">
+     <f-component cc-id="fau_gen.1" name="Audit Data Generation" status="feat-based">
+       <f-element id="fau-gen-1e1">
          <title>
            The TSF shall be able to generate audit data of the following auditable events:
            <h:ol type="a">
@@ -563,7 +557,7 @@
              <h:li><assignable>all administrative functions claimed in FMT_MOF.1 and
                FMT_SMF.1</assignable></h:li>]</h:ol></title>
        </f-element>
-       <f-element id="fau-gen.1e2">
+       <f-element id="fau-gen-1e2">
          <title>
            The TSF shall record within the audit data at least the following information:
            <h:ol type="a">
@@ -578,9 +572,7 @@
            If a peripheral device is rejected due to its incompatibility with the peripheral
            interface, then this rejection need not be audited.
          </note>
-       
        <aactivity>
-         <Isolation/>
          <TSS>
            The evaluator shall verify that the TSS describes the audit functionality
            including which events are audited, what information is saved in each record
@@ -594,6 +586,7 @@
            instructions on how the audit logs can be viewed as well as any information
            needed to interpret the audit logs.
          </Guidance>
+         <CustomEA name="Isolation"/>
          <Tests>
            The evaluator shall perform each of the auditable functions to succeed, and
            where possible, to fail. The evaluator shall use the means described in the
@@ -641,30 +634,24 @@
            <management>No specific management functions are identified.</management>
            <audit>There are no auditable events foreseen.</audit>
            <dependencies>No dependencies</dependencies>
-          <f-element id="fdp-apc-ext.1e1">
+          <f-element id="fdp-apc-ext-1e1">
             <title> The TSF shall route user data only to or from the interfaces selected by the
               user. 
             </title>
           </f-element>
-          <f-element id="fdp-apc-ext.1e2">
+          <f-element id="fdp-apc-ext-1e2">
             <title>The TSF shall ensure that no data flows between connected computers whether the
               TOE is powered on or powered off.</title>
           </f-element>
-          <f-element id="fdp-apc-ext.1e3">
+          <f-element id="fdp-apc-ext-1e3">
             <title>The TSF shall ensure that no data transits the TOE when the TOE is powered off.</title>
           </f-element>         
-          <f-element id="fdp-apc-ext.1e4">
+          <f-element id="fdp-apc-ext-1e4">
             <title>The TSF shall ensure that no data transits the TOE when the TOE is in a failure
               state.</title>
           
            <aactivity>
-             <Isolation>
-               The evaluator shall review the Isolation Documentation and Assessment as
-               described in Appendix D of this PP and ensure that it adequately describes
-               the isolation concepts and implementation in the TOE and why it can be
-               relied upon to provide proper isolation between connected computers
-               whether the TOE is powered on or powered off.
-             </Isolation>
+             
              <TSS>
                The evaluator shall verify that the TSS describes the conditions under which
                the TOE enters a failure state.
@@ -673,6 +660,13 @@
                The evaluator shall verify that the operational user guidance describes how a
                user knows when the TOE enters a failure state.
              </Guidance>
+             <CustomEA name="Isolation">
+               The evaluator shall review the Isolation Documentation and Assessment as
+               described in Appendix D of this PP and ensure that it adequately describes
+               the isolation concepts and implementation in the TOE and why it can be
+               relied upon to provide proper isolation between connected computers
+               whether the TOE is powered on or powered off.
+             </CustomEA>
              <Tests/>
            </aactivity>
           </f-element>
@@ -691,29 +685,30 @@
           </audit>
           <dependencies>No dependencies</dependencies>
           
-          <f-element id="fdp-pdc-ext.1e1">
+          <f-element id="fdp-pdc-ext-1e1">
             <title>
               The TSF shall reject connections with unauthorized devices upon TOE power up
               and upon connection of a peripheral device to a powered‐on TOE.
             </title>
-            <f-element id="fdp-pdc-ext.1e2">
+          </f-element>
+            <f-element id="fdp-pdc-ext-1e2">
               <title>
                 The TSF shall reject connections with devices presenting unauthorized
                 interface protocols upon TOE power up and upon connection of a peripheral
                 device to a powered‐on TOE.
               </title>
             </f-element>
-            <f-element id="fdp-pdc-ext.1e3">
+            <f-element id="fdp-pdc-ext-1e3">
               <title>
                 The TOE shall have no external interfaces other than those claimed by the TSF.
               </title>
             </f-element>
-            <f-element id="fdp-pdc-ext.1e4">
+            <f-element id="fdp-pdc-ext-1e4">
               <title>
                 The TOE shall not have wireless interfaces.
               </title>
             </f-element>
-            <f-element id="fdp-pdc-ext.1e5">
+            <f-element id="fdp-pdc-ext-1e5">
               <title>
                 The TOE shall provide a visual or auditory indication to the User when a
                 peripheral is rejected.
@@ -721,7 +716,7 @@
             
             <note role="application">The list of unauthorized devices is in Appendix E: Peripheral Device Connections.</note>
             <aactivity>
-              <Isolation/>
+              
               <TSS>
                 The evaluator shall verify that the TSS describes the compatible devices for
                 each peripheral port type supported by the TOE. The description must
@@ -752,6 +747,7 @@
                 visual or auditory indications provided to a user when the TOE rejects the
                 connection of a device.
               </Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>
                 <testlist>
                   <test>
@@ -801,9 +797,7 @@
             <audit-event>
               <audit-event-descr>Self-test failures</audit-event-descr>
               <audit-event-info>None</audit-event-info>
-            </audit-event>
-          </f-element>
-          
+            </audit-event>                    
          </f-component>
         
         <f-component  cc-id="fdp_rip_ext.1" name="Residual Information Protection">
@@ -817,13 +811,13 @@
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>No dependencies</dependencies>
           
-          <f-element id="fdp-rep-ext.1e1">
+          <f-element id="fdp-rep-ext-1e1">
             <title>
               The TSF shall ensure that no user data is written to TOE non‐volatile memory or
               storage.
             </title>            
             <aactivity>
-              <Isolation/>
+              
               <TSS>
                 The evaluator shall verify that the TSS includes a Letter of Volatility that
                 provides the following information:<h:ul>
@@ -842,13 +836,14 @@
                 user data is not stored in TOE non‐volatile memory or storage.
               </TSS>
               <Guidance/>
+              <CustomEA name="Isolation"/>
               <Tests/>
             </aactivity>
           </f-element>
           <audit-event/>
         </f-component>      
       
-      <f-component cc-id="fdp_rip_ext.2" name="Purge of Residual Information" status="implementation-based">
+      <f-component cc-id="fdp_rip_ext.2" name="Purge of Residual Information" status="feat-based">
         <consistency-rationale/>
         <comp-lev>requires the TSF to have a purge function to clear its
           memory of all stored non‐audit data.</comp-lev>
@@ -862,14 +857,14 @@
           </h:ul></audit>
         <dependencies>No dependencies</dependencies>
         
-        <f-element id="fdp-rip-ext.2e1">
+        <f-element id="fdp-rip-ext-2e1">
           <title>
             The TOE shall have a purge memory or restore factory defaults function
             accessible to the administrator to delete all TOE stored configuration and
             settings except for logging.
           </title>
           <aactivity>
-            <Isolation/>
+            
             <TSS>
               The evaluator shall verify that the TSS describes the TOE’s reaction to
               memory purge or restore factory defaults.
@@ -879,6 +874,7 @@
               describes the effect that the TOE Restore Factory Default function has on
               each component listed in the Letter of Volatility.
             </Guidance>
+            <CustomEA name="Isolation"/>
             <Tests>
               Perform the TOE memory purge or restore factory defaults according
               to the guidance and verify that the TOE enters a desirable secure state.<h:br/><h:br/>
@@ -898,7 +894,7 @@
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>No dependencies</dependencies>
           
-          <f-element id="fdp-swi-ext.1e1">
+          <f-element id="fdp-swi-ext-1e1">
             <title>
               The TSF shall ensure that <selectables>
                 <selectable>the TOE supports only one connected computer</selectable>
@@ -910,7 +906,7 @@
               ST must include the selection‐based requirements FDP_SWI_EXT.2 and FTA_CIN_EXT.1.
             </note>
             <aactivity>
-              <Isolation/>
+              
               <TSS>
                 If the ST includes the selection the "TOE supports only one connected
                 computer", the evaluator shall verify that the TSS indicates that the TOE
@@ -925,12 +921,12 @@
                 express user action", the evaluator shall verify that the operational user
                 guidance describes the TOE supported switching mechanisms.
               </Guidance>
+              <CustomEA name="Isolation"/>
               <Tests/>
             </aactivity>
           </f-element> 
           <audit-event/>
-        </f-component>
-       </section>
+        </f-component>       
     
     <f-component cc-id="fdp_swi_ext.2" name="PSD Switching Methods" status="sel-based">
       <consistency-rationale/>
@@ -968,7 +964,7 @@
           Module and select "multiple connected displays" in FDP_CDS_EXT.1.1.
         </note>
         <aactivity>
-          <Isolation/>
+          
           <TSS>
             The evaluator shall verify that the TSS describes the TOE supported
             switching mechanisms. The evaluator shall verify that the TSS does not
@@ -985,15 +981,17 @@
             through a connected computer, and control through keyboard shortcuts as
             TOE supported switching mechanisms.
           </Guidance>
+          <CustomEA name="Isolation"/>
           <Tests/>
         </aactivity>
       </f-element>
       <audit-event/>
     </f-component>    
-    
+    </section>
+      
     <section title="Identification and Authentication" id="FIA">
-      <f-component cc-id="fia_uau.2" name="User Authentication Before Any Action" status="implementation-based">
-        <f-element id="fia-uau.2e1">
+      <f-component cc-id="fia_uau.2" name="User Authentication Before Any Action" status="feat-based">
+        <f-element id="fia-uau-2e1">
           <title>
             The TSF shall require each <h:b>administrator</h:b> to be successfully authenticated
             before allowing any other TSF-mediated actions on behalf of that <h:b>administrator</h:b>.
@@ -1003,7 +1001,7 @@
             logon credential, specially assigned key, etc.).
           </note>
           <aactivity>
-            This SFR is evaluated by the Evaluation Activities in FMT_MOF.1 below.
+            <no-tests>This SFR is evaluated by the Evaluation Activities in FMT_MOF.1 below.</no-tests>
           </aactivity>
         </f-element>
         <audit-event>
@@ -1012,14 +1010,14 @@
         </audit-event>
       </f-component>
 
-      <f-component cc-id="fia_uid.2" name="User Identification Before Any Action" status="implementation-based">
-        <f-element id="fia-uid.2e1">
+      <f-component cc-id="fia_uid.2" name="User Identification Before Any Action" status="feat-based">
+        <f-element id="fia-uid-2e1">
           <title>
             The TSF shall require each <h:b>administrator</h:b> to be successfully identified before
             allowing any other TSF-mediated actions on behalf of that <h:b>administrator</h:b>.
           </title>          
           <aactivity>
-          This SFR is evaluated by the Evaluation Activities in FMT_MOF.1 below.
+          <no-tests>This SFR is evaluated by the Evaluation Activities in FMT_MOF.1 below.</no-tests>
           </aactivity>
         </f-element> 
         <audit-event>
@@ -1030,14 +1028,14 @@
     </section>
       
       <section title="Security Management" id="FMT">
-        <f-component cc-id="fmt_mof.1" name="Management of Security Functions Behavior" status="implementation-based">
-        <f-element id="fmt-mof.1e1">
+        <f-component cc-id="fmt_mof.1" name="Management of Security Functions Behavior" status="feat-based">
+        <f-element id="fmt-mof-1e1">
           <title>
             The TSF shall restrict the ability to [<h:i>modify the behavior of</h:i>] the functions
             <assignable>list of functions</assignable> to [<h:i>the authorized administrators</h:i>].
           </title>          
           <aactivity>
-            <Isolation/>
+            
             <TSS>
               The evaluator shall verify that the TSS describes the mechanism for preventing
               non‐administrators from accessing the administrative functions stated above.<h:br/><h:br/>
@@ -1059,6 +1057,7 @@
               shall verify that the authorized behavior for each separate administrative role is
               described.
             </Guidance>
+            <CustomEA name="Isolation"/>
             <Tests>
               <testlist>
                 <test>
@@ -1085,13 +1084,11 @@
           <audit-event>
             <audit-event-descr>Modifications in the behaviour of functions</audit-event-descr>
             <audit-event-info>None</audit-event-info>
-          </audit-event>
-          
-      </f-component>
-      </section>
+          </audit-event>          
+      </f-component>      
     
-    <f-component cc-id="fmt_smf.1" name="Specification of Management Functions" status="implementation-based">
-      <f-element id="fmt-smf.1e1">
+    <f-component cc-id="fmt_smf.1" name="Specification of Management Functions" status="feat-based">
+      <f-element id="fmt-smf-1e1">
         <title>
           The TOE shall be capable of performing the following management functions:
           <assignable>list of management functions to be provided by the TSF</assignable>.
@@ -1106,7 +1103,7 @@
           administrator.
         </note>
         <aactivity>
-          <Isolation/>
+          
           <TSS>
             The evaluator shall check to ensure the TSS describes the management functions
             available to the administrators and user TOE configurations and how they are
@@ -1118,6 +1115,7 @@
             description contains the information required to perform the management duties
             associated with each management function.
           </Guidance>
+          <CustomEA name="Isolation"/>
           <Tests>
             The evaluator shall test the TOE’s ability to provide the management functions by
             configuring the TOE and testing each option assigned from above. The evaluator is
@@ -1133,13 +1131,13 @@
       
     </f-component>
     
-    <f-component cc-id="fmt_smr.1" name="Security Roles" status="implementation-based">
-      <f-element id="fmt-smr.1e1">
+    <f-component cc-id="fmt_smr.1" name="Security Roles" status="feat-based">
+      <f-element id="fmt-smr-1e1">
         <title>
           The TSF shall maintain the roles [<h:i>administrators</h:i>].
         </title>
       </f-element>
-      <f-element id="fmt-smf.1e2">
+      <f-element id="fmt-smf-1e2">
           <title>
             The TSF shall be able to associate users with roles.
           </title>
@@ -1154,7 +1152,7 @@
           accordingly.
         </note>
         <aactivity>
-          Refer to the Evaluation Activities of FMT_MOF.1.1 above.
+          <no-tests>Refer to the Evaluation Activities of FMT_MOF.1.1 above.</no-tests>
         </aactivity>
       </f-element>
       <audit-event>
@@ -1166,6 +1164,7 @@
         <audit-event-info>Due to the given conditions on the roles</audit-event-info>
       </audit-event>
     </f-component>
+      </section>
     
        <section title="Protection of the TSF" id="FPT">
          
@@ -1193,7 +1192,7 @@
              FPT_PHP.3 Resistance to Physical Attack
            </dependencies>
            
-          <f-element id="fpt-fls-ext.1e1">
+          <f-element id="fpt-fls-ext-1e1">
             <title>The TSF shall preserve a secure state when the following types of failures
               occur: failure of the power‐on self‐test and <selectables>
                 <selectable>failure of the anti-tamper function</selectable>
@@ -1208,7 +1207,7 @@
               in the ST.
             </note>
             <aactivity>
-              This SFR is evaluated in conjunction with FPT_TST.1
+              <no-tests>This SFR is evaluated in conjunction with FPT_TST.1</no-tests>
 	          </aactivity>
           </f-element>
  	       <audit-event/>            
@@ -1222,7 +1221,7 @@
            <audit>There are no auditable events foreseen.</audit>
            <dependencies>No dependencies</dependencies>
            
-           <f-element id="fpt-nta-ext.1e1">
+           <f-element id="fpt-nta-ext-1e1">
              <title>
                TOE firmware, software, and memory shall not be accessible via the TOE’s
                external ports, with the following exceptions:<selectables>
@@ -1234,7 +1233,7 @@
                </selectables>                              
              </title>            
              <aactivity>
-               <Isolation/>
+               
                <TSS>
                  The evaluator shall examine the TSS to ensure that the TSS documents that
                  connected computers and peripherals do not have access to TOE software,
@@ -1244,6 +1243,7 @@
                  The evaluator shall check the operational user guidance to ensure any
                  configurations required to comply with this SFR are defined.
                </Guidance>
+               <CustomEA name="Isolation"/>
                <Tests/>
              </aactivity>
            </f-element> 
@@ -1256,18 +1256,18 @@
                The TSF shall provide unambiguous detection of physical tampering that might
                compromise the TSF.
              </title>
+           </f-element>
            <f-element id="fpt-php-1e2">
              <title>
                The TSF shall provide the capability to determine whether physical tampering
                with the TSF’s devices or TSF’s elements has occurred.
-             </title>               
-           </f-element>
+             </title> 
              <note role="application">
                FPT_PHP.1.1 include indications generated from application of optional SFR
                FPT_PHP.3
              </note>
              <aactivity>
-               <Isolation/>
+               
                <TSS>
                  The evaluator shall verify that the TSS indicates that the TOE provides
                  unambiguous detection of physical tampering of the TOE enclosure and TOE
@@ -1281,6 +1281,7 @@
                  provides the user with instructions for verifying that the TOE has not been
                  tampered with.
                </Guidance>
+               <CustomEA name="Isolation"/>
                <Tests>
                  <testlist>
                    <test>
@@ -1301,10 +1302,11 @@
            <audit-event>
              <audit-event-descr>Detection of intrusion.</audit-event-descr>
              <audit-event-info>None</audit-event-info>
-           </audit-event>           
+           </audit-event>
+           
          </f-component>
          
-         <f-component cc-id="fpt_php.3" name="Resistance to Physical Attack" status="implementation-based">
+         <f-component cc-id="fpt_php.3" name="Resistance to Physical Attack" status="feat-based">
            <f-element id="fpt-php-3e1">
              <title>
                The TSF shall resist [<h:i>a physical attack for the purpose of gaining access to the
@@ -1317,7 +1319,7 @@
                devices will cease to function.               
              </note>
              <aactivity>
-               <Isolation/>
+               
                <TSS>
                  The evaluator shall verify that the TSS describes the TOE’s reaction to
                  opening the device enclosure or damaging and exhausting the anti‐tampering
@@ -1331,6 +1333,7 @@
                  of the actions that will cause the anti‐tampering functionality to disable the
                  device.
                </Guidance>
+               <CustomEA name="Isolation"/>
                <Tests>
                  In the following testing the evaluator shall attempt to gain physical access to
                  the TOE internal circuitry (enough access to allow the insertion of tools to
@@ -1368,7 +1371,7 @@
            <audit-event/>
          </f-component>        
          
-         <f-component cc-id="fpt_stm.1" name="Reliable Time Stamps" status="implementation-based">
+         <f-component cc-id="fpt_stm.1" name="Reliable Time Stamps" status="feat-based">
            <f-element id="fpt-stm-1e1">
              <title>
                The TSF shall be able to provide reliable time stamps.
@@ -1381,7 +1384,7 @@
                up to the Administrator.
              </note>
              <aactivity>
-               <Isolation/>
+               
                <TSS>
                  The evaluator shall check to ensure the TSS describes how the TOE provides
                  reliable timestamps.
@@ -1391,6 +1394,7 @@
                  TOE provides reliable timestamps and if there are any management functions for
                  configuring the time.
                </Guidance>
+               <CustomEA name="Isolation"/>
                <Tests>
                  The evaluator shall test the TOE’s ability to provide time stamps. It is expected
                  that this test be performed in conjunction with FAU_GEN.1.
@@ -1405,7 +1409,7 @@
          </f-component>         
          
          <f-component cc-id="fpt_tst.1" name="TSF Testing">
-           <f-element id="fpt-tst.1e1">
+           <f-element id="fpt-tst-1e1">
              <title>
                The TSF shall run a suite of self‐tests [<h:i>during initial start‐up and at the
                conditions</h:i> <selectables>
@@ -1417,7 +1421,8 @@
                    <selectable>no other functions</selectable>
                  </selectables>].
              </title>
-           <f-element id="fpt-tst.1e2">
+           </f-element>
+           <f-element id="fpt-tst-1e2">
              <title>
                The TSF shall provide authorized users with the capability to verify the integrity
                of <selectables>
@@ -1426,7 +1431,7 @@
                </selectables>].
              </title>
            </f-element>
-           <f-element id="fpt-tst.1e3">
+           <f-element id="fpt-tst-1e3">
                <title>
                  The TSF shall provide authorized users with the capability to verify the integrity
                  of <selectables>
@@ -1434,7 +1439,7 @@
                    <selectable>TSF</selectable>
                  </selectables>].
                </title>
-           </f-element>
+           
              <note role="application">
                Reset button activation should be selected if the TOE includes such
                functionality.<h:br/><h:br/>
@@ -1444,7 +1449,7 @@
                Anyone with physical access to the TOE can be considered an authorized user.
              </note>
              <aactivity>
-               <Isolation/>
+               
                <TSS>
                  The evaluator shall verify that the TSS describes the self‐ tests that are
                  performed on start up or on reset (if "upon reset button activation" is
@@ -1481,6 +1486,7 @@
                  This method can include restarting the TOE, a dedicated self‐test, or some
                  other method.
                </Guidance>
+               <CustomEA name="Isolation"/>
                <Tests>
                  The evaluator shall trigger the conditions specified in the TSS that are used
                  to initiate TSF self‐testing and verify that successful completion of the selftests
@@ -1508,7 +1514,7 @@
              </h:ul></audit>
            <dependencies>FPT_TST.1 TSF Testing</dependencies>
            
-           <f-element id="fpt-tst-ext.1e1">
+           <f-element id="fpt-tst-ext-1e1">
              <title>
                The TSF shall respond to a self‐test failure by providing users with a <selectables>
                  <selectable>visual</selectable>
@@ -1516,7 +1522,7 @@
                </selectables> indication of failure and by shutdown of normal TSF functions.
              </title>
              <aactivity>
-               <Isolation/>
+               
                <TSS>
                  The evaluator shall check the TSS to verify that it describes the TOE behavior
                  in case of self‐test failure. The evaluator shall verify that the described TOE
@@ -1534,6 +1540,7 @@
                  The evaluator shall verify that the operational user guidance provides adequate
                  information on TOE self-test failures, their causes, and their indications.
                </Guidance>
+               <CustomEA name="Isolation"/>
                <Tests>
                  The evaluator shall cause a TOE self-test failure and verify that the TOE responds by
                  disabling normal functions and provides proper indications to the user.
@@ -1549,12 +1556,13 @@
          </f-component>         
       </section>
 
-    <section title="TOE Access" id="FTA">
-      
-      <ext-comp-def title="Continuous Indications" fam-id="FTA_CIN_EXT">
-          <family-behavior>
-            Components in this family define how the TSF displays its switching status.
-          </family-behavior>
+      <section id="ss-fta" title="TOE Access">
+        
+        <ext-comp-def title="Continuous Indications" fam-id="FTA_CIN_EXT">
+          <fam-behavior>
+            This family defines requirements for availability of entropy data
+            generated or collected by the TSF.
+          </fam-behavior>
         </ext-comp-def>
       
       <f-component cc-id="fta_cin_ext.1" name="Continuous Indications" status="sel-based">
@@ -1610,7 +1618,7 @@
             than do a different evaluation for each model.
           </note>
           <aactivity>
-            <Isolation/>
+            
             <TSS>
               The evaluator shall verify that the TSS describes how the TOE behaves on
               power up and on reset, if applicable, regarding which computer interfaces
@@ -1661,7 +1669,7 @@
         <audit-event/>
       </f-component>      
     </section>
-    
+    </section>
     <section title="Security Assurance Requirements" id="SARs">
       The Security Objectives in <xref to="Security_Objectives"/> were constructed to address threats identified in
       <xref to="Threats"/>. The Security Functional Requirements (SFRs) in <xref to="SFRs"/> are a formal instantiation
@@ -2196,7 +2204,7 @@
     </section>
   </sec:Security_Requirements>
 
-  <appendix title="Isolation Documentation and Assessment" >
+  <appendix id="Isodocassess" title="Isolation Documentation and Assessment" >
     <section title="General">
       This appendix describes the required supplementary information for implementing isolation of data
       between connected computers.<h:br/><h:br/>
@@ -2240,7 +2248,7 @@
     </section>
   </appendix>
 
-  <appendix title="Peripheral Device Connections">
+  <appendix id="perdevcon" title="Peripheral Device Connections">
     <section title="General">
       This appendix provides a list of unauthorized devices and interface protocols referenced by
       FDP_PDC_EXT.1.
