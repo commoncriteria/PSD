@@ -1725,13 +1725,13 @@
         <h:TR>
           <h:TD>Security Target (ST) (ASE)</h:TD>
           <h:TD>
-            Conformance Claims (ASE_CCL.1)
-            Extended Components Definition (ASE_ECD.1)
-            ST Introduction (ASE_INT.1)
-            Security Objectives (ASE_OBJ.2)            
-            Derived Security Requirements (ASE_REQ.2)
-            Security Problem Definition (ASE_SPD.1)
-            TOE Summary Specification (ASE_TSS.1)
+            Conformance Claims (ASE_CCL.1)<h:br/><h:br/>
+            Extended Components Definition (ASE_ECD.1)<h:br/><h:br/>
+            ST Introduction (ASE_INT.1)<h:br/><h:br/>
+            Security Objectives (ASE_OBJ.2)<h:br/><h:br/>
+            Derived Security Requirements (ASE_REQ.2)<h:br/><h:br/>
+            Security Problem Definition (ASE_SPD.1)<h:br/><h:br/>
+            TOE Summary Specification (ASE_TSS.1)<h:br/><h:br/>
           </h:TD>
         </h:TR>
         <h:TR>
@@ -1740,13 +1740,13 @@
         </h:TR>
         <h:TR>
           <h:TD>Guidance Documents (AGD)</h:TD>
-          <h:TD> Operational User Guidance (AGD_OPE.1) 
+          <h:TD> Operational User Guidance (AGD_OPE.1)<h:br/><h:br/> 
             Preparative Procedures (AGD_PRE.1)
           </h:TD>
         </h:TR>
         <h:TR>
           <h:TD>Life-Cycle Support (ALC)</h:TD>
-          <h:TD> Labeling of the TOE (ALC_CMC.1)
+          <h:TD> Labeling of the TOE (ALC_CMC.1)<h:br/><h:br/>
             TOE CM Coverage (ALC_CMS.1) </h:TD>
         </h:TR>
         <h:TR>
