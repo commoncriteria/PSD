@@ -13,7 +13,7 @@
       <PPTitle>Protection Profile for Peripheral Sharing Devices</PPTitle>
       <PPVersion>5.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2025-06-30</PPPubDate>
+      <PPPubDate>2025-07-11</PPPubDate>
       <Keywords>PSD</Keywords>
     </ReferenceTable>
   </PPReference>  
@@ -27,36 +27,39 @@
     <entry>
       <version>1.1</version>
       <date>2007-07-25</date>
-      <subject></subject>
+      <subject>Update to conform with CC V3.1</subject>
     </entry>
     <entry>
       <version>1.2</version>
       <date>2008-08-21</date>
-      <subject></subject>
+      <subject>Update to conform with additional parts of CC V3.1 r3</subject>
     </entry>
     <entry>
       <version>2.0</version>
       <date>2010-06-01</date>
-      <subject></subject>
+      <subject>Updates to assumptions, threats, and objectives</subject>
     </entry>
     <entry>
       <version>2.1</version>
       <date>2010-09-07</date>
-      <subject></subject>
+      <subject>Update to replace ROM requirement</subject>
     </entry>
     <entry>
       <version>3.0</version>
       <date>2015-02-13</date>
-      <subject></subject>
+      <subject>Update to conform with CC V3.1 r4 and substantial additional
+        functionality</subject>
     </entry>
     <entry>
       <version>4.0</version>
       <date>2019-07-19</date>
-      <subject></subject>
+      <subject>Update to conform with CC V3.1 r5 and includes separation of security
+        functionality into base Protection Profile and Protection Profile Modules
+        based on interface type</subject>
     </entry>
     <entry>
       <version>5.0</version>
-      <date>2025-06-06</date>
+      <date>2025-07-11</date>
       <subject>First draft of version 1.0 for comment</subject>
     </entry>
   </RevisionHistory>
@@ -152,6 +155,9 @@
       <term full="Non-Selected Computer">
         A connected computer that has no active interfaces with the PSD.
       </term>
+      <term full="Peripheral Interface">
+        The PSD's physical receptacle or port for connecting to a peripheral device.
+      </term>
       <term full="Peripheral or Peripheral Device">
         A device with access that can be shared or filtered by a PSD.
       </term>
@@ -200,6 +206,7 @@
       more computers such that data cannot flow between computers by way of the peripherals or the PSD.
       Examples of PSDs that can claim compliance to this PP include Keyboard, Video, Mouse (KVM) switches;
       Keyboard, Mouse (KM) switches; and Isolators.<h:br/><h:br/>
+      Examples of devices that cannot claim conformance to this PP include Extenders.<h:br/><h:br/>
       A PSD may be composed of one or more hardware components or platforms, and its software or
       firmware. It may include cables and accessories. PSDs that support more than one computer include a
       user interface that includes a visible indication of the selected computer interface and a mechanism for
@@ -214,7 +221,7 @@
         In this case, the TOE includes a user interface that allows a user to select the active computer. The user
         interface includes an indicator identifying the currently selected computer. Typical PSD usage is illustrated
         in Figure 1 below.        
-        <figure entity="images/Toe.png" title="General TOE " id="toe"/> <comment>Need to add figure here.</comment>
+        <figure entity="images/Toe.png" title="General TOE " id="toe"/>
           <section title="PSD Compliance Guidelines">
             Connected peripheral devices, computer platforms, and connecting cables are not covered under this PP,
             but may be addressed by another PP. Nevertheless, testing of the TOE requires a complete setup that
@@ -260,7 +267,7 @@
             directly to the connected computers (unconnected to the PSD) and multiple peripherals of the
             same type (for display or audio output only) each connected to the PSD, as shown in the figures
             below:              
-              <comment>Add Single user with KM PSDand peripherals connected directly to computers Figure here</comment><h:br/><h:br/>
+              <comment>Add Single user with KM PSD and peripherals connected directly to computers Figure here</comment><h:br/><h:br/>
               <comment>Add Single user with PSD and multiple peripherals of the same type Figure here</comment>                            
             </description>
         </usecase>
@@ -284,6 +291,13 @@
             can be claimed at the ST author’s discretion.
           </description>          
         </usecase>
+        <usecase id="invalidusecase" title="[Invalid Use Case] Single User with PSD, Without Complete Local Monitoring or
+          Local Control (Extender)">
+          <description>In this use case, the user controls the portion of PSD into which the peripherals are connected but
+            is not necessarily in direct control of the entirety of the PSD or the connected computer. Since the full PSD
+            does not necessarily reside in close physical proximity to the user, the user is not expected to have physical
+            access and full visibility of the PSD monitoring and control functions.</description>
+        </usecase>
       </usecases>
     </section>
   </sec:Introduction>
@@ -304,7 +318,9 @@
         <Mod-cc-ref>PP‐Module for User Authentication Devices, Version 1.0</Mod-cc-ref>        
         <Mod-cc-ref>PP‐Module for Video/Display Devices, Version 1.0</Mod-cc-ref>
       </cc-pp-config-with>
-      <cc-pkg-claim/>
+      <cc-pkg-claim>
+        <AP-cc-ref conf="conformant">Assurance Package for Flaw Remediation, Version 1.0</AP-cc-ref>
+      </cc-pkg-claim>
     </CClaimsInfo>
   </section>
   
@@ -382,7 +398,7 @@
             unauthorized connections.</rationale>
           <addressed-by>FDP_SWI_EXT.1</addressed-by><rationale>Mitigates this SFR by ensuring there
             is only one connected computer unless a switch is authorized by user action.</rationale>
-          <addressed-by>FDP_SWI_EXT.2 (selection-based)></addressed-by><rationale>Mitigates this SFR
+          <addressed-by>FDP_SWI_EXT.2 (selection-based)</addressed-by><rationale>Mitigates this SFR
             by ensuring only authorized users are able to initiate a switch.</rationale>      	
         </threat>
         <threat name="T.UNAUTHORIZED_DEVICES">
@@ -398,7 +414,7 @@
           <description>
             A PSD may connect the user to a computer other than the one to which the user intended to connect.
           </description>          
-          <addressed-by>FDP SWI_EXT.1</addressed-by><rationale>Mitigates this SFR by ensuring there
+          <addressed-by>FDP_SWI_EXT.1</addressed-by><rationale>Mitigates this SFR by ensuring there
             is only one connected computer unless a switch is authorized by user action.</rationale>
           <addressed-by>FDP_SWI_EXT.2 (selection-based)</addressed-by><rationale>Mitigates this SFR by 
             ensuring only authorized users are able to initiate a switch.</rationale>
@@ -550,16 +566,16 @@
            <h:ol type="a">
              <h:li>Start-up and shutdown of the audit functions;</h:li>
              <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
-             [<h:li><h:i>administrator login</h:i></h:li>
+             <h:li>[<h:i>administrator login</h:i></h:li>
              <h:li><h:i>administrator logout</h:i></h:li>
              <h:li><h:i>self-test failures</h:i></h:li>
-             <h:li><h:i>>peripheral device acceptance and rejections</h:i></h:li>
+             <h:li><h:i>peripheral device acceptance and rejections</h:i></h:li>
              <h:li><assignable>all administrative functions claimed in FMT_MOF.1 and
-               FMT_SMF.1</assignable></h:li>]</h:ol></title>
+               FMT_SMF.1]</assignable></h:li></h:ol></title>
        </f-element>
        <f-element id="fau-gen-1e2">
          <title>
-           The TSF shall record within the audit data at least the following information:
+           The TSF shall record within the audit record at least the following information:
            <h:ol type="a">
              <h:li>Date and time of the event, type of event, subject identity (if applicable), and the
                outcome (success or failure) of the event;</h:li>
@@ -599,7 +615,7 @@
      </f-component>
    </section>
     
-    <section title="User Data Protection" id="fdp">
+    <section title="User Data Protection (FDP)" id="fdp">
       
       <ext-comp-def title="Active PSD Connections" fam-id="FDP_APC_EXT">
         <fam-behavior>
@@ -714,7 +730,11 @@
                 peripheral is rejected.
               </title>
             
-            <note role="application">The list of unauthorized devices is in Appendix E: Peripheral Device Connections.</note>
+            <note role="application">The list of unauthorized devices is in Appendix E: Peripheral
+              Device Connections.<h:br/><h:br/>
+              The TSF may elect to enforce rejection of unauthorized devices connected to the PSD
+              through a USB hub by considering USB hubs as unauthorized devices.
+            </note>
             <aactivity>
               
               <TSS>
@@ -867,7 +887,10 @@
             
             <TSS>
               The evaluator shall verify that the TSS describes the TOE’s reaction to
-              memory purge or restore factory defaults.
+              memory purge or restore factory defaults.<h:br/><h:br/>
+              The evaluator shall verify that the Letter of Volatility included in the TSS
+              describes the effect that the TOE Restore Factory Default function has on
+              each component listed in the Letter of Volatility.
             </TSS>
             <Guidance>
               The evaluator shall verify that the Letter of Volatility included in the TSS
@@ -929,6 +952,7 @@
         </f-component>       
     
     <f-component cc-id="fdp_swi_ext.2" name="PSD Switching Methods" status="sel-based">
+      <depends on-sel="fdp-swi-ext-1e1"/>
       <consistency-rationale/>
       <comp-lev>places restrictions on how the TSF’s switching mechanisms can
         be controlled.</comp-lev>
@@ -989,7 +1013,7 @@
     </f-component>    
     </section>
       
-    <section title="Identification and Authentication" id="FIA">
+    <section title="Identification and Authentication (FIA)" id="FIA">
       <f-component cc-id="fia_uau.2" name="User Authentication Before Any Action" status="feat-based">
         <f-element id="fia-uau-2e1">
           <title>
@@ -1027,7 +1051,7 @@
       </f-component>
     </section>
       
-      <section title="Security Management" id="FMT">
+      <section title="Security Management (FMT)" id="FMT">
         <f-component cc-id="fmt_mof.1" name="Management of Security Functions Behavior" status="feat-based">
         <f-element id="fmt-mof-1e1">
           <title>
@@ -1166,7 +1190,7 @@
     </f-component>
       </section>
     
-       <section title="Protection of the TSF" id="FPT">
+       <section title="Protection of the TSF (FPT)" id="FPT">
          
          <ext-comp-def title="Failure with Preservation of Secure State" fam-id="FPT_FLS_EXT">
          <fam-behavior>Components in this family define the secure failure requirements for the TSF.</fam-behavior>
@@ -1177,7 +1201,7 @@
            accessible.</fam-behavior>
          </ext-comp-def>
          
-         <ext-comp-def title="TSF Testing" fam-id="FPT_TLS_EXT">
+         <ext-comp-def title="TSF Testing" fam-id="FPT_TST_EXT">
          <fam-behavior>Components in this family define how the TSF responds to a self-test failure.</fam-behavior>
          </ext-comp-def>
          
@@ -1224,7 +1248,7 @@
            <f-element id="fpt-nta-ext-1e1">
              <title>
                TOE firmware, software, and memory shall not be accessible via the TOE’s
-               external ports, with the following exceptions:<selectables>
+               external ports, with the following exceptions: <selectables>
                  <selectable>the Extended Display Identification Data (EDID) memory of 
                    Video TOEs may be accessible from connected computers;</selectable>
                  <selectable>the configuration data, settings, and logging data that
@@ -1311,12 +1335,15 @@
              <title>
                The TSF shall resist [<h:i>a physical attack for the purpose of gaining access to the
                internal components, to damage the anti‐tamper battery, to drain or exhaust
-               the anti‐tamper battery</h:i>] to the [<h:i>TOE enclosure</h:i>] by <h:b>becoming permanently
-               disabled</h:b>.
+               the anti‐tamper battery</h:i>] to the [<h:i>TOE enclosure and any remote controllers</h:i>]
+               by <h:b>the attacked component becoming permanently disabled</h:b>.
              </title>
              <note role="application">
-               'Becoming permanently disabled' is interpreted to mean that connected peripheral
-               devices will cease to function.               
+               "By the attacked component becoming permanently disabled" is interpreted to mean that
+               if the TOE enclosure is attacked, the TOE is disabled so that the connected peripheral
+               devices will cease to function; however, if the remote controller is attacked, only
+               the remote controller needs to be disabled so that switching through the remote
+               control functionality will cease to function.               
              </note>
              <aactivity>
                
@@ -1349,15 +1376,15 @@
                  verifies that the user would be unable to ignore the TOE tampering
                  indications and resume normal work.<h:br/><h:br/>
                  The evaluator shall perform the following steps: <h:ol>
-                 <h:li>The evaluator shall attempt to open the PSD enclosure enough to
-                 gain access to its internal circuitry and observe that the TOE is both
-                 permanently disabled and provides the proper indication that it has been
-                 tampered with in accordance with the operational user guidance.</h:li>
                  <h:li>[conditional: this step is applicable for TOEs having a remote
                  controller] The evaluator shall attempt to open the PSD remote controller
                  enclosure enough to gain access to its internal circuitry and observe that the
                  TOE is both permanently disabled and provides the proper indication that it
                  has been tampered with in accordance with the operational user guidance.</h:li>
+                 <h:li>The evaluator shall attempt to open the PSD enclosure enough to
+                 gain access to its internal circuitry and observe that the TOE is both
+                 permanently disabled and provides the proper indication that it has been
+                 tampered with in accordance with the operational user guidance.</h:li>                 
                  <h:li>The evaluator shall attempt to access the TOE settings to reset the
                  tampering state and verify that it is not possible to recover from the
                  tampered state.</h:li>
@@ -1403,7 +1430,7 @@
            </f-element>
            <audit-event>
              <audit-event-descr>Changes to the time</audit-event-descr>
-             <audit-event-info>None.</audit-event-info>
+             <audit-event-info>None</audit-event-info>
            </audit-event>
            
          </f-component>         
@@ -1411,12 +1438,12 @@
          <f-component cc-id="fpt_tst.1" name="TSF Testing">
            <f-element id="fpt-tst-1e1">
              <title>
-               The TSF shall run a suite of self‐tests [<h:i>during initial start‐up and at the
+               The TSF shall run a suite of the following self‐tests [<h:i>during initial start‐up and at the
                conditions</h:i> <selectables>
                  <selectable>upon reset button activation</selectable>
                  <selectable>no other conditions</selectable>
                </selectables>] to demonstrate the correct operation of [<h:i>user control functions
-                 and</h:i><selectables>
+                 and </h:i><selectables>
                    <selectable>active anti-tamper functionality</selectable>
                    <selectable>no other functions</selectable>
                  </selectables>].
@@ -1428,7 +1455,7 @@
                of <selectables>
                  <selectable><assignable>parts of TSF data</assignable></selectable>
                  <selectable>TSF data</selectable>
-               </selectables>].
+               </selectables>.
              </title>
            </f-element>
            <f-element id="fpt-tst-1e3">
@@ -1437,7 +1464,7 @@
                  of <selectables>
                    <selectable><assignable>parts of TSF</assignable></selectable>
                    <selectable>TSF</selectable>
-                 </selectables>].
+                 </selectables>.
                </title>
            
              <note role="application">
@@ -1461,7 +1488,7 @@
                      jammed) and
                    </h:li>
                    <h:li>
-                     if "active anti‐tamper functionality" is selected, a test of any antitampering
+                     if "active anti‐tamper functionality" is selected, a test of any anti-tampering
                      mechanism (e.g., checking that the backup battery is functional).
                    </h:li>
                  </h:ul>
@@ -1489,7 +1516,7 @@
                <CustomEA name="Isolation"/>
                <Tests>
                  The evaluator shall trigger the conditions specified in the TSS that are used
-                 to initiate TSF self‐testing and verify that successful completion of the selftests
+                 to initiate TSF self‐testing and verify that successful completion of the self-tests
                  can be determined by following the corresponding steps in the
                  operational guidance.
                </Tests>
@@ -1556,7 +1583,7 @@
          </f-component>         
       </section>
 
-      <section id="ss-fta" title="TOE Access">
+      <section id="ss-fta" title="TOE Access (FTA)">
         
         <ext-comp-def title="Continuous Indications" fam-id="FTA_CIN_EXT">
           <fam-behavior>
@@ -1566,6 +1593,7 @@
         </ext-comp-def>
       
       <f-component cc-id="fta_cin_ext.1" name="Continuous Indications" status="sel-based">
+        <depends on-sel="fdp-swi-ext-1e1"/>
         <consistency-rationale/>
         <comp-lev>requires the TSF to display a visual indication of what computers are selected.</comp-lev>
         <management>No specific management functions are identified.</management>
@@ -1637,7 +1665,7 @@
               no conflicting information is displayed by any indicators.
             </Guidance>
             <Tests>
-              <h:ol type="a">
+              <h:ol>
                 <h:li>The evaluator shall configure the TOE and its operational
                   environment in accordance with the operational user guidance.</h:li>
                 <h:li>The evaluator shall select a connected computer and power down
@@ -1648,7 +1676,7 @@
                   TOE configuration.</h:li>
                 <h:li>[Conditional] If "upon reset button activation" is selected in
                   FPT_TST.1.1, then the evaluator shall repeat this process for each TOE
-                  configuration using the reset function rather than power‐down and powerup.</h:li>
+                  configuration using the reset function rather than power‐down and power-up.</h:li>
                 <h:li>The evaluator shall verify that the TOE selected computer indications
                   are always on (i.e., continuous) and fully visible to the TOE user.</h:li>
                 <h:li>[Conditional] If the TOE allows peripherals to have active interfaces
@@ -1671,22 +1699,24 @@
     </section>
     </section>
     <section title="Security Assurance Requirements" id="SARs">
-      The Security Objectives in <xref to="Security_Objectives"/> were constructed to address threats identified in
-      <xref to="Threats"/>. The Security Functional Requirements (SFRs) in <xref to="SFRs"/> are a formal instantiation
-      of the Security Objectives. The PP identifies the Security Assurance Requirements (SARs) to frame the extent to
-      which the evaluator assesses the documentation applicable for the evaluation and performs independent testing.<h:br/><h:br/>
-      This section lists the set of SARs from CC part 3 that are required in evaluations against this PP. Individual 
-      Assurance Activities to be performed are specified both in <xref to="SFRs"/> as well as in this section.<h:br/><h:br/>
-      The general model for evaluation of TOEs against STs written to conform to this PP is as follows.<h:br/><h:br/>
-      After the  ST has been approved for evaluation, the TSEF will obtain the TOE, supporting environmental IT, and the
-      administrative/user guides for the TOE. The ITSEF is expected to perform actions mandated by the Common Evaluation
-      Methodology (CEM) for the ASE and ALC SARs. The ITSEF also performs the Assurance Activities contained within 
-      <xref to="SFRs"/>, which are intended to be an interpretation of the other CEM assurance requirements as they 
-      apply to the specific technology instantiated in the TOE. The Assurance Activities that are captured in 
-      <xref to="SFRs"/> also provide clarification as to what the developer needs to provide to demonstrate the TOE is 
-      compliant with the PP.<h:br/><h:br/>
+      The Security Objectives for the TOE in Section 4 were constructed to address threats identified in
+      Section 3.1. The Security Functional Requirements (SFRs) in Section 5.2 are a formal instantiation of the
+      Security Objectives. The SARs were chosen based on the complexity of the products that are anticipated
+      to be evaluated against this PP as well as the expected level of sophistication and access that an attacker
+      would have if the TOE is deployed in an environment that satisfies the environmental security objectives
+      in this PP.<h:br/><h:br/>
+      This section lists the set of SARs drawn from CC Part 3 that are required in evaluations against this PP.
+      Individual Evaluation Activities to be performed are specified both in Section 5.2 as well as in this section.<h:br/><h:br/>
+      The general model for evaluation of TOEs against STs written to conform to this PP is as follows:<h:br/><h:br/>
+      After the ST has been approved for evaluation, the Common Criteria Testing Laboratory (CCTL) will obtain
+      the TOE, supporting IT environmental, and the administrative/user guides for the TOE. The CCTL is
+      expected to perform actions mandated by the Common Evaluation Methodology (CEM) for the ASE and
+      ALC SARs. The CCTL also performs the Evaluation Activities contained within Section 5.2, which are
+      intended to be an interpretation of the other CEM assurance requirements as they apply to the specific
+      technology instantiated in the TOE. The Evaluation Activities that are captured in Section 5.2 also provide
+      clarification as to what the developer needs to provide to demonstrate the TOE is compliant with the PP.<h:br/><h:br/>
       The TOE security assurance requirements are identified in <xref to="sar"/>. 
-      <h:center><h:H4><ctr ctr-type="Table" pre="Table " id="sar">:Security Assurance Requirements</ctr></h:H4></h:center>
+      <h:center><h:H4><ctr ctr-type="Table" pre="Table " id="sar">: Security Assurance Requirements</ctr></h:H4></h:center>
       <h:table>
         <h:TR>
           <h:TD><h:b>Assurance Class</h:b></h:TD>
@@ -1695,12 +1725,12 @@
         <h:TR>
           <h:TD>Security Target (ST) (ASE)</h:TD>
           <h:TD>
-            Conformance Claims (ASE_CCL.1)<h:br/><h:br/>
-            Extended Components Definition (ASE_ECD.1)<h:br/><h:br/>
-            ST Introduction (ASE_INT.1)<h:br/><h:br/>
-            Security Objectives (ASE_OBJ.2)<h:br/><h:br/>            
-            Derived Security Requirements (ASE_REQ.2)<h:br/><h:br/>
-            Security Problem Definition (ASE_SPD.1)<h:br/><h:br/>
+            Conformance Claims (ASE_CCL.1)
+            Extended Components Definition (ASE_ECD.1)
+            ST Introduction (ASE_INT.1)
+            Security Objectives (ASE_OBJ.2)            
+            Derived Security Requirements (ASE_REQ.2)
+            Security Problem Definition (ASE_SPD.1)
             TOE Summary Specification (ASE_TSS.1)
           </h:TD>
         </h:TR>
@@ -1710,13 +1740,13 @@
         </h:TR>
         <h:TR>
           <h:TD>Guidance Documents (AGD)</h:TD>
-          <h:TD> Operational User Guidance (AGD_OPE.1)<h:br/><h:br/> 
+          <h:TD> Operational User Guidance (AGD_OPE.1) 
             Preparative Procedures (AGD_PRE.1)
           </h:TD>
         </h:TR>
         <h:TR>
           <h:TD>Life-Cycle Support (ALC)</h:TD>
-          <h:TD> Labeling of the TOE (ALC_CMC.1)<h:br/><h:br/>
+          <h:TD> Labeling of the TOE (ALC_CMC.1)
             TOE CM Coverage (ALC_CMS.1) </h:TD>
         </h:TR>
         <h:TR>
@@ -2014,14 +2044,208 @@
               provided by the developer in association with the requirements in the ST is associated with the TSF
               using this unique identification.</aactivity>
           </a-element>
-	  
         </a-component>
+	  
+          <a-component cc-id="alc_flr.1" name="Basic Flaw Remediation (ALC_FLR.1)" status="optional">
+            <a-element type="D">
+              <title>The developer shall document and provide flaw remediation procedures addressed to TOE
+                developers.</title>
+            </a-element>
+            <a-element type="C">
+              <title>The flaw remediation procedures documentation shall describe the procedures used to
+                track all reported security flaws in each release of the TOE.</title>
+            </a-element>
+            <a-element type="C">
+              <title>The flaw remediation procedures shall require that a description of the nature and effect
+                of each security flaw be provided, as well as the status of finding a correction to that flaw.</title>
+            </a-element>
+            <a-element type="C">
+              <title>The flaw remediation procedures shall require that corrective actions be identified for
+                each of the security flaws.</title>
+            </a-element>
+            <a-element type="C">
+              <title>The flaw remediation procedures documentation shall describe the methods used to
+                provide flaw information, corrections and guidance on corrective actions to TOE users.</title>
+            </a-element>
+            <a-element type="E">
+              <title>The evaluator shall confirm that the information provided meets all requirements for
+                content and presentation of evidence.</title>
+              <aactivity>Evaluated as specified by <xref to="bibCEM"/>.</aactivity>
+            </a-element>  
+          </a-component>
+          
+          
+          
+          <a-component cc-id="alc_flr.2" name="Flaw Reporting Procedures (ALC_FLR.2)" status="optional">
+            <a-element type="D">
+              <title>
+                The developer shall document and provide flaw remediation procedures addressed to TOE
+                developers.</title>
+            </a-element>
+            <a-element type="D">
+              <title>
+                The developer shall establish a procedure for accepting and acting upon all reports of
+                security flaws and requests for corrections to those flaws.
+              </title>
+            </a-element>
+            <a-element type="D">
+              <title>
+                The developer shall provide flaw remediation guidance addressed to TOE users.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures documentation shall describe the procedures used to track all
+                reported security flaws in each release of the TOE.</title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures shall require that a description of the nature and effect of each
+                security flaw be provided, as well as the status of finding a correction to that flaw.</title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures shall require that corrective actions be identified for each of the
+                security flaws.</title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures documentation shall describe the methods used to provide flaw
+                information, corrections and guidance on corrective actions to TOE users.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures shall describe a means by which the developer receives
+                from TOE users reports and enquiries of suspected security flaws in the TOE.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The procedures for processing reported security flaws shall ensure that any reported
+                flaws are remediated and the remediation procedures issued to TOE users.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The procedures for processing reported security flaws shall provide safeguards that any
+                corrections to these security flaws do not introduce any new flaws.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation guidance shall describe a means by which TOE users report to the
+                developer any suspected security flaws in the TOE.
+              </title>
+            </a-element>
+            <a-element type="E">
+              <title>
+                The evaluator shall confirm that the information provided meets all requirements for content and
+                presentation of evidence.</title>
+              <aactivity>Evaluated as specified by <xref to="bibCEM"/>.</aactivity>
+            </a-element>  
+          </a-component>		
+          
+          
+          <a-component cc-id="alc_flr.3" name="Systematic Flaw Remediation (ALC_FLR.3)" status="optional">
+            <a-element type="D">
+              <title>
+                The developer shall document and provide flaw remediation procedures addressed to TOE
+                developers.
+              </title>
+            </a-element>
+            <a-element type="D">
+              <title>
+                The developer shall establish a procedure for accepting and acting upon all reports of security
+                flaws and requests for corrections to those flaws.
+              </title>
+            </a-element>
+            <a-element type="D">
+              <title>
+                The developer shall provide flaw remediation guidance addressed to TOE users.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures documentation shall describe the procedures used to track all
+                reported security flaws in each release of the TOE.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures shall require that a description of the nature and effect of each
+                security flaw be provided, as well as the status of finding a correction to that flaw.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures shall require that corrective actions be identified for each of the
+                security flaws.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures documentation shall describe the methods used to provide flaw
+                information, corrections and guidance on corrective actions to TOE users.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures shall describe a means by which the developer receives from
+                TOE users reports and enquiries of suspected security flaws in the TOE.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation procedures shall include a procedure requiring timely response and
+                the automatic distribution of security flaw reports and the associated corrections to
+                registered users who might be affected by the security flaw.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The procedures for processing reported security flaws shall ensure that any reported flaws are
+                remediated and the remediation procedures issued to TOE users.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The procedures for processing reported security flaws shall provide safeguards that any
+                corrections to these security flaws do not introduce any new flaws.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation guidance shall describe a means by which TOE users report to the
+                developer any suspected security flaws in the TOE.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation guidance shall describe a means by which TOE users may register
+                with the developer, to be eligible to receive security flaw reports and corrections.
+              </title>
+            </a-element>
+            <a-element type="C">
+              <title>
+                The flaw remediation guidance shall identify the specific points of contact for all reports
+                and enquiries about security issues involving the TOE.
+              </title>
+            </a-element>
+            <a-element type="E">
+              <title>
+                The evaluator shall confirm that the information provided meets all requirements for content and
+                presentation of evidence.</title>
+              <aactivity>Evaluated as specified by <xref to="bibCEM"/>.</aactivity>
+            </a-element>  
+          </a-component>	  
+
         <a-component cc-id="alc_tsu_ext.1" name="Timely Security Updates"> This component requires the
           TOE developer, in conjunction with any other necessary parties, to provide information as
           to how the end-user devices are updated to address security issues in a timely manner. The
           documentation describes the process of providing updates to the public from the time a
           security flaw is reported or discovered, to the time an update is released. This description
-          includes the parties involved (e.g., the developer, carrierss) and the steps that are
+          includes the parties involved (e.g., the developer, carriers) and the steps that are
           performed (e.g., developer testing, carrier testing), including worst case time periods,
           before an update is made available to the public. 
             <a-element type="D">
@@ -2058,7 +2282,7 @@
               process, the TSS lists a time between public disclosure of a vulnerability and public
               availability of the security update to the TOE patching this vulnerability, to include
               any third-party or carrier delays in deployment. The evaluator shall verify that this
-              time is expressed in a number or range of days.<h:br/><h:br/> The evaluator shalll verify that
+              time is expressed in a number or range of days.<h:br/><h:br/> The evaluator shall verify that
               this description includes the publicly available mechanisms (including either an email
               address or website) for reporting security issues related to the TOE. The evaluator
               shall verify that the description of this mechanism includes a method for protecting
@@ -2268,14 +2492,7 @@
     </section>
   </appendix>
   
-  <bibliography>
-    <entry id="bibCEM">
-      <tag>CEM</tag>
-      <description>
-        <h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CEMV3.1R4.pdf">Common
-        Evaluation Methodology for Information Technology Security - Evaluation Methodology</h:a>,
-      CCMB-2012-09-004, Version 3.1, Revision 4, September 2012. </description>
-    </entry>
+  <bibliography>    
     <entry id="bibCESG">
       <tag>CESG</tag>
       <description>CESG - <h:a
