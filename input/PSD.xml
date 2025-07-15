@@ -300,6 +300,19 @@
         </usecase>
       </usecases>
     </section>
+    
+    <section title="Implementation-Based Features" id="sec-features">
+      A conformant TOE may implement certain features that are not strictly necessary in order to achieve the desired level of security, but if these features are implemented, it is expected that they conform to certain requirements governing their behavior.
+      <implements>
+        <feature id="management" title="Management">
+          <description>The TSF implements a filtration mechanism above and beyond only allowing the authorized peripheral device types that are defined in Appendix E. This may be a fixed mechanism (e.g., a device may be bundled with a purpose-built keyboard that is the only keyboard recognized by the TOE's peripheral keyboard port) or a configurable one.</description>
+        </feature>
+        <feature id="tamperresponse" title="Rejection of Re-Enumeration">
+          <description>The TSF automatically rejects any USB device that attempts to re-enumerate as a different device.</description>
+        </feature>
+      </implements>			
+    </section>   
+    
   </sec:Introduction>
 
   <section title="Conformance Claims" id="sec-cclaims" boilerplate="no">
@@ -560,6 +573,7 @@
   
    <section title="Security Audit" id="FAU">
      <f-component cc-id="fau_gen.1" name="Audit Data Generation" status="feat-based">
+       <depends on="management"/>
        <f-element id="fau-gen-1e1">
          <title>
            The TSF shall be able to generate audit data of the following auditable events:
@@ -864,6 +878,7 @@
         </f-component>      
       
       <f-component cc-id="fdp_rip_ext.2" name="Purge of Residual Information" status="feat-based">
+        <depends on="management"/>
         <consistency-rationale/>
         <comp-lev>requires the TSF to have a purge function to clear its
           memory of all stored non‐audit data.</comp-lev>
@@ -1015,6 +1030,7 @@
       
     <section title="Identification and Authentication (FIA)" id="FIA">
       <f-component cc-id="fia_uau.2" name="User Authentication Before Any Action" status="feat-based">
+        <depends on="management"/>
         <f-element id="fia-uau-2e1">
           <title>
             The TSF shall require each <h:b>administrator</h:b> to be successfully authenticated
@@ -1035,6 +1051,7 @@
       </f-component>
 
       <f-component cc-id="fia_uid.2" name="User Identification Before Any Action" status="feat-based">
+        <depends on="management"/>
         <f-element id="fia-uid-2e1">
           <title>
             The TSF shall require each <h:b>administrator</h:b> to be successfully identified before
@@ -1053,6 +1070,7 @@
       
       <section title="Security Management (FMT)" id="FMT">
         <f-component cc-id="fmt_mof.1" name="Management of Security Functions Behavior" status="feat-based">
+          <depends on="management"/>
         <f-element id="fmt-mof-1e1">
           <title>
             The TSF shall restrict the ability to [<h:i>modify the behavior of</h:i>] the functions
@@ -1112,6 +1130,7 @@
       </f-component>      
     
     <f-component cc-id="fmt_smf.1" name="Specification of Management Functions" status="feat-based">
+      <depends on="management"/>
       <f-element id="fmt-smf-1e1">
         <title>
           The TOE shall be capable of performing the following management functions:
@@ -1156,6 +1175,7 @@
     </f-component>
     
     <f-component cc-id="fmt_smr.1" name="Security Roles" status="feat-based">
+      <depends on="management"/>
       <f-element id="fmt-smr-1e1">
         <title>
           The TSF shall maintain the roles [<h:i>administrators</h:i>].
@@ -1331,6 +1351,7 @@
          </f-component>
          
          <f-component cc-id="fpt_php.3" name="Resistance to Physical Attack" status="feat-based">
+           <depends on="tamperresponse"/>
            <f-element id="fpt-php-3e1">
              <title>
                The TSF shall resist [<h:i>a physical attack for the purpose of gaining access to the
@@ -1399,6 +1420,7 @@
          </f-component>        
          
          <f-component cc-id="fpt_stm.1" name="Reliable Time Stamps" status="feat-based">
+           <depends on="management"/>
            <f-element id="fpt-stm-1e1">
              <title>
                The TSF shall be able to provide reliable time stamps.
