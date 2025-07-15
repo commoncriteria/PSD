@@ -305,10 +305,10 @@
       A conformant TOE may implement certain features that are not strictly necessary in order to achieve the desired level of security, but if these features are implemented, it is expected that they conform to certain requirements governing their behavior.
       <implements>
         <feature id="management" title="Management">
-          <description>The TSF implements a filtration mechanism above and beyond only allowing the authorized peripheral device types that are defined in Appendix E. This may be a fixed mechanism (e.g., a device may be bundled with a purpose-built keyboard that is the only keyboard recognized by the TOE's peripheral keyboard port) or a configurable one.</description>
+          <description>The TSF implements a management interface for its configuration. This generally exists when it is possible to configure the device filtration behavior of the TOE to explicitly allow or reject certain devices. When this functionality is implemented, it is expected that an interface exists that requires an authorized user to authenticate to the TOE, and that an audit log with reliable timestamps be generated to record the configuration activities performed against the TOE.</description>
         </feature>
-        <feature id="tamperresponse" title="Rejection of Re-Enumeration">
-          <description>The TSF automatically rejects any USB device that attempts to re-enumerate as a different device.</description>
+        <feature id="tamperresponse" title="Automatic Tamper Response">
+          <description>The TSF implements an automatic tamper response mechanism that renders the TSF unusable when physical tampering has been detected.</description>
         </feature>
       </implements>			
     </section>   
