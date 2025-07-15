@@ -921,7 +921,7 @@
             <title>
               The TSF shall ensure that <selectables>
                 <selectable>the TOE supports only one connected computer</selectable>
-                <selectable>switching can be initiated only through express user action</selectable>
+                <selectable id="notisolator">switching can be initiated only through express user action</selectable>
               </selectables>.
             </title>
             <note role="application">
@@ -952,7 +952,7 @@
         </f-component>       
     
     <f-component cc-id="fdp_swi_ext.2" name="PSD Switching Methods" status="sel-based">
-      <depends on-sel="fdp-swi-ext-1e1"/>
+      <depends on-sel="notisolator"/>
       <consistency-rationale/>
       <comp-lev>places restrictions on how the TSF’s switching mechanisms can
         be controlled.</comp-lev>
@@ -1593,7 +1593,7 @@
         </ext-comp-def>
       
       <f-component cc-id="fta_cin_ext.1" name="Continuous Indications" status="sel-based">
-        <depends on-sel="fdp-swi-ext-1e1"/>
+        <depends on-sel="notisolator"/>
         <consistency-rationale/>
         <comp-lev>requires the TSF to display a visual indication of what computers are selected.</comp-lev>
         <management>No specific management functions are identified.</management>
