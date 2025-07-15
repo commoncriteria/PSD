@@ -1263,7 +1263,7 @@ The following sections list Common Criteria and technology terms used in this do
           
           
           <div class="element"><div class="reqid" id="FDP_SWI_EXT.1.1"><a href="#FDP_SWI_EXT.1.1" class="abbr">FDP_SWI_EXT.1.1</a></div><div class="reqdesc">
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that [<b>selection</b>: <span class="selectable-content" id="_s_1">the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports only one connected computer</span>, <span class="selectable-content" id="_s_2">switching can be initiated only through express user action</span>].
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that [<b>selection</b>: <span class="selectable-content" id="_s_1">the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports only one connected computer</span>, <span class="selectable-content" id="notisolator">switching can be initiated only through express user action</span>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -2516,7 +2516,9 @@ The following sections list Common Criteria and technology terms used in this do
  	</p>
 		 </span><h2 id="sel-based-reqs-audit" class="indexable" data-level="2">B.1 
               Auditable Events for Selection-based  Requirements
-           </h2><table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="t-audit-sel-based" data-counter-type="ct-Table" id="t-audit-sel-based">Table <span class="counter">6</span></span>: Auditable Events for Selection-based Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FDP_SWI_EXT.2"><td rowspan="2"><a href="#FDP_SWI_EXT.2">FDP_SWI_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FDP_SWI_EXT.2#"><td></td></tr><tr data-sortkey="FDP_SWI_EXT.2.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTA_CIN_EXT.1"><td rowspan="2"><a href="#FTA_CIN_EXT.1">FTA_CIN_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_CIN_EXT.1#"><td></td></tr><tr data-sortkey="FTA_CIN_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table><h2 id="fdp-sel-based" class="indexable" data-level="2">B.2 User Data Protection (FDP)</h2><div class="comp" id="FDP_SWI_EXT.2"><h4>FDP_SWI_EXT.2 PSD Switching Methods</h4><div class="statustag"></div>
+           </h2><table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="t-audit-sel-based" data-counter-type="ct-Table" id="t-audit-sel-based">Table <span class="counter">6</span></span>: Auditable Events for Selection-based Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FDP_SWI_EXT.2"><td rowspan="2"><a href="#FDP_SWI_EXT.2">FDP_SWI_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FDP_SWI_EXT.2#"><td></td></tr><tr data-sortkey="FDP_SWI_EXT.2.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTA_CIN_EXT.1"><td rowspan="2"><a href="#FTA_CIN_EXT.1">FTA_CIN_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTA_CIN_EXT.1#"><td></td></tr><tr data-sortkey="FTA_CIN_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table><h2 id="fdp-sel-based" class="indexable" data-level="2">B.2 User Data Protection (FDP)</h2><div class="comp" id="FDP_SWI_EXT.2"><h4>FDP_SWI_EXT.2 PSD Switching Methods</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
+           <a href="#FDP_SWI_EXT.1.1">FDP_SWI_EXT.1.1</a>.
+           </i></b></div>
       
       
       
@@ -2565,7 +2567,9 @@ The following sections list Common Criteria and technology terms used in this do
             <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supported switching mechanisms.
           </div></div><div class="ea"><div class="eacategory">Isolation</div>
 			There are no Isolation evaluation activities for this component.<br/></div><div class="eacategory">Tests</div><div class="ea">
-			There are no test activities for this component.<br/></div></div></div></div><h2 id="ss-fta-sel-based" class="indexable" data-level="2">B.3 TOE Access (FTA)</h2><div class="comp" id="FTA_CIN_EXT.1"><h4>FTA_CIN_EXT.1 Continuous Indications</h4><div class="statustag"></div>
+			There are no test activities for this component.<br/></div></div></div></div><h2 id="ss-fta-sel-based" class="indexable" data-level="2">B.3 TOE Access (FTA)</h2><div class="comp" id="FTA_CIN_EXT.1"><h4>FTA_CIN_EXT.1 Continuous Indications</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
+           <a href="#FDP_SWI_EXT.1.1">FDP_SWI_EXT.1.1</a>.
+           </i></b></div>
         
         
         
@@ -2773,7 +2777,7 @@ The following sections list Common Criteria and technology terms used in this do
              PSD Switching Methods,
              places restrictions on how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>’s switching mechanisms can
         be controlled.</p><h4>Management: FDP_SWI_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FDP_SWI_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FDP_SWI_EXT.1 PSD Switching</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies</td></tr></table><h4 id="ext-comp-FDP_SWI_EXT.1.1">FDP_SWI_EXT.1.1</h4>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that [<b>selection</b>: <span class="selectable-content" id="_s_1">the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports only one connected computer</span>, <span class="selectable-content" id="_s_2">switching can be initiated only through express user action</span>].
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that [<b>selection</b>: <span class="selectable-content" id="_s_1">the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports only one connected computer</span>, <span class="selectable-content" id="notisolator">switching can be initiated only through express user action</span>].
             </div><h4>Management: FDP_SWI_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FDP_SWI_EXT.2</h4><p>There are no auditable events foreseen.</p><h4>FDP_SWI_EXT.2 PSD Switching Methods</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><a href="#FDP_SWI_EXT.1">FDP_SWI_EXT.1</a> PSD Switching</td></tr></table><h4 id="ext-comp-FDP_SWI_EXT.2.1">FDP_SWI_EXT.2.1</h4>
           The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall ensure that no switching can be initiated through automatic port
           scanning, control through a connected computer, or control through keyboard
