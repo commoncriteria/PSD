@@ -308,7 +308,7 @@
           <description>The TSF implements a management interface for its configuration. This generally exists when it is possible to configure the device filtration behavior of the TOE to explicitly allow or reject certain devices. When this functionality is implemented, it is expected that an interface exists that requires an authorized user to authenticate to the TOE, and that an audit log with reliable timestamps be generated to record the configuration activities performed against the TOE.</description>
         </feature>
         <feature id="tamperresponse" title="Automatic Tamper Response">
-          <description>The TSF implements an automatic tamper response mechanism that renders the TSF unusable when physical tampering has been detected.</description>
+          <description>The TSF implements an automatic tamper response mechanism that renders the TSF unusable when physical tampering has been detected. </description>
         </feature>
       </implements>			
     </section>   
