@@ -228,7 +228,7 @@
             includes computers, cables, and peripheral devices.<h:br/><h:br/>
             PSDs covered by this PP: <h:ul>
               <h:li>May support one or more types of peripherals specified in the PP‐Modules that extend this PP
-              (e.g., video display or keyboard/mouse).</h:li>
+              (e.g., video display or keyboard and mouse).</h:li>
               <h:li>Must be connected to one or more computers.</h:li>
               <h:li>May comprise one or more connected sub‐systems (e.g., one KM device and one video device
               connected with cables or wires).</h:li>
@@ -325,11 +325,11 @@
       <cc-pt3-conf>conformant</cc-pt3-conf> 
       <cc-pp-conf/>
       <cc-pp-config-with>
-        <Mod-cc-ref>PP‐Module for Analog Audio Output Devices, Version 1.0</Mod-cc-ref>
-        <Mod-cc-ref>PP‐Module for Audio Input Devices, Version 1.0</Mod-cc-ref>
-        <Mod-cc-ref>PP‐Module for Keyboard/Mouse Devices, Version 1.0</Mod-cc-ref>
-        <Mod-cc-ref>PP‐Module for User Authentication Devices, Version 1.0</Mod-cc-ref>        
-        <Mod-cc-ref>PP‐Module for Video/Display Devices, Version 1.0</Mod-cc-ref>
+        <Mod-cc-ref>PP‐Module for Analog Audio Output Devices, Version 2.0</Mod-cc-ref>
+        <Mod-cc-ref>PP‐Module for Audio Input Devices, Version 2.0</Mod-cc-ref>
+        <Mod-cc-ref>PP‐Module for Keyboard/Mouse Devices, Version 2.0</Mod-cc-ref>
+        <Mod-cc-ref>PP‐Module for User Authentication Devices, Version 2.0</Mod-cc-ref>        
+        <Mod-cc-ref>PP‐Module for Video/Display Devices, Version 2.0</Mod-cc-ref>
       </cc-pp-config-with>
       <cc-pkg-claim>
         <AP-cc-ref conf="conformant">Assurance Package for Flaw Remediation, Version 1.0</AP-cc-ref>
@@ -1660,7 +1660,7 @@
             current status while all other indicators to reflect no status. It is also permissible
             for a TOE that supports split control (i.e., different peripherals pointing to
             different computers) to have separate indicators for individual peripherals.
-            Note however that a TOE that supports keyboard/mouse peripherals is not
+            Note however that a TOE that supports keyboard and mouse peripherals is not
             permitted to have the keyboard and mouse peripherals split in this manner, as
             per the requirements in the PP‐Module for Keyboard/Mouse (KM) Devices.<h:br/><h:br/>
             If multiple products with single and multiple indicators are part of the TOE, then
