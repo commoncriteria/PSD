@@ -1,3 +1,4 @@
 * https://commoncriteria.github.io/PSD/main/PSD-release-linkable.html[PSD-release-linkable.html]
 * https://commoncriteria.github.io/PSD/main/PSD-release.html[PSD-release.html]
 * https://commoncriteria.github.io/PSD/main/PSD.html[PSD.html]
+* https://commoncriteria.github.io/PSD/main/diff-pp-template-release.html[diff-pp-template-release.html]
