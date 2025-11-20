@@ -1196,7 +1196,7 @@ The following sections list Common Criteria and technology terms used in this do
                     information console on the connected computer.</li>
                       <li>Attempt to connect a <abbr class="dyn-abbr"><a href="#abbr_USB">USB</a></abbr> mass storage device to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> peripheral
                     interface.</li>
-                      <li>.</li>
+                      <li>Power on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. Verify the device is rejected.</li>
                       <li>Ensure the <abbr class="dyn-abbr"><a href="#abbr_USB">USB</a></abbr> mass storage device is disconnected, and then
                     attempt to connect it to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> peripheral interface again.</li>
                       <li>Verify the device is rejected.</li>
@@ -1594,21 +1594,21 @@ The following sections list Common Criteria and technology terms used in this do
             <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> by requiring reliable time stamp use.</td></tr>
 </table></p>
     <h2 class="indexable" data-level="2" id="SARs">5.2 Security Assurance Requirements</h2>
-      The Security Objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in Section 4 were constructed to address threats identified in
-      Section 3.1. The Security Functional Requirements (<abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>) in Section 5.2 are a formal instantiation of the
+      The Security Objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in Section 4.1 were constructed to address threats identified in
+      Section 3.1. The Security Functional Requirements (<abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>) in Section 5.1 are a formal instantiation of the
       Security Objectives. The <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> were chosen based on the complexity of the products that are anticipated
       to be evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> as well as the expected level of sophistication and access that an attacker
       would have if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is deployed in an environment that satisfies the environmental security objectives
       in this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.<br/><br/>
       This section lists the set of <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> drawn from <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 3 that are required in evaluations against this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-      Individual Evaluation Activities to be performed are specified both in Section 5.2 as well as in this section.<br/><br/>
+      Individual Evaluation Activities to be performed are specified both in Section 5.1 as well as in this section.<br/><br/>
       The general model for evaluation of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> against <abbr class="dyn-abbr"><a href="#abbr_ST">STs</a></abbr> written to conform to this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is as follows:<br/><br/>
       After the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> has been approved for evaluation, the Common Criteria Testing Laboratory (CCTL) will obtain
       the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, supporting IT environmental, and the administrative/user guides for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The CCTL is
       expected to perform actions mandated by the Common Evaluation Methodology (<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>) for the ASE and
-      ALC <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>. The CCTL also performs the Evaluation Activities contained within Section 5.2, which are
+      ALC <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>. The CCTL also performs the Evaluation Activities contained within Section 5.1, which are
       intended to be an interpretation of the other <abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr> assurance requirements as they apply to the specific
-      technology instantiated in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The Evaluation Activities that are captured in Section 5.2 also provide
+      technology instantiated in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The Evaluation Activities that are captured in Section 5.1 also provide
       clarification as to what the developer needs to provide to demonstrate the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is compliant with the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.<br/><br/>
       The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> security assurance requirements are identified in <a onclick="showTarget('sar')" href="#sar" class="sar-ref">Table  <span class="counter">4</span></a>. 
       <center><H4><span class="ctr" data-myid="sar" data-counter-type="ct-Table" id="sar">Table  <span class="counter">4</span>: Security Assurance Requirements</span></H4></center>
@@ -2663,7 +2663,7 @@ The following sections list Common Criteria and technology terms used in this do
                 <li>[Conditional] If "a screen with dimming function" is selected, the
                   evaluator shall verify that indications are visible at minimum brightness
                   settings in standard room illumination conditions.</li>
-                <li>If "multiple indicators which never display conflicting
+                <li>[Conditional] If "multiple indicators which never display conflicting
                   information" is selected, the evaluator shall verify that either all indicators
                   reflect the same status at all times, or the indicator for the most recently
                   used switching mechanism displays the correct switching status and that all
@@ -2707,8 +2707,7 @@ The following sections list Common Criteria and technology terms used in this do
              </div></div></span><span data-sortkey="TOE Access (FTA)"><h3 id="ext-comp-FTA" class="indexable" data-level="3">C.2.2 TOE Access (FTA)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines the following extended components as part of the
 	 FTA class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FTA_CIN_EXT" class="indexable" data-level="4">C.2.2.1 FTA_CIN_EXT Continuous Indications</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>
-            This family defines requirements for availability of entropy data
-            generated or collected by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.
+            This family defines requirements for defining how the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> displays its switching status.
           </div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FTA_CIN_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FTA_CIN_EXT.1">FTA_CIN_EXT.1</a>,
              Continuous Indications,
              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to display a visual indication of what computers are selected.</p><h4>Management: FTA_CIN_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FTA_CIN_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FTA_CIN_EXT.1 Continuous Indications</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><a href="#FDP_APC_EXT.1">FDP_APC_EXT.1</a> Active PSD Connections</td></tr></table><h4 id="ext-comp-FTA_CIN_EXT.1.1">FTA_CIN_EXT.1.1</h4>
@@ -2828,9 +2827,8 @@ The following sections list Common Criteria and technology terms used in this do
     <h2 class="indexable" data-level="2" id="_sec_28">D.3 Isolation Means Justification</h2>
       The documentation shall include a section that refers to each one of the unauthorized data flows listed
       in the appropriate data flow <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, how isolation is provided and how the risk is mitigated by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-      The details shall include a description of the method used in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to assure that the specific
       unauthorized data flow will be blocked. The document shall also provide justification for each method
-      used based on the threats defined in Chapter 2 of this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
+      used based on the threats defined in Section 3.1 of this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
     
     
     <h2 class="indexable" data-level="2" id="_sec_29">D.4 Firmware Dependencies</h2>
