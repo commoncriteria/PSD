@@ -289,7 +289,7 @@
         </usecase>
         <usecase title="PSD with Single Integrated Video Display (Combiner or Multi-Viewer)" id="psd-sin-int-vid-disp-comb-or-mv">          
           <description>
-            <figure entity="images/usecase3 psd sing.png" title="PSD with Single Integhrated
+            <figure entity="images/usecase3 psd sing.png" title="PSD with Single Integrated
               Video Display (Combiner or Multi-Viewer)" id="singpsdsing"/><h:br/><h:br/>
             A Combiner is used to simultaneously display output from multiple connected computers to one or more
             display devices. A Combiner PSD may combine the display output from multiple connected computers
