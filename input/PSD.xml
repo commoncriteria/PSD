@@ -278,8 +278,8 @@
         </usecase>
         <usecase title="Single User with PSD and a Single Computer (Isolator or Filter)" id="supsd-sin-comp-iso-or-fil">
           <description>
-            <figure entity="images/usecase2 sing psd sing.png" title="PSD with Single Integrated
-              Video Display (Combiner or Multi-Viewer" id="singpsdsing"/><h:br/><h:br/>
+            <figure entity="images/usecase2 sing psd sing.png" title="Single User with PSD and a
+              Single Computer (Isolator or Filter)" id="singpsdsing"/><h:br/><h:br/>
             In this use case, the PSD sits between a set of connected peripherals and a single connected
             computer. The connected computer may change over time, such as different laptops connected
             to an Isolator or Filter that persistently resides in a conference room. Once again, this use case
