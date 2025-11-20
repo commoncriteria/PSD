@@ -804,7 +804,7 @@
                     information console on the connected computer.</h:li>
                       <h:li>Attempt to connect a USB mass storage device to the TOE peripheral
                     interface.</h:li>
-                      <h:li>.</h:li>
+                      <h:li>Power on the TOE. Verify the device is rejected.</h:li>
                       <h:li>Ensure the USB mass storage device is disconnected, and then
                     attempt to connect it to the TOE peripheral interface again.</h:li>
                       <h:li>Verify the device is rejected.</h:li>
@@ -1607,8 +1607,7 @@
         
         <ext-comp-def title="Continuous Indications" fam-id="FTA_CIN_EXT">
           <fam-behavior>
-            This family defines requirements for availability of entropy data
-            generated or collected by the TSF.
+            This family defines requirements for defining how the TSF displays its switching status.
           </fam-behavior>
         </ext-comp-def>
       
@@ -1705,7 +1704,7 @@
                 <h:li>[Conditional] If "a screen with dimming function" is selected, the
                   evaluator shall verify that indications are visible at minimum brightness
                   settings in standard room illumination conditions.</h:li>
-                <h:li>If "multiple indicators which never display conflicting
+                <h:li>[Conditional] If "multiple indicators which never display conflicting
                   information" is selected, the evaluator shall verify that either all indicators
                   reflect the same status at all times, or the indicator for the most recently
                   used switching mechanism displays the correct switching status and that all
@@ -1719,21 +1718,21 @@
     </section>
     </section>
     <section title="Security Assurance Requirements" id="SARs">
-      The Security Objectives for the TOE in Section 4 were constructed to address threats identified in
-      Section 3.1. The Security Functional Requirements (SFRs) in Section 5.2 are a formal instantiation of the
+      The Security Objectives for the TOE in Section 4.1 were constructed to address threats identified in
+      Section 3.1. The Security Functional Requirements (SFRs) in Section 5.1 are a formal instantiation of the
       Security Objectives. The SARs were chosen based on the complexity of the products that are anticipated
       to be evaluated against this PP as well as the expected level of sophistication and access that an attacker
       would have if the TOE is deployed in an environment that satisfies the environmental security objectives
       in this PP.<h:br/><h:br/>
       This section lists the set of SARs drawn from CC Part 3 that are required in evaluations against this PP.
-      Individual Evaluation Activities to be performed are specified both in Section 5.2 as well as in this section.<h:br/><h:br/>
+      Individual Evaluation Activities to be performed are specified both in Section 5.1 as well as in this section.<h:br/><h:br/>
       The general model for evaluation of TOEs against STs written to conform to this PP is as follows:<h:br/><h:br/>
       After the ST has been approved for evaluation, the Common Criteria Testing Laboratory (CCTL) will obtain
       the TOE, supporting IT environmental, and the administrative/user guides for the TOE. The CCTL is
       expected to perform actions mandated by the Common Evaluation Methodology (CEM) for the ASE and
-      ALC SARs. The CCTL also performs the Evaluation Activities contained within Section 5.2, which are
+      ALC SARs. The CCTL also performs the Evaluation Activities contained within Section 5.1, which are
       intended to be an interpretation of the other CEM assurance requirements as they apply to the specific
-      technology instantiated in the TOE. The Evaluation Activities that are captured in Section 5.2 also provide
+      technology instantiated in the TOE. The Evaluation Activities that are captured in Section 5.1 also provide
       clarification as to what the developer needs to provide to demonstrate the TOE is compliant with the PP.<h:br/><h:br/>
       The TOE security assurance requirements are identified in <xref to="sar"/>. 
       <h:center><h:H4><ctr ctr-type="Table" pre="Table " id="sar">: Security Assurance Requirements</ctr></h:H4></h:center>
@@ -2479,9 +2478,8 @@
     <section title="Isolation Means Justification">
       The documentation shall include a section that refers to each one of the unauthorized data flows listed
       in the appropriate data flow SFRs, how isolation is provided and how the risk is mitigated by the TOE.
-      The details shall include a description of the method used in the TOE to assure that the specific
       unauthorized data flow will be blocked. The document shall also provide justification for each method
-      used based on the threats defined in Chapter 2 of this PP.
+      used based on the threats defined in Section 3.1 of this PP.
     </section>
     
     <section title="Firmware Dependencies">
