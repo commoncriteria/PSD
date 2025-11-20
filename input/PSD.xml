@@ -256,7 +256,9 @@
       The following use cases are examples of PSDs covered by this PP.
       <usecases>
         <usecase title="Single User with PSD, Local Monitoring, and Local Control" id="supsd-loc-mon-loc-con">
-            <description><comment>Single user with PSD, local monitoring, and local control Figure here</comment><h:br/><h:br/>
+            <description>
+            <figure entity="images/usecase1a sing psd local.png" title="Single User with PSD, Local
+                Monitoring, and Local Control" id="singpsdlocal"/>
             In this use case, the user controls the PSD through a user interface on the PSD itself or through
             a directly connected remote controller. Peripheral devices are connected directly to the PSD
             using cables. Since the PSD resides in close physical proximity to the user, the user is expected
@@ -266,14 +268,18 @@
             Note that the Operational Environment of this PSD may include peripherals that are connected
             directly to the connected computers (unconnected to the PSD) and multiple peripherals of the
             same type (for display or audio output only) each connected to the PSD, as shown in the figures
-            below:              
-              <comment>Add Single user with KM PSD and peripherals connected directly to computers Figure here</comment><h:br/><h:br/>
-              <comment>Add Single user with PSD and multiple peripherals of the same type Figure here</comment>                            
+            below:       
+              <figure entity="images/usecase1b sing km psd and periph.png" title="Single User with
+                KM PSD and Peripherals Connected Directly to Computers" id="singkmpsdperiph"/> 
+              <figure entity="images/usecase1c sing km psd and periph.png" title="Single User with
+                KM PSD and Peripherals Connected Directly to Computers" id="singkmpsdperiph"/>
+              
             </description>
         </usecase>
         <usecase title="Single User with PSD and a Single Computer (Isolator or Filter)" id="supsd-sin-comp-iso-or-fil">
           <description>
-            <comment>Add Single User with PSD and a Single Computer (Isolator or Filter) Figure here</comment>
+            <figure entity="images/usecase2 sing psd sing.png" title="PSD with Single Integhrated
+              Video Display (Combiner or Multi-Viewer" id="singpsdsing"/>
             In this use case, the PSD sits between a set of connected peripherals and a single connected
             computer. The connected computer may change over time, such as different laptops connected
             to an Isolator or Filter that persistently resides in a conference room. Once again, this use case
@@ -282,7 +288,9 @@
           </description>
         </usecase>
         <usecase title="PSD with Single Integrated Video Display (Combiner or Multi-Viewer)" id="psd-sin-int-vid-disp-comb-or-mv">          
-          <description><comment>Add PSD with Single Integrated Video Display (Combiner or Multi-Viewer) Figure here</comment> <h:br/><h:br/>
+          <description>
+            <figure entity="images/usecase3 psd sing.png" title="PSD with Single Integhrated
+              Video Display (Combiner or Multi-Viewer)" id="singpsdsing"/>
             A Combiner is used to simultaneously display output from multiple connected computers to one or more
             display devices. A Combiner PSD may combine the display output from multiple connected computers
             onto a single monitor (as shown in Figure 6 above) or output the display from one connected computer
