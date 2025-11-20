@@ -12,6 +12,7 @@ output/PSD-release-linkable.html: CDS
 output/PSD-release-linkable.html: CEM
 output/PSD-release-linkable.html: ECD
 output/PSD-release-linkable.html: EDID
+output/PSD-release-linkable.html: Integhrated
 output/PSD-release-linkable.html: PSD
 output/PSD-release-linkable.html: PSDs
 output/PSD-release-linkable.html: SPD
@@ -36,6 +37,7 @@ output/PSD-release.html: CDS
 output/PSD-release.html: CEM
 output/PSD-release.html: ECD
 output/PSD-release.html: EDID
+output/PSD-release.html: Integhrated
 output/PSD-release.html: PSD
 output/PSD-release.html: PSDs
 output/PSD-release.html: PSD’s
@@ -58,6 +60,7 @@ output/PSD.html: CDS
 output/PSD.html: CEM
 output/PSD.html: ECD
 output/PSD.html: EDID
+output/PSD.html: Integhrated
 output/PSD.html: PSD
 output/PSD.html: PSDs
 output/PSD.html: PSD’s

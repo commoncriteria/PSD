@@ -629,7 +629,7 @@ function showTarget(id){
 	            img[src="images/collapsed.png"] { display:none;}
 
           }
-    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/><a href="#Comment-3-">Comment: Comment-3-</a><br/><a href="#Comment-4-">Comment: Comment-4-</a><br/><a href="#Comment-5-">Comment: Comment-5-</a><br/></div><h1 class="title" style="page-break-before:auto;">Protection Profile for Peripheral Sharing Devices</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
+    </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">Protection Profile for Peripheral Sharing Devices</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 5.0<br/>2025-07-11<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2000-08-08</td><td>Initial Version</td></tr>
 <tr><td>1.1</td><td>2007-07-25</td><td>Update to conform with <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> V3.1</td></tr>
 <tr><td>1.2</td><td>2008-08-21</td><td>Update to conform with additional parts of <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> V3.1 r3</td></tr>
@@ -866,7 +866,9 @@ The following sections list Common Criteria and technology terms used in this do
     
     <h2 class="indexable" data-level="2" id="sec-usecases">1.4 Use Cases</h2>
       The following use cases are examples of PSDs covered by this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-      <dl><dt id="supsd-loc-mon-loc-con"> [USE CASE 1] Single User with PSD, Local Monitoring, and Local Control</dt><dd><span class="description"><span style="" class="comment " id="Comment-1-">Single user with PSD, local monitoring, and local control Figure here</span><br/><br/>
+      <dl><dt id="supsd-loc-mon-loc-con"> [USE CASE 1] Single User with PSD, Local Monitoring, and Local Control</dt><dd><span class="description">
+            <div class="figure" id="figure-singpsdlocal"><img id="singpsdlocal" src="images/usecase1a sing psd local.png" width="" height=""></img><br/><span class="ctr" data-myid="singpsdlocal" data-counter-type="ct-figure">Figure <span class="counter">2</span></span>:
+      Single User with PSD, Local                 Monitoring, and Local Control</div>
             In this use case, the user controls the PSD through a user interface on the PSD itself or through
             a directly connected remote controller. Peripheral devices are connected directly to the PSD
             using cables. Since the PSD resides in close physical proximity to the user, the user is expected
@@ -876,17 +878,23 @@ The following sections list Common Criteria and technology terms used in this do
             Note that the Operational Environment of this PSD may include peripherals that are connected
             directly to the connected computers (unconnected to the PSD) and multiple peripherals of the
             same type (for display or audio output only) each connected to the PSD, as shown in the figures
-            below:              
-              <span style="" class="comment " id="Comment-2-">Add Single user with <abbr class="dyn-abbr"><a href="#abbr_KM">KM</a></abbr> PSD and peripherals connected directly to computers Figure here</span><br/><br/>
-              <span style="" class="comment " id="Comment-3-">Add Single user with PSD and multiple peripherals of the same type Figure here</span>                            
+            below:       
+              <div class="figure" id="figure-singkmpsdperiph"><img id="singkmpsdperiph" src="images/usecase1b sing km psd and periph.png" width="" height=""></img><br/><span class="ctr" data-myid="singkmpsdperiph" data-counter-type="ct-figure">Figure <span class="counter">3</span></span>:
+      Single User with                 <abbr class="dyn-abbr"><a href="#abbr_KM">KM</a></abbr> PSD and Peripherals Connected Directly to Computers</div> 
+              <div class="figure" id="figure-singkmpsdperiph"><img id="singkmpsdperiph" src="images/usecase1c sing km psd and periph.png" width="" height=""></img><br/><span class="ctr" data-myid="singkmpsdperiph" data-counter-type="ct-figure">Figure <span class="counter">4</span></span>:
+      Single User with                 <abbr class="dyn-abbr"><a href="#abbr_KM">KM</a></abbr> PSD and Peripherals Connected Directly to Computers</div>
+              
             </span></dd><dt id="supsd-sin-comp-iso-or-fil"> [USE CASE 2] Single User with PSD and a Single Computer (Isolator or Filter)</dt><dd><span class="description">
-            <span style="" class="comment " id="Comment-4-">Add Single User with PSD and a Single Computer (Isolator or Filter) Figure here</span>
+            <div class="figure" id="figure-singpsdsing"><img id="singpsdsing" src="images/usecase2 sing psd sing.png" width="" height=""></img><br/><span class="ctr" data-myid="singpsdsing" data-counter-type="ct-figure">Figure <span class="counter">5</span></span>:
+      PSD with Single Integhrated               Video Display (Combiner or Multi-Viewer</div>
             In this use case, the PSD sits between a set of connected peripherals and a single connected
             computer. The connected computer may change over time, such as different laptops connected
             to an Isolator or Filter that persistently resides in a conference room. Once again, this use case
             does not specifically mandate or exclude the use of any one type of peripheral that is defined by
             this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> and its <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>‐Modules.
-          </span></dd><dt id="psd-sin-int-vid-disp-comb-or-mv"> [USE CASE 3] PSD with Single Integrated Video Display (Combiner or Multi-Viewer)</dt><dd><span class="description"><span style="" class="comment " id="Comment-5-">Add PSD with Single Integrated Video Display (Combiner or Multi-Viewer) Figure here</span> <br/><br/>
+          </span></dd><dt id="psd-sin-int-vid-disp-comb-or-mv"> [USE CASE 3] PSD with Single Integrated Video Display (Combiner or Multi-Viewer)</dt><dd><span class="description">
+            <div class="figure" id="figure-singpsdsing"><img id="singpsdsing" src="images/usecase3 psd sing.png" width="" height=""></img><br/><span class="ctr" data-myid="singpsdsing" data-counter-type="ct-figure">Figure <span class="counter">6</span></span>:
+      PSD with Single Integhrated               Video Display (Combiner or Multi-Viewer)</div>
             A Combiner is used to simultaneously display output from multiple connected computers to one or more
             display devices. A Combiner PSD may combine the display output from multiple connected computers
             onto a single monitor (as shown in Figure 6 above) or output the display from one connected computer

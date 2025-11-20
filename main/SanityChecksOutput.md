@@ -1,4 +1,7 @@
-* Warning: This document still has at least one comment.
+* Error: Detected multiple elements with an id of 'singkmpsdperiph'.
+* Error: Detected multiple elements with an id of 'singkmpsdperiph'.
+* Error: Detected multiple elements with an id of 'singpsdsing'.
+* Error: Detected multiple elements with an id of 'singpsdsing'.
  Failed to find a reference to bibCEM.
  Failed to find a reference to SFRs.
  Failed to find a reference to SFRs.
