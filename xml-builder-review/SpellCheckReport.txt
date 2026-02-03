@@ -42,7 +42,6 @@ output/PSD-release.html: PSD’s
 output/PSD-release.html: SPD
 output/PSD-release.html: XCCDF
 output/PSD-release.html: behaviour
-output/PSD-release.html: computers’
 output/PSD-release.html: enquiries
 output/PSD-release.html: microcontrollers
 output/PSD-release.html: r3
@@ -63,7 +62,6 @@ output/PSD.html: PSDs
 output/PSD.html: PSD’s
 output/PSD.html: SPD
 output/PSD.html: XCCDF
-output/PSD.html: computers’
 output/PSD.html: microcontrollers
 output/PSD.html: r3
 output/PSD.html: r4
