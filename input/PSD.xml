@@ -255,7 +255,8 @@
     <sec:Threats>
       <threats>
         <threat name="T.DATA_LEAK">
-          <description>            A connection via the PSD between one or more computers may allow unauthorized data flow            through the PSD or its connected peripherals.          </description>
+          <description>A connection via the PSD between one or more computers may allow unauthorized data flow
+            through the PSD or its connected peripherals.</description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FDP_APC_EXT.1</addressed-by>
           <rationale>Mitigates this SFR by preventing
@@ -265,7 +266,8 @@
             connection with unauthorized devices, including external and wireless interfaces.</rationale>
         </threat>
         <threat name="T.FAILED">
-          <description>            Detectable failure of a PSD may cause an unauthorized information flow or weakening of PSD security            functions.          </description>
+          <description>Detectable failure of a PSD may cause an unauthorized information flow or weakening of PSD security
+            functions.</description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FPT_FLS_EXT.1</addressed-by>
           <rationale>Mitigates this SFR by preserving a
@@ -278,14 +280,17 @@
             self-tests to verify integrity.</rationale>
         </threat>
         <threat name="T.LOGICAL_TAMPER">
-          <description>            An attached device (computer or peripheral) with malware, or otherwise under the control of a            malicious user, could modify or overwrite code or data stored in the PSD’s volatile or non‐volatile            memory to allow unauthorized information flows.          </description>
+          <description>An attached device (computer or peripheral) with malware, or otherwise under the control of a
+            malicious user, could modify or overwrite code or data stored in the PSD’s volatile or non‐volatile
+            memory to allow unauthorized information flows.</description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FPT_NTA_EXT.1</addressed-by>
           <rationale>Mitigates this SFR by preventing
             access to firmware, software, and memory except under specified exceptions.</rationale>
         </threat>
         <threat name="T.PHYSICAL_TAMPER">
-          <description>            A malicious user or human agent could physically modify the PSD to allow unauthorized information            flows.          </description>
+          <description>A malicious user or human agent could physically modify the PSD to allow unauthorized information
+            flows.</description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FPT_PHP.1</addressed-by>
           <rationale>Mitigates this SFR by requiring
@@ -295,14 +300,16 @@
             by permanently disabling during a physical attack.</rationale>
         </threat>
         <threat name="T.REPLACEMENT">
-          <description>            A malicious human agent could replace the PSD during shipping, storage, or use with an alternate            device that does not enforce the PSD security policies.          </description>
+          <description>A malicious human agent could replace the PSD during shipping, storage, or use with an alternate
+            device that does not enforce the PSD security policies.</description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FPT_PHP.1</addressed-by>
           <rationale>Mitigates this SFR by ensuring
             physical tampering does not occur.</rationale>
         </threat>
         <threat name="T.RESIDUAL_LEAK">
-          <description>            A PSD may leak (partial, residual, or echo) user data between the intended connected computer and            another unintended connected computer.          </description>
+          <description>A PSD may leak (partial, residual, or echo) user data between the intended connected computer and
+            another unintended connected computer.</description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FDP_RIP_EXT.1</addressed-by>
           <rationale>Mitigates this SFR by ensuring not
@@ -313,7 +320,8 @@
             functions.</rationale>
         </threat>
         <threat name="T.SIGNAL_LEAK">
-          <description>            A connection via the PSD between one or more computers may allow unauthorized data flow            through bit‐by‐bit signaling.          </description>
+          <description>A connection via the PSD between one or more computers may allow unauthorized data flow
+            through bit‐by‐bit signaling.</description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FDP_APC_EXT.1</addressed-by>
           <rationale>Mitigates this SFR by ensuring
@@ -329,14 +337,16 @@
             by ensuring only authorized users are able to initiate a switch.</rationale>
         </threat>
         <threat name="T.UNAUTHORIZED_DEVICES">
-          <description>            The use of an unauthorized peripheral device with a specific PSD peripheral port may allow            unauthorized data flows between connected devices or enable an attack on the PSD or its connected            computers.          </description>
+          <description>The use of an unauthorized peripheral device with a specific PSD peripheral port may allow
+            unauthorized data flows between connected devices or enable an attack on the PSD or its connected
+            computers.</description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FDP_PDC_EXT.1</addressed-by>
           <rationale>Mitigates this SFR by rejecting
             connections with unauthorized devices.</rationale>
         </threat>
         <threat name="T.UNINTENDED_USE">
-          <description>            A PSD may connect the user to a computer other than the one to which the user intended to connect.          </description>
+          <description>A PSD may connect the user to a computer other than the one to which the user intended to connect.</description>
           <!-- New mapping to build updated threat mapping table. -->
           <addressed-by>FAU_GEN.1 (Implementation-based)</addressed-by>
           <rationale>Mitigates this
