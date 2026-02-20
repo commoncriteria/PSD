@@ -529,6 +529,7 @@
               <Guidance>The evaluator shall verify that the operational guidance provides
            instructions on how the audit logs can be viewed as well as any information
            needed to interpret the audit logs.</Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>The evaluator shall perform each of the auditable functions to succeed, and
            where possible, to fail. The evaluator shall use the means described in the
            TSS to access the audit records and verify that each of the events has been
@@ -577,6 +578,11 @@
                the TOE enters a failure state.</TSS>
               <Guidance>The evaluator shall verify that the operational user guidance describes how a
                user knows when the TOE enters a failure state.</Guidance>
+              <CustomEA name="Isolation">The evaluator shall review the Isolation Documentation and Assessment as
+               described in Appendix D of this PP and ensure that it adequately describes
+               the isolation concepts and implementation in the TOE and why it can be
+               relied upon to provide proper isolation between connected computers
+               whether the TOE is powered on or powered off.</CustomEA>
               <Tests/>
             </aactivity>
           </f-element>
@@ -664,6 +670,7 @@
                 visual or auditory indications provided to a user when the TOE rejects the
                 connection of a device.
               </Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>
                 <testlist>
                   <test>The evaluator shall check the TOE and its supplied cables and accessories to ensure that there are no external wired interfaces other than computer interfaces, peripheral device interfaces, and power interfaces.</test>
@@ -723,6 +730,7 @@
                 user data is not stored in TOE non‐volatile memory or storage.
               </TSS>
               <Guidance/>
+              <CustomEA name="Isolation"/>
               <Tests/>
             </aactivity>
           </f-element>
@@ -765,6 +773,7 @@
               <Guidance>The evaluator shall verify that the Letter of Volatility included in the TSS
               describes the effect that the TOE Restore Factory Default function has on
               each component listed in the Letter of Volatility.</Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>
                 Perform the TOE memory purge or restore factory defaults according
               to the guidance and verify that the TOE enters a desirable secure state.
@@ -809,6 +818,7 @@
               <Guidance>If the ST includes the selection "switching can be initiated only through
                 express user action", the evaluator shall verify that the operational user
                 guidance describes the TOE supported switching mechanisms.</Guidance>
+              <CustomEA name="Isolation"/>
               <Tests/>
             </aactivity>
           </f-element>
@@ -862,6 +872,7 @@
             operational user guidance does not include automatic port scanning, control
             through a connected computer, and control through keyboard shortcuts as
             TOE supported switching mechanisms.</Guidance>
+              <CustomEA name="Isolation"/>
               <Tests/>
             </aactivity>
           </f-element>
@@ -949,6 +960,7 @@
               administrators. If the TSF provides multiple administrative roles, the evaluator
               shall verify that the authorized behavior for each separate administrative role is
               described.</Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>
                 <testlist>
                   <test>
@@ -1000,6 +1012,7 @@
             this requirement is described in the operational user guidance and that the
             description contains the information required to perform the management duties
             associated with each management function.</Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>The evaluator shall test the TOE’s ability to provide the management functions by
             configuring the TOE and testing each option assigned from above. The evaluator is
             expected to test these functions in all the ways in which the ST and guidance
@@ -1112,6 +1125,7 @@
                  firmware, and TOE memory, except as described above.</TSS>
               <Guidance>The evaluator shall check the operational user guidance to ensure any
                  configurations required to comply with this SFR are defined.</Guidance>
+              <CustomEA name="Isolation"/>
               <Tests/>
             </aactivity>
           </f-element>
@@ -1138,6 +1152,7 @@
                  mechanism by which the TOE provides unambiguous detection of physical tampering and
                  provides the user with instructions for verifying that the TOE has not been
                  tampered with.</Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>
                 <testlist>
                   <test>The evaluator shall verify, for each tamper evident seal or label affixed to the TOE enclosure and TOE remote controller (if applicable), that any attempts to open the enclosure or remove the seal results in the seal being damaged in a manner that is consistent with the operational user guidance.</test>
@@ -1181,6 +1196,7 @@
                  of the actions that will cause the anti‐tampering functionality to disable the
                  device.
               </Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>
                 In the following testing the evaluator shall attempt to gain physical access to
                  the TOE internal circuitry (enough access to allow the insertion of tools to
@@ -1241,6 +1257,7 @@
               <Guidance>The evaluator shall check that the operational user guidance describes how the
                  TOE provides reliable timestamps and if there are any management functions for
                  configuring the time.</Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>The evaluator shall test the TOE’s ability to provide time stamps. It is expected
                  that this test be performed in conjunction with FAU_GEN.1.</Tests>
             </aactivity>
@@ -1336,6 +1353,7 @@
                  users verify the integrity of the selections in FPT_TST.1.2 and FPT_TST.1.3.
                  This method can include restarting the TOE, a dedicated self‐test, or some
                  other method.</Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>The evaluator shall trigger the conditions specified in the TSS that are used
                  to initiate TSF self‐testing and verify that successful completion of the self-tests
                  can be determined by following the corresponding steps in the
@@ -1387,6 +1405,7 @@
                 The evaluator shall verify that the operational user guidance provides adequate
                  information on TOE self-test failures, their causes, and their indications.
               </Guidance>
+              <CustomEA name="Isolation"/>
               <Tests>The evaluator shall cause a TOE self-test failure and verify that the TOE responds by
                  disabling normal functions and provides proper indications to the user.</Tests>
             </aactivity>
@@ -1541,7 +1560,8 @@
       clarification as to what the developer needs to provide to demonstrate the TOE is compliant with the PP.
       <h:br/>
       <h:br/>
-      The TOE security assurance requirements are identified in <xref to="sar"/>.
+      The TOE security assurance requirements are identified in
+      <xref to="sar"/>.
       <h:center>
         <h:H4>
           <ctr ctr-type="Table" pre="Table " id="sar">: Security Assurance Requirements</ctr>
@@ -1614,13 +1634,15 @@
         </h:TR>
       </h:table>
       <section title="Class ASE: Security Target" id="ase">
-        As per ASE activities defined in <xref to="bibCEM"/>.
+        As per ASE activities defined in
+        <xref to="bibCEM"/>.
       </section>
       <section title="Class ADV: Development" id="adv">
         The information about the TOE is contained in the guidance 
         documentation available to the end user as well as the TSS portion of the ST. The TOE developer must concur
         with the description of the product that is contained in the TSS as it relates to the functional requirements.
-        The Assurance Activities contained in <xref to="SFRs"/>
+        The Assurance Activities contained in
+        <xref to="SFRs"/>
         should provide the ST authors with sufficient 
         information to determine the appropriate content for the TSS section.
         <a-component cc-id="adv_fsp.1" name="Basic Functional Specification (ADV_FSP.1)">
@@ -1677,7 +1699,8 @@
             <aactivity>
               There are no specific assurance activities associated with these SARs, except
               ensuring the information is provided. The functional specification documentation is
-              provided to support the evaluation activities described in <xref to="SFRs"/>, and
+              provided to support the evaluation activities described in
+              <xref to="SFRs"/>, and
               other activities described for AGD, ATE, and AVA SARs. The requirements on the content
               of the functional specification information is implicitly assessed by virtue of the
               other assurance activities being performed; if the evaluator is unable to perform an
@@ -1768,8 +1791,10 @@
               for content and presentation of evidence.</title>
             <aactivity>
               Some of the contents of the operational guidance are verified by the
-                assurance activities in <xref to="SFRs"/>
-              and evaluation of the TOE according to the <xref to="bibCEM"/>. The following additional information is also required. If 
+                assurance activities in
+              <xref to="SFRs"/>
+              and evaluation of the TOE according to the
+              <xref to="bibCEM"/>. The following additional information is also required. If 
                 cryptographic functions are provided by the TOE, the operational guidance shall
                 contain instructions for configuring the cryptographic engine associated with 
                 the evaluated configuration of the TOE. It shall provide a warning to the administrator
@@ -2115,9 +2140,11 @@
           Testing is performed to confirm the
           functionality described in the TSS as well as the administrative
           (including configuration and operational) documentation provided. The focus of the testing
-          is to confirm that the requirements specified in <xref to="SFRs"/>
+          is to confirm that the requirements specified in
+          <xref to="SFRs"/>
           being met,
-          although some additional testing is specified for SARs in <xref to="SARs"/>. The
+          although some additional testing is specified for SARs in
+          <xref to="SARs"/>. The
           Assurance Activities identify the additional testing activities associated with these
           components. The evaluator produces a test report documenting the plan for and results of
           testing, as well as coverage arguments focused on the platform/TOE
@@ -2147,7 +2174,8 @@
               The evaluator shall prepare a test plan and report documenting the testing
               aspects of the system, including any application crashes during testing. The evaluator
               shall determine the root cause of any application crashes and include that information
-              in the report. The test plan covers all of the testing actions contained in the <xref to="bibCEM"/>
+              in the report. The test plan covers all of the testing actions contained in the
+              <xref to="bibCEM"/>
               and the body of this PP’s Assurance Activities.
               <h:br/>
               <h:br/>
