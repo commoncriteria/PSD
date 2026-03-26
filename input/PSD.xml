@@ -577,7 +577,7 @@
         <audit-table id="t-audit-mandatory" table="mandatory"/>        
   </section>
   
-   <section title="Security Audit" id="FAU">
+      <section title="Class FAU: Security Audit" id="FAU">
      <f-component cc-id="fau_gen.1" name="Audit Data Generation" status="feat-based">
        <depends on="management"/>
        <f-element id="fau-gen-1e1">
@@ -635,7 +635,7 @@
      </f-component>
    </section>
     
-    <section title="User Data Protection (FDP)" id="fdp">
+      <section title="Class FDP: User Data Protection" id="fdp">
       
       <ext-comp-def title="Active PSD Connections" fam-id="FDP_APC_EXT">
         <fam-behavior>
@@ -1034,7 +1034,7 @@
     </f-component>    
     </section>
       
-    <section title="Identification and Authentication (FIA)" id="FIA">
+      <section title="Class FIA: Identification and Authentication" id="FIA">
       <f-component cc-id="fia_uau.2" name="User Authentication Before Any Action" status="feat-based">
         <depends on="management"/>
         <f-element id="fia-uau-2e1">
@@ -1074,7 +1074,7 @@
       </f-component>
     </section>
       
-      <section title="Security Management (FMT)" id="FMT">
+      <section title="Class FMT: Security Management" id="FMT">
         <f-component cc-id="fmt_mof.1" name="Management of Security Functions Behavior" status="feat-based">
           <depends on="management"/>
         <f-element id="fmt-mof-1e1">
@@ -1216,7 +1216,7 @@
     </f-component>
       </section>
     
-       <section title="Protection of the TSF (FPT)" id="FPT">
+      <section title="Class FPT: Protection of the TSF" id="FPT">
          
          <ext-comp-def title="Failure with Preservation of Secure State" fam-id="FPT_FLS_EXT">
          <fam-behavior>Components in this family define the secure failure requirements for the TSF.</fam-behavior>
@@ -1611,7 +1611,7 @@
          </f-component>         
       </section>
 
-      <section id="ss-fta" title="TOE Access (FTA)">
+      <section id="ss-fta" title="Class FTA: TOE Access">
         
         <ext-comp-def title="Continuous Indications" fam-id="FTA_CIN_EXT">
           <fam-behavior>
