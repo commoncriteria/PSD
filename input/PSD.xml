@@ -333,11 +333,51 @@
       <cc-pt3-conf>conformant</cc-pt3-conf> 
       <cc-pp-conf/>
       <cc-pp-config-with>
-        <Mod-cc-ref>PP‐Module for Analog Audio Output Devices, Version 2.0</Mod-cc-ref>
-        <Mod-cc-ref>PP‐Module for Audio Input Devices, Version 2.0</Mod-cc-ref>
-        <Mod-cc-ref>PP‐Module for Keyboard/Mouse Devices, Version 2.0</Mod-cc-ref>
-        <Mod-cc-ref>PP‐Module for User Authentication Devices, Version 2.0</Mod-cc-ref>        
-        <Mod-cc-ref>PP‐Module for Video/Display Devices, Version 2.0</Mod-cc-ref>
+        <Mod-cc-ref>
+			<cc-doc-ref id="PSD-AO">
+				<git>
+					<url>https://github.com/commoncriteria/PSD-AO</url>
+					<branch>main</branch>
+				</git>
+				<url>https://niap-ccevs.org/protectionprofiles/433</url>			
+			</cc-doc-ref>		
+		</Mod-cc-ref>
+        <Mod-cc-ref>
+			<cc-doc-ref id="PSD-AI">
+				<git>
+					<url>https://github.com/commoncriteria/PSD-AI</url>
+					<branch>main</branch>
+				</git>
+				<url>https://niap-ccevs.org/protectionprofiles/432</url>			
+			</cc-doc-ref>		
+		</Mod-cc-ref>
+        <Mod-cc-ref>
+			<cc-doc-ref id="PSD-KM">
+				<git>
+					<url>https://github.com/commoncriteria/PSD-KM</url>
+					<branch>main</branch>
+				</git>
+				<url>https://niap-ccevs.org/protectionprofiles/435</url>			
+			</cc-doc-ref>		
+		</Mod-cc-ref>
+        <Mod-cc-ref>
+			<cc-doc-ref id="PSD-UA">
+				<git>
+					<url>https://github.com/commoncriteria/PSD-UA</url>
+					<branch>main</branch>
+				</git>
+				<url>https://niap-ccevs.org/protectionprofiles/434</url>			
+			</cc-doc-ref>		
+		</Mod-cc-ref>
+        <Mod-cc-ref>
+			<cc-doc-ref id="PSD-VI">
+				<git>
+					<url>https://github.com/commoncriteria/PSD-VI</url>
+					<branch>main</branch>
+				</git>
+				<url>https://niap-ccevs.org/protectionprofiles/436</url>			
+			</cc-doc-ref>		
+		</Mod-cc-ref>
       </cc-pp-config-with>
       <cc-pkg-claim/>
     </CClaimsInfo>
